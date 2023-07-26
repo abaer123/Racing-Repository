@@ -6,7 +6,9 @@ GEM
     rack (2.2.7)
     rack-protection (3.0.6)
       rack
+    rake (13.0.6)
     ruby2_keywords (0.0.5)
+    rubytest (0.8.1)
     sequel (5.70.0)
     sinatra (3.0.6)
       mustermann (~> 3.0)
@@ -15,6 +17,8 @@ GEM
       tilt (~> 2.0)
     sqlite3 (1.6.3-arm64-darwin)
     sqlite3 (1.6.3-x86_64-linux)
+    test (1.0.0)
+      rubytest
     tilt (2.2.0)
 
 PLATFORMS
@@ -22,9 +26,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  rack
+  rake
   sequel
   sinatra
   sqlite3
+  test
 
 BUNDLED WITH
    2.3.9
