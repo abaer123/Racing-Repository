@@ -1,8 +1,14 @@
 require './app.rb'
 require 'test/unit'
 require 'rack/test'
+require 'rake/testtask'
 
-set :environment, :test
+Rake::TestTask.new do |t|
+  t.libs << 'test'
+end
+
+desc "Run tests"
+task :default => :test
 
 class MyAppTest < Test::Unit::TestCase
   include Rack::Test::Methods
