@@ -1,0 +1,22 @@
+gitops:
+      # Manifest projects are watched by the agent. Whenever a project changes,
+      # GitLab deploys the changes using the agent.
+      manifest_projects:
+      # Below variable is just a place holder. Most workshop do not need to have the manifest_project set
+      - id: gitlab-learn-labs/webinars/tanuki-racing/tanuki-racing-application
+      #- id: path/to/your/project
+        paths:
+        - glob: 'manifests/*.yaml'
+
+
+# The CI/CD tunnel is always enabled in the project where you register and configure the Agent.
+# This connection can be shared with other groups and projects.
+ci_access:
+  groups:
+  - id: gitlab-learn-labs/webinars/tanuki-racing
+
+user_access:
+  access_as:
+    agent: {}
+  groups:
+  - id: gitlab-learn-labs/webinars/tanuki-racing
