@@ -1,0 +1,12 @@
+.table-responsive {
+    max-height:40%;
+    min-width: 60%;
+    margin: 15%;
+}
+
+thead th { 
+    position: sticky;
+    top: 0; 
+    z-index: 1;
+    font-size: 2em;
+}

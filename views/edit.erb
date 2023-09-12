@@ -1,0 +1,105 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Index</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="/images/logo.png" alt="Logo" width="30" height="24">
+        <b>Tanuki Racing Leaderboard</b>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/leaderboard">Leaderboard</a>
+          <a class="nav-link" href="/edit">Time Submission</a>
+          <a class="nav-link" href="/about">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <%# player, time, map, date %>
+  <div class="card" style="width: 22rem;">
+    <div class="card-body">
+      <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Player</span>
+          </div>
+          <input type="text" id="Player" class="form-control" placeholder="Player" aria-label="Player" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Map</label>
+          </div>
+          <select class="form-control custom-select" id="inputGroupSelect01">
+            <option selected>Choose Map...</option>
+            <%# Names randomly generated from chat gpt %>
+            <option value="Safari Sprint Circuit">Safari Sprint Circuit</option>
+            <option value="Jungle Jamboree Track">Jungle Jamboree Track</option>
+            <option value="Arctic Avalanche Raceway">Arctic Avalanche Raceway</option>
+            <option value="Desert Dash Circuit">Desert Dash Circuit</option>
+            <option value="Ocean Odyssey Speedway">Ocean Odyssey Speedway</option>
+            <option value="Rainforest Rally Run">Rainforest Rally Run</option>
+            <option value="Mountain Mayhem Course">Mountain Mayhem Course</option>
+            <option value="Canyon Chase Challenge">Canyon Chase Challenge</option>
+            <option value="Savannah Stampede Track">Savannah Stampede Track</option>
+            <option value="Volcano Velocity Circuit">Volcano Velocity Circuit</option>
+            <option value="Woodland Whirlwind Run">Woodland Whirlwind Run</option>
+            <option value="Tundra Turbo Trails">Tundra Turbo Trails</option>
+            <option value="Island Isle Invitational">Island Isle Invitational</option>
+            <option value="Urban Jungle Grand Prix">Urban Jungle Grand Prix</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Time</span>
+          </div>
+          <input type="number" class="form-control" placeholder="In seconds" id="Time" aria-label="Time" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Date</span>
+          </div>
+          <input type="date" class="form-control" placeholder="Date" id="Date" aria-label="Date" aria-describedby="basic-addon1">
+        </div>
+        <button onclick="addEntry(event)" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+  function addEntry(e) {
+    e.preventDefault();
+    console.log(e);
+    // <%# player, time, map, date %>
+    var player = document.getElementById("Player").value
+    var time = document.getElementById("Time").value
+    var map = document.getElementById("inputGroupSelect01").value
+    var date = document.getElementById("Date").value
+    var body = JSON.stringify({ player, time, map, date })
+    console.log('________________________');
+    console.log(player);
+    console.log(time);
+    console.log(map);
+    console.log(date);
+    console.log(body);
+    console.log('________________________');
+    fetch('/edit_board', {
+      method: 'POST',
+      body: body,
+    }).then(response => {
+      if (response.redirected) {
+          window.location.href = response.url;
+      }
+  }).catch(function(err) {
+      console.info(err + " url: " + url);
+  });
+  }
+</script>
