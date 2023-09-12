@@ -8,6 +8,8 @@ do we dockerize it?
 - maybe need a docker file?
 - need to fix table at some point
 
+might need to move the docker file back out
+
 Notes
 
 Run bundle lock --add-platform x86_64-linux when build breaks
