@@ -7,9 +7,9 @@ variables:
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
   DAST_BAS_DISABLED: "true"
-  FUZZAPI_PROFILE: Quick-10
-  FUZZAPI_OPENAPI: test-api-specification.json
-  FUZZAPI_TARGET_URL: http://test-deployment/
+  # FUZZAPI_PROFILE: Quick-10
+  FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
+  FUZZAPI_TARGET_URL: http://149.248.44.52:7777
   
 
 stages:
@@ -49,13 +49,6 @@ include:
 
 dast:
   extends: .dast_with_bas
-
-my_fuzz_target:
-  extends: .fuzz_base
-  script:
-    # Build your fuzz target binary in these steps, then run it with gitlab-cov-fuzz
-    # See our example repos for how you could do this with any of our supported languages
-    - ./gitlab-cov-fuzz run --regression=$REGRESSION -- <your fuzz target>
 
 .auto-deploy:
   dependencies: [build]
