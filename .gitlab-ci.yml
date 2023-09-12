@@ -42,6 +42,7 @@ include:
   - template: Jobs/Secret-Detection.gitlab-ci.yml
   - template: Jobs/SAST-IaC.gitlab-ci.yml
   - template: Security/DAST.gitlab-ci.yml
+  - template: Jobs/DAST-Default-Branch-Deploy.gitlab-ci.yml
   - template: BAS.latest.gitlab-ci.yml
   - template: Coverage-Fuzzing.gitlab-ci.yml
   - template: API-Fuzzing.gitlab-ci.yml
@@ -55,3 +56,8 @@ my_fuzz_target:
     # Build your fuzz target binary in these steps, then run it with gitlab-cov-fuzz
     # See our example repos for how you could do this with any of our supported languages
     - ./gitlab-cov-fuzz run --regression=$REGRESSION -- <your fuzz target>
+
+.auto-deploy:
+  dependencies: [build]
+dast_environment_deploy:
+  dependencies: [build]
