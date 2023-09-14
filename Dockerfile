@@ -6,4 +6,4 @@ WORKDIR /tanuki-racing-appliation
 COPY . /tanuki-racing-appliation
 RUN bundle install
 
-CMD ["bundle", "exec", "rackup"]
+CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "80"]
