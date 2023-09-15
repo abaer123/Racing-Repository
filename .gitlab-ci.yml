@@ -14,7 +14,7 @@ variables:
   FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
   FUZZAPI_TARGET_URL: http://149.248.44.52:7777
   CI_DEBUG_TRACE: "true"
-  CI_PROJECT_PATH_SLUG: "tanukiracing"
+  # CI_PROJECT_PATH_SLUG: "tanukiracing"
   
 
 stages:
@@ -55,10 +55,10 @@ include:
 dast:
   extends: .dast_with_bas
 
-.auto-deploy:
-  dependencies: [build]
-dast_environment_deploy:
-  dependencies: [build]
+# .auto-deploy:
+#   dependencies: [build]
+# dast_environment_deploy:
+#   dependencies: [build]
 
 build:
   stage: build
