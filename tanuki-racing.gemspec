@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.push File.expand_path('lib', __dir__)
-require "TanukiRacing/version"
+require "tanukiracing/version"
 
 Gem::Specification.new do |s|
   s.name = "tanukiracing"
