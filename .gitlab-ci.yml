@@ -55,11 +55,6 @@ include:
 dast:
   extends: .dast_with_bas
 
-# .auto-deploy:
-#   dependencies: [build]
-# dast_environment_deploy:
-#   dependencies: [build]
-
 build:
   stage: build
   variables:
@@ -69,3 +64,16 @@ build:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $IMAGE .
     - docker push $IMAGE
+
+simple_staging:
+  extends: staging
+  environment:
+    name: staging
+    url: http://tanuki-racing-staging.$KUBE_INGRESS_BASE_DOMAIN
+
+
+simple_production:
+  extends: production
+  environment:
+    name: production
+    url: http://tanuki-racing.$KUBE_INGRESS_BASE_DOMAIN
