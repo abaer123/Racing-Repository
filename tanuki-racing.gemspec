@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables = ["tanukiracing"]
-  s.required_ruby_version = '~> 3.0.3'
+  s.required_ruby_version = '~> 3.1'
 
 
   s.add_runtime_dependency 'sequel'
