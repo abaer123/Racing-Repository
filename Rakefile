@@ -1,18 +1,9 @@
-# require "rake"
-# require "rake/clean"
-# require 'rake/testtask'
-
-# task :default => :test
-
-# Rake::TestTask.new do |t|
-#   t.warning = true
-# end
-
-
+require "rake"
+require "rake/clean"
+require 'rake/testtask'
 require 'tanukiracing'
 require 'test/unit'
 require 'rack/test'
-require 'rake/testtask'
 
 Rake::TestTask.new do |t|
   t.libs << 'test'
