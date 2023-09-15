@@ -26,8 +26,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'test-unit'
 
   s.add_development_dependency 'rake'
-#   s.add_development_dependency 'rack'
-#   s.add_development_dependency 'rack-test'
+  s.add_development_dependency 'rack'
+  s.add_development_dependency 'rack-test'
 #   s.add_development_dependency 'puma'
   s.add_development_dependency 'rubocop'
 end
