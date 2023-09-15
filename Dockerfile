@@ -1,6 +1,6 @@
 # Dockerfile
 
-FROM ruby:3.0.3
+FROM ruby:3.1.2
 
 ADD . /tanuki-racing-appliation
 WORKDIR /tanuki-racing-appliation
