@@ -1,0 +1,52 @@
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: graphlab
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: graphlab
+  namespace: graphlab
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphlab
+  namespace: graphlab
+spec:
+  selector:
+    matchLabels:
+      app: graphlab
+  template:
+    metadata:
+      labels:
+        app: graphlab
+    spec:
+      containers:
+      - image: registry.gitlab.com/gitlab-com/customer-success/demo-engineering/508-compliance-demo/main:latest
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 10
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+        name: graphlab
+        ports:
+        - containerPort: 8080
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+      imagePullSecrets:
+      - name: gitlab-credentials
+      securityContext: {}
+      serviceAccountName: graphlab

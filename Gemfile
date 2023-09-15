@@ -1,10 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'sinatra'
-gem 'sequel'
-gem 'sqlite3'
-gem 'test-unit'
-gem 'rack'
-gem 'rake'
-gem 'rack-test'
-gem 'puma'
+source "http://rubygems.org"
+
+# Gem dependencies in gemspec
+gemspec

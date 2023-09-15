@@ -1,6 +1,3 @@
-require 'sinatra'
-require "bundler/setup"
+require 'graphlab'
 
-require './app.rb'
-
-run Sinatra::Application
+run TanukiRacing::App

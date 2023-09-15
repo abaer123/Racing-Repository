@@ -1,3 +1,4 @@
+- Fix up the rakefile
 - we need to make sure it deploys, currently does not deploy
 - fix the db entries
 do we dockerize it?
