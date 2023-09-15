@@ -14,7 +14,7 @@ variables:
   FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
   FUZZAPI_TARGET_URL: http://149.248.44.52:7777
   CI_DEBUG_TRACE: "true"
-  CI_PROJECT_PATH_SLUG: "tanuki-racing"
+  CI_PROJECT_PATH_SLUG: "tanukiracing"
   
 
 stages:

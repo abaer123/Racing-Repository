@@ -4,7 +4,7 @@ $LOAD_PATH.push File.expand_path('lib', __dir__)
 require "TanukiRacing/version"
 
 Gem::Specification.new do |s|
-  s.name = "tanuki-racing"
+  s.name = "tanukiracing"
   s.version = TanukiRacing::VERSION
   s.platform = Gem::Platform::RUBY
   s.authors = ["Logan Stucker"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables = ["tanuki_racing"]
+  s.executables = ["tanukiracing"]
   s.required_ruby_version = '~> 3.0.3'
 
 

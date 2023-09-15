@@ -2,30 +2,30 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: graphlab
+  name: tanuki-racing-staging
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: graphlab
-  namespace: graphlab
+  name: tanuki-racing
+  namespace: tanuki-racing-staging
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: graphlab
-  namespace: graphlab
+  name: tanuki-racing
+  namespace: tanuki-racing-staging
 spec:
   selector:
     matchLabels:
-      app: graphlab
+      app: tanuki-racing
   template:
     metadata:
       labels:
-        app: graphlab
+        app: tanuki-racing
     spec:
       containers:
-      - image: registry.gitlab.com/gitlab-com/customer-success/demo-engineering/508-compliance-demo/main:latest
+      - image: registry.gitlab.com/gitlab-learn-labs/webinars/tanuki-racing/tanuki-racing-application/main:latest
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 10
@@ -35,7 +35,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 10
           successThreshold: 1
-        name: graphlab
+        name: tanuki-racing
         ports:
         - containerPort: 8080
         resources: {}
@@ -49,4 +49,4 @@ spec:
       imagePullSecrets:
       - name: gitlab-credentials
       securityContext: {}
-      serviceAccountName: graphlab
+      serviceAccountName: tanuki-racing

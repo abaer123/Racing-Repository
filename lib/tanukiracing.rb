@@ -3,4 +3,4 @@
 # Gems
 require 'sinatra'
 
-require 'tanuki_racing/app'
+require 'tanukiracing/app'
