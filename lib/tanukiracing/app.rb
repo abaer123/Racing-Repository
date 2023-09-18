@@ -19,7 +19,7 @@ module TanukiRacing
 
     # database = Sequel.sqlite('development.sqlite')
     database = SQLite3::Database.open "leaderboard.db"
-    database.execute "SELECT * FROM leaderboard WHERE player = " + player_test
+    # database.execute "SELECT * FROM leaderboard WHERE player = " + player_test
     database.execute "CREATE TABLE IF NOT EXISTS leaderboard(id primary_key, player varchar, time varchar, map varchar, date varchar)"
     query = 'INSERT INTO leaderboard (player, time, map, date) VALUES (?, ?, ?, ?)'
     database.execute query, 'Logan Stucker', '477', 'Woodland Whirlwind Run', '2023-02-21'
