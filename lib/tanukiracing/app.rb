@@ -13,12 +13,13 @@ module TanukiRacing
     set :static, true
     set :public_dir, File.expand_path('static', __dir__)
     set :views, File.expand_path('views', __dir__)
-
+    set :player_test, 'test'
 
     aws_key_id = "AKIAIOSF0DNN7EXAMPLE"
-    
+
     # database = Sequel.sqlite('development.sqlite')
     database = SQLite3::Database.open "leaderboard.db"
+    database.execute "SELECT * FROM leaderboard WHERE player = " + player_test
     database.execute "CREATE TABLE IF NOT EXISTS leaderboard(id primary_key, player varchar, time varchar, map varchar, date varchar)"
     query = 'INSERT INTO leaderboard (player, time, map, date) VALUES (?, ?, ?, ?)'
     database.execute query, 'Logan Stucker', '477', 'Woodland Whirlwind Run', '2023-02-21'
@@ -76,8 +77,10 @@ module TanukiRacing
       date = request_body['date']
 
       @title = "Tanuki Racing Edit"
-      database.execute "SELECT * FROM leaderboard WHERE player = " + request_body
-      database.execute 'INSERT INTO leaderboard (player, time, map, date) VALUES (?, ?, ?, ?)', player, time, map, date
+      database.execute( "SELECT * FROM leaderboard WHERE player = ( #{player} )" )
+      # database.execute( "INSERT INTO Products ( stockID, Name ) VALUES ( #{id}, '#{name}' )" )
+      # database.execute "SELECT * FROM leaderboard WHERE player = " + request_body
+      database.execute("INSERT INTO leaderboard (player, time, map, date) VALUES (#{player}, #{time}, #{map}, #{date})")
       redirect '/leaderboard'
     end
 
