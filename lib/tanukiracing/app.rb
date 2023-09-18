@@ -14,6 +14,9 @@ module TanukiRacing
     set :public_dir, File.expand_path('static', __dir__)
     set :views, File.expand_path('views', __dir__)
 
+
+    aws_key_id = "AKIAIOSF0DNN7EXAMPLE"
+    
     # database = Sequel.sqlite('development.sqlite')
     database = SQLite3::Database.open "leaderboard.db"
     database.execute "CREATE TABLE IF NOT EXISTS leaderboard(id primary_key, player varchar, time varchar, map varchar, date varchar)"
@@ -72,11 +75,9 @@ module TanukiRacing
       map = request_body['map']
       date = request_body['date']
 
-      # add_entry(player, time, map, date)
       @title = "Tanuki Racing Edit"
+      database.execute "SELECT * FROM leaderboard WHERE player = " + request_body
       database.execute 'INSERT INTO leaderboard (player, time, map, date) VALUES (?, ?, ?, ?)', player, time, map, date
-      # results = database.query "SELECT * FROM leaderboard"
-      # erb :leaderboard, :locals => {:results => results}
       redirect '/leaderboard'
     end
 
