@@ -7,8 +7,8 @@ This section focuses on shifting left as a security practice and how your code c
 * [ ] Step 1: Adding Security Scans
   * First make sure that you are on the main page of the project you just forked in. It is best if you have these instructions open in a separate tab/screen while completing the tasks.
   * Once ready use the left hand navigation menu to click through **Build \> Pipeline editor**. Here you will see the current set up of our main branch pipeline. Notice that there is only the build stage, which is further defined below to outline how we build our application from docker.
-  * This pipeline does very little in terms of security scanning, so lets go ahead and create a new branch to add out changes. Go ahead and use the left hand navigation menu to click through **Code \> Branches** then click **New branch**. Name the branch **_completed-pipeline_** and make sure it is based off of **_main_**, then click **Create Branch**.
-  * Once again use the left hand navigation menu to click through **Build \> Pipeline editor** to get back to the editor page. Then in the top left of the editor view you can click the branch dropdown to then select **_completed-pipeline_**. We then want to change the pipeline yaml to be the code below:
+  * This pipeline does very little in terms of security scanning and only has a simple unit test defined currently. Lets go ahead and create a new branch to add out changes. Use the left hand navigation menu to click through **Code \> Branches** then click **New branch**. Name the branch **_secure-pipeline_** and make sure it is based off of **_main_**, then click **Create Branch**.
+  * Once again use the left hand navigation menu to click through **Build \> Pipeline editor** to get back to the editor page. Then in the top left of the editor view you can click the branch dropdown to then select **_secure-pipeline_**. We then want to change the pipeline yaml to be the code below:
 
 ```plaintext
 image: docker:latest
@@ -17,32 +17,35 @@ services:
   - docker:dind
 
 variables:
+  CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
   DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   ROLLOUT_RESOURCE_TYPE: deployment
+  DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+  DAST_BAS_DISABLED: "true"
+  # FUZZAPI_PROFILE: Quick-10
+  FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
+  FUZZAPI_TARGET_URL: http://149.248.44.52:7777
+  CI_DEBUG_TRACE: "true"
+  # CI_PROJECT_PATH_SLUG: "tanukiracing"
+  
 
 stages:
   - build
-  - unit
   - test
-  - feature
-  - staging
-  - cleanup
-  - production
+  - fuzz
 
 include:
+  - template: Jobs/Test.gitlab-ci.yml
+  - template: Jobs/Code-Intelligence.gitlab-ci.yml
   - template: Jobs/Container-Scanning.gitlab-ci.yml
   - template: Code-Quality.gitlab-ci.yml
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
   - template: Jobs/SAST.gitlab-ci.yml
   - template: Jobs/Secret-Detection.gitlab-ci.yml
   - template: Jobs/SAST-IaC.gitlab-ci.yml
-
-container_scanning:
-  variables:
-    GIT_STRATEGY: fetch
-    CS_DISABLE_LANGUAGE_VULNERABILITY_SCAN: "false"
+  - template: Coverage-Fuzzing.gitlab-ci.yml
+  - template: API-Fuzzing.gitlab-ci.yml
 
 build:
   stage: build
@@ -54,29 +57,13 @@ build:
     - docker build -t $IMAGE .
     - docker push $IMAGE
 
-unit:
-  image: python:3.11-buster
-  stage: unit
-  script:
-    - apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-    - curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash
-    - apt install gcc libmariadb3 libmariadb-dev mariadb-client sqlite3 libsqlite3-dev openssl -y
-    - pip install --upgrade pip
-    - pip3 install -r requirements.txt
-    - python -m unittest tests/test_db.py
-
-gemnasium-python-dependency_scanning:
-  before_script:
-    - apt update -y
-    - apt install curl -y
-    # - apt install gcc libmariadb3 libmariadb-dev mariadb-client sqlite3 libsqlite3-dev openssl -y
-    - apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-    - curl -LsS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash
-    - apt install gcc libmariadb3 libmariadb-dev mariadb-client sqlite3 libsqlite3-dev openssl -y
+sast:
+  variables:
+      SEARCH_MAX_DEPTH: 12
 ```
 
 * First looking at the **_include_** section you can see that a number of security templates have been brought into our project. These define different scans and jobs that will now be ran based off of our **_stages_**. To get a better look into the templates you can click **View merged YAML** which will show the true pipeline yaml with all of the templates brought in. You can also click the branch icon in the top left to then click into a specific template to get its definition.
-* Click **Edit** again to be brought back to our normal editor. Notice that we have defined an additional 2 extra jobs at the end of the yaml that will take place during both the **_unit & test_** stages.
+* Click **Edit** again to be brought back to our normal editor. Notice that we have defined an additional 2 extra jobs at the end of the yaml that will take place during both the **test & fuzz_** stages.
 * Now that our changes are in lets click **Commit changes** at the bottom of the page.
 
 > [Docs for GitLab CICD](https://docs.gitlab.com/ee/ci/)
