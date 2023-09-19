@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sequel'
 require 'sqlite3'
 require_relative 'db'
+require 'active_record'
 
 # frozen_string_literal: true
 
@@ -20,6 +21,13 @@ module TanukiRacing
 
     TanukiRacing::DB.initialize("leaderboard.db")
     TanukiRacing::DB.create_table
+
+
+    # ActiveRecord::Base.establish_connection(
+    #   adapter: 'sqlite3',
+    #   database: 'leaderboard.db'
+    # )
+
     TanukiRacing::DB.add_leader('Logan Stucker', '477', 'Woodland Whirlwind Run', '2023-02-21')
     TanukiRacing::DB.add_leader('John Doe', '122', 'Canyon Chase Challenge', '2023-02-23')
     TanukiRacing::DB.add_leader('Sarah Johnson', '321', 'Rainforest Rally Run', '2023-03-01')
@@ -39,7 +47,7 @@ module TanukiRacing
 
     get '/leaderboard' do
       @title = "Tanuki Racing Leaderboard"
-      results = TanukiRacing::DB.get_all
+      results = (TanukiRacing::DB.get_all).as_json
       erb :leaderboard, :locals => {:results => results}
     end
 
@@ -68,7 +76,6 @@ module TanukiRacing
     not_found do
       erb :not_found
     end
-
   end
 end
 

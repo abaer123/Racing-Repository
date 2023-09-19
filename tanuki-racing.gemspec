@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'webrick'
   s.add_runtime_dependency 'sqlite3'
   s.add_runtime_dependency 'test-unit'
+  s.add_runtime_dependency 'activerecord'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rack'

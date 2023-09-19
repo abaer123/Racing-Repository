@@ -46,10 +46,10 @@
   <tbody>
     <% results.each do |lp|  %>
     <tr>
-    <td><%= lp[1] %><td>
-    <td><%= lp[2] %><td>
-    <td><%= lp[3] %><td>
-    <td><%= lp[4] %><td>
+    <td><%= lp['player']%><td>
+    <td><%= lp['time'] %><td>
+    <td><%= lp['map'] %><td>
+    <td><%= lp['date'] %><td>
     </tr>
 <%  end  %>
   </tbody>
