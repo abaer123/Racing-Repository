@@ -20,7 +20,7 @@ With the uptick of major security breaches hitting headlines many governments ha
     * Policy status: Enabled
     * Rules: If **Select scan type** == **License Scan**, rest of first section stays as is
     * **Status is** both **Newly Detected** and **Pre-existing**
-    * License is **matching** **_MIT License_**
+    * License is **matching** **_MIT_**
     * Actions: Require 1 approval from: **Individual users** **lfstucker**
     * Click **Configure with a merge request**
   * Merge the new merge request into the existing security policy project.

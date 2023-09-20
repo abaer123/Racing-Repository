@@ -22,11 +22,6 @@ In case of security risks events these tools are extremely handy at quickly trou
   * Take note of all of the various settings we can change about the scan to better suit our needs. 
   * Most of these settings can also be changed by adding variables to your pipeline, but often it is easier to change from this view.
   * Still within the ***Security Configuration*** settings we want to click the **Vulnerability Management** tab and enable the security training providers. Now our Vulnerability will link out to certain security trainings if they are related to an existing course.
-
-* [ ] Step 4: Security Training
-  * Now that security training is enabled lets use the left hand navigation menu to click through **Secure > Vulnerability report**
-  * Once in the report we will filter for the ***SAST*** tool and the ***Medium*** severity. It should be the top result but you may have to scroll for the ***Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')*** vulnerability. 
-  * Click into this vulnerability and notice at the bottom of the report that various trainings are linked. Go ahead and click into either of the trainings to see what they have to offer.
   
 * [ ] Step 4: CODEOWNERS
   * Another compliance feature you should take advantage of is the use of the CODEOWNERS file. To do this we will first navigate back to the main page of our project and click **Web IDE**. Once in the IDE create a new file called ***CODEOWNERS***
