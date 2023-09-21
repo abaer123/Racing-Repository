@@ -20,39 +20,16 @@ variables:
 stages:
   - build
   - test
-  - deploy
-  - review
-  - dast
-  - staging
-  - canary
-  - production
-  - incremental rollout 10%
-  - incremental rollout 25%
-  - incremental rollout 50%
-  - incremental rollout 100%
-  - performance
-  - fuzz
-  - cleanup
 
 include:
   - template: Jobs/Test.gitlab-ci.yml
   - template: Jobs/Code-Intelligence.gitlab-ci.yml
-  - template: Jobs/Deploy.gitlab-ci.yml
   - template: Jobs/Container-Scanning.gitlab-ci.yml
   - template: Code-Quality.gitlab-ci.yml
-  - template: Jobs/Browser-Performance-Testing.gitlab-ci.yml
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
   - template: Jobs/SAST.gitlab-ci.yml
   - template: Jobs/Secret-Detection.gitlab-ci.yml
   - template: Jobs/SAST-IaC.gitlab-ci.yml
-  - template: Security/DAST.gitlab-ci.yml
-  - template: Jobs/DAST-Default-Branch-Deploy.gitlab-ci.yml
-  - template: BAS.latest.gitlab-ci.yml
-  - template: Coverage-Fuzzing.gitlab-ci.yml
-  - template: API-Fuzzing.gitlab-ci.yml
-
-dast:
-  extends: .dast_with_bas
 
 build:
   stage: build
