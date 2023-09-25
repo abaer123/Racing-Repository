@@ -6,12 +6,6 @@ The goal of this workshop is to give you a look into all of the features the Git
 
 ## Key Tasks to Complete
 
-* [ ] Step 0: Importing Project
-  * First please click this link to download the export of this project: 
-
-    [2023-09-07_16-01-235_gitlab-learn-labs_sample-proje_export.tar.gz](/uploads/e57e7b5a351f91638996d990d88f9688/2023-09-07_16-01-235_gitlab-learn-labs_sample-proje_export.tar.gz)
-  * Once downloaded, navigate to the group that you redeemed for this workshop in the pre-work and click **Create new project,** then **Import project,** and lastly the **GitLab export** option.
-  * Give your project a name and then click **Import project**. Give it a few seconds and then the project will be imported along with a new set of these issues for you to follow along with.
 * [ ] Step 1: Enable Code Suggestions
   * Please notes that a number of top level group settings have been enabled to turn on all of the AI featuers. If you want to do this on your own instance you will have to make sure you enable **Experiment features** and **Third-party AI services** at the top level of your group.
   * **Ensure as a student you complete this step or Code Suggestions will not work for you later on**. In the top left corner and click our profile icon, then right click **preferences** and select **_open in new tab_**.
@@ -33,7 +27,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   * Next use the left hand navigation menu to click through **Build \> Pipelines** and ensure that the most recent pipeline we kicked off is complete.
   * Spend some time taking a look at all of the information provided to you, exploring the job results and information tabs.
   * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Secure -\> Vulnerability report** to view the full report
-  * Once in the **_Vulnerability Report√ we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerablilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
+  * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerablilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
   * Next look for the **Possible SQL Injection')** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable.
   * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop.
   * If you are curious what triggered this response try clicking ***Show prompt*** to see the full prompt sent to GitLab duo to generate the suggested fix.
