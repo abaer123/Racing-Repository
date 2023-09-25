@@ -24,4 +24,4 @@ You can also find a blog about other supported [Web IDE's here](https://about.gi
   * Next type **'GitLab: Add Account to VS Code'** and click the quick action with the same name.
   * We then want to input 'https://gitlab.com/', then provide your personal access token that we got earlier.
 
-You should now start seeing code suggestions pop up in VSC, same as you do in the Web IDE
+You should now start seeing code suggestions pop up in VSC, same as you do in the Web IDE. If you want to use other editors such as JetBrains IDEs, Neovim, and more check out our docs [here](https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-editor-extensions).
