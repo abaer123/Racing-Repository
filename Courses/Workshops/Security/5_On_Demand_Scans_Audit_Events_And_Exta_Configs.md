@@ -10,6 +10,7 @@ In case of security risks events these tools are extremely handy at quickly trou
   * Next in the ***DAST configuration*** section click **Select scanner profile** twice, give it a name, then save the rest as is and click **Save profile**.
   * We then want to double click **Select site profile**, and under ***Target URL*** enter http://www.example.com/home. It is out of scope to fully deploy out this application therefore the DAST scanner will not run, but think about how you could customize these settings for your own application.
   * Then click **Save profile** and scroll down to **Save scan**.
+  * Your presenter can also show you what this scan looks like on a live [Tanuki Racing deployment](https://gitlab.com/gitlab-learn-labs/webinars/tanuki-racing/tanuki-racing-application/-/on_demand_scans#/all)
 
 > [Docs on DAST Scanning](https://docs.gitlab.com/ee/user/application_security/dast/)
 
