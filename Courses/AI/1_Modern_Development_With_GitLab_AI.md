@@ -2,7 +2,7 @@
 
 The goal of this workshop is to give you a look into all of the features the GitLab AI team is developing, not just Code Suggestions. We put a big emphasis are trying to help developers throughout the entire SDLC and not just their coding tasks.
 
-**PLEASE NOTE:** Many of these features are in the [experimental phase](https://docs.gitlab.com/ee/policy/experiment-beta-support.html#experiment), which means they may be prone to outages as the dev team is actively working on enhancing them. If this occurs and you didnt see a feature demo live that you hopped to see, please reach out to the account team and we will provide recordings & additional info on when it may be available.
+**PLEASE NOTE:** Many of these features are in the [experimental phase](https://docs.gitlab.com/ee/policy/experiment-beta-support.html#experiment), which means they may be prone to outages as the dev team is actively working on enhancing them. Additionally there may be a short delay (up to 1 hour) where these features may not appear visual to you as they are being provisioned. If this occurs and you didnt see a feature demo live that you hopped to see, please reach out to the account team and we will provide recordings & additional info on when it may be available.
 
 ## Key Tasks to Complete
 
