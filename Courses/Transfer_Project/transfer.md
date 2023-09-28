@@ -9,7 +9,7 @@ You will lose some capabilities we went over during the workshop when you transf
 * [ ] Transferring Project
   * If you only want a single project to reference for later, start here. If instead you want the whole group we have been working with to reference later, skip to step 2.
   * This step is completely optional, if you do not wish to transfer just click **finish**. **Keep in mind that if you do not have an existing ultimate license some of the lab functionality will go away when you transfer your project.**
-  * Projects cannot be transferred when there are images in the container registry, clean them up by going to **Packages and Registries --> Container registry**
+  * Projects cannot be transferred when there are images in the container registry, clean them up by going to **Deploy --> Container registry**
   * Delete all the available images by clicking on the **trashcan** at the back of the line, and confirm the deletion until **all** images are deleted
   * While still in your project use the left hand navigation menu to click through **Settings -> General**
   * From there scroll to the bottom and click **Expand** on the ***Advanced*** section.
@@ -24,3 +24,4 @@ You will lose some capabilities we went over during the workshop when you transf
     > https://gitlab.com/gitlab-learn-labs/environments/session-{your session id}/{your group id}
   * Next locate where you want to transfer the project to. More often than not it will be under your personal namespace or a different group you have already created. Go ahead and click **New group** or **New subgroup** then select **Import group/import an existing group**.
   * From here we will want to input the URL of our existing group we copied earlier then click **Connect instance**. At that point GitLab will begin to move over your group for you so that you can reference it even when the workshop infra is torn down.
+  * If this is disabled by your admin you can also try the import by file option: https://docs.gitlab.com/ee/user/group/import/#migrate-groups-by-uploading-an-export-file-deprecated
