@@ -87,7 +87,50 @@ The goal of this workshop is to give you a look into all of the features the Git
   * If we navigate to the changes tab at the top of the MR view we want to locate the changes we made in our db.rb file.
   * Next click the three dots at the top right corner of the view for that file.
   * Then click **Suggest test cases**, at which point a pop up on the right hand side will appear to give you a number of suggestions of test cases you could add to your project for unit testing.
+  * [ ] Step 7: Pipeline Root Cause Analysis
+  * Lastly we will show off a feature can assist you when writting your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
+  * Use the left hand navigation menu to click through **Build \> Pipeline schedules** and change the pipeline config to be the code below:
+
+  ```yaml
+  image: docker:latest
+  
+  services:
+    - docker:dind
+  
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+    ROLLOUT_RESOURCE_TYPE: deployment
+    RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+  
+  stages:
+    - build
+    - test
+    - feature
+    - staging
+    - cleanup
+    - production
+  
+  include:
+    - template: Jobs/SAST.gitlab-ci.yml
+  
+  build:
+    stage: build
+    variables:
+      IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+    before_script: 
+      - apt list --installed 
+    script:
+      - docker info
+      - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+      - docker build -t $IMAGE .
+      - docker push $IMAGE
+  ```
+  * Next scroll down and click **Commit changes**. We then will want to use the left hand navigation menu to click through **Build \> Pipelines** and click into the last kicked off pipeline.
+  * We expect the _build_ job to fail, and once it does lets click into the job. At the top of the view we want to click **Root cause analysis,** at which point a pop up will appear on the left hand side of the screen with an in depth analysis on why you job failed. In this case its because of the `apt list --installed` line we added to the build job which our image does not support.
   * That is the end of the hands on portion for this lab, but if you check out the [issues](https://gitlab.com/gitlab-learn-labs/sample-projects/ai-workshop/workshop-project/-/issues) there are additional steps to enable code suggestions in VSC and show off some of our Plan stage AI/ML features
+
+
 
 > Plan stage AI features typically have a start up time of 24 hours to train themselves, so if you want to see them in action make sure you start those tasks today
 
