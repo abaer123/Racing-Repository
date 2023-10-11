@@ -4,9 +4,9 @@ This Challenge will walk through the steps of importing your CI/CD pipeline proj
 
 # Step 01 - Importing basic CI/CD application
 
-1. In a new browser window navigate to this url: https://gitlab.com/gitlab-learn-labs/sample-projects/cicd-workshop/workshop-project.
+1. In a new browser window navigate to this url: https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing.
 2. Next click **Fork** in the top right of the screen.
-3. Then on the fork project screen in the **_Project URL_** section we want to select our existing Learn Labs group we just created through using the redemption code. **DO NOT** change the name of the project as this will break some automation later on in the workshop. Next click **Fork project**.
+3. Then on the fork project screen in the **_Project URL_** section we want to select our existing Learn Labs group we just created through using the redemption code. Change the name of this workshop to **_workshop-project_** as this is how our project will be referenced for the rest of the workshop. Next click **Fork project**.
 4. Wait a few minutes then you should be brought to forked project in your recently created group.
 5. You should now be on your **_workshop-project_** project homescreen. We dont want to keep the fork relationship so go ahead and use the left hand navigation menu to click through **Settings -\> General**. Once on the settings page scroll to the bottom and click **Expand** next to advanced.
 6. Scroll down again and find the **_Remove fork relationship_** section and click **Remove fork relationship**. Enter the project name in the input, then click confirm. Next we will want to click the name of our project in the top left.
@@ -14,7 +14,10 @@ This Challenge will walk through the steps of importing your CI/CD pipeline proj
 # Step 02 - creating a simple pipeline
 
 1. First click **_workshop-project_** in the top left of the screen. Now that we have our project imported, go ahead and take a look at the **_.gitlab-ci.yml_** file.
-2. Notice that we have a simple pipeline already defined. We have two stages, **_build & test_**, as well as an **_build_app_** job that uses the **_before_script & script_** keywords.
+2. Notice that we have a simple pipeline already defined. We have two stages, **_build & test_**, as well as an **_build_** job that uses the **_before_script , script, & after_script_** keywords.
+
+Logan here
+
 3. In the **_unit_test_** job we want to use the **_after_script_** keyword to echo out that the build has completed. First to edit the pipeline we need to click **Edit in pipeline editor**. Once there lets go ahead and add an **_after_script_** to the **_unit_test_** job:
 
    ```plaintext
