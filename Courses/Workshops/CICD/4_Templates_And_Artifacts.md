@@ -17,9 +17,6 @@ In this challenge we will add security testing to our existing pipeline
 6. Now that we have SAST lets add a few more security templates to our project to confirm that our code is secure. Edit your **_includes_** section below to be:
 
    ```plaintext
-   variables:
-       CS_DOCKERFILE_PATH: "../workshop-project/"
-   
    include:
      - template: Code-Quality.gitlab-ci.yml
      - template: Jobs/Dependency-Scanning.gitlab-ci.yml
@@ -51,22 +48,24 @@ In this challenge we will add security testing to our existing pipeline
 
 # Step 03 - Storing with Artifacts
 
-1. Let's say a requirement comes in that we want to store the results of the **_build_app_** job in an artifact. Let's add a change the job to do just that:
+1. Let's say a requirement comes in that we want to store the results of the **_build_** job in an artifact. Let's add a change the job to do just that:
 
    ```plaintext
-   build_app:
-     stage: build
-     before_script:
-       - export NODE_OPTIONS=--openssl-legacy-provider
-     script:
-       - yarn install
-       - yarn upgrade
-       - yarn run build
-       - yarn cache clean
-     artifacts:
-       paths:
-         - dist
-       expire_in: 1 hour
+    build:
+      stage: build
+      variables:
+        IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+      before_script:
+        - docker info
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+      script:
+        - docker build -t $IMAGE .
+      after_script:
+        - docker push $IMAGE
+      artifacts:
+        paths:
+          - Gemfile.lock
+        expire_in: 1 hour
    ```
 2. Now when we go ahead and click **Commit Changes** and use the left hand menu to click through **Build \> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **<span dir="">_#_</span>**. First we can see the changes that took place by using inheritance on the **_sast_** job & we will wait for the pipeline to complete before moving on to the next step. If you got lost at any point you can just merge in the **_extended-sast_** branch as well.
 
