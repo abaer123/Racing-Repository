@@ -28,7 +28,6 @@ In this challenge we will add security testing to our existing pipeline
    ```plaintext
    stages:
      - build
-     - unit
      - test
      - security
    ```
