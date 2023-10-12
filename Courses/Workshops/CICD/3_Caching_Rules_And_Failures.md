@@ -214,26 +214,26 @@ In this Challenge we will take our existing pipeline and modify it to show how u
 3. Your yaml for the **_code_quality & unit_test_** job should look like this:
 
    ```plaintext
-  test:
-    stage: test
-    image: gliderlabs/herokuish:latest
-    script:
-      - cp -R . /tmp/app
-      - /bin/herokuish buildpack test
-    after_script:
-      - echo "Our race track has been tested!"
-    needs: []
-    rules:
-      - if: $CI_COMMIT_BRANCH == 'main'
+    test:
+      stage: test
+      image: gliderlabs/herokuish:latest
+      script:
+        - cp -R . /tmp/app
+        - /bin/herokuish buildpack test
+      after_script:
+        - echo "Our race track has been tested!"
+      needs: []
+      rules:
+        - if: $CI_COMMIT_BRANCH == 'main'
 
-  super_fast_test:
-    stage: test
-    script:
-      - echo "If your not first your last"
-      - return 1
-    needs: []
-    rules:
-      - if: $CI_COMMIT_BRANCH == 'main'
+    super_fast_test:
+      stage: test
+      script:
+        - echo "If your not first your last"
+        - return 1
+      needs: []
+      rules:
+        - if: $CI_COMMIT_BRANCH == 'main'
         allow_failure: true
    ```
 4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **CI/CD -\> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **_#_**. In the pipeline view as the jobs run click into each of them to see how our added **_rules & allow_failure_** have changed the output. We should also see that the code_quality job fails with a warning but the pipeline succeeds. Later we will add more stages to the pipeline as well so you can see that even though this job fails the pipeline continues to run. Note that if you use the completed **_rules & allow_failure_** the target branch for the rule will change.
