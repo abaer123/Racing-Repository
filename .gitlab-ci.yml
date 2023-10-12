@@ -1,5 +1,14 @@
 image: docker:latest
 
+cache:
+  - key: cache-$CI_COMMIT_REF_SLUG
+    fallback_keys:
+      - cache-$CI_DEFAULT_BRANCH
+      - cache-default
+    paths:
+      - vendor/ruby
+      - Gemfile.lock
+
 services:
   - docker:dind
 
@@ -39,11 +48,16 @@ test:
   after_script:
     - echo "Our race track has been tested!"
   needs: []
+  rules:
+     - if: $CI_COMMIT_BRANCH == 'main'
 
 super_fast_test:
   stage: test
   script:
     - echo "If your not first your last"
-    - return 0
+    - return 1
   needs: []
+  rules:
+     - if: $CI_COMMIT_BRANCH == 'main'
+       allow_failure: true
 
