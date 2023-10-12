@@ -38,3 +38,12 @@ test:
     - /bin/herokuish buildpack test
   after_script:
     - echo "Our race track has been tested!"
+  needs: []
+
+super_fast_test:
+  stage: test
+  script:
+    - echo "If your not first your last"
+    - return 1
+  needs: []
+
