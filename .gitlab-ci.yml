@@ -44,6 +44,6 @@ super_fast_test:
   stage: test
   script:
     - echo "If your not first your last"
-    - return 1
+    - return true
   needs: []
 
