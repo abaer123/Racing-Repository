@@ -9,35 +9,34 @@ This Challenge will build off of the simple pipeline we created in the first tra
 > Example: **_#577244133_**
 
 2. You can see that our pipeline jobs ran sequentially, but what if we wanted 2 jobs to run parallel? We can do that with the **_needs_** keyword. Lets navigate back to our **_.gitlab-ci.yml_** file to accomplish this.
-3. To edit our pipeline use the left hand navigation menu to click through **CI/CD -\> Editor**. Right now we only have the **_unit_test_** job running during the test stage, so let's add the **_code_quality_** job below the **_unit_test_** job.:
+3. To edit our pipeline use the left hand navigation menu to click through **CI/CD -\> Editor**. Right now we only have the **_test_** job running during the test stage, so let's add the **_super_fast_test_** job below the **_test_** job.:
 
    ```plaintext
-   code_quality:
-     stage: test
-     script:
-       -  echo "This will run code quality in the future"
-     ### This job can run independently of any previous job completion, i.e. build job, in order to execute
-     needs: []
+  super_fast_test:
+    stage: test
+    script:
+      - echo "If your not first your last"
+      - return 1
+    needs: []
    ```
-4. Now that we have the two jobs we also want to modify the execution order so that they run at the same time. Add the following line to the end of the **_unit_test_** code block:
+4. Now that we have the two jobs we also want to modify the execution order so that they run at the same time. Add the following line to the end of the **_test_** code block:
 
    ```plaintext
    needs: []
    ```
 
-   The new **_unit_test_** should look like this:
+   The new **_test_** should look like this:
 
    ```plaintext
-   unit_test:
-     stage: test
-     before_script:
-       - yarn add chai mocha mocha-simple-html-reporter mocha-junit-reporter chai-http mocha-test-url
-     script:
-       - ./node_modules/mocha/bin/_mocha "test/*.js" --reporter mocha-junit-reporter --reporter-options mochaFile=./testresults/test-results.xml
-       - ./node_modules/mocha/bin/_mocha "test/*.js" --reporter mocha-simple-html-reporter --reporter-options output=./testresults/test-results.html
-     after_script:
-       - echo "build_app job has run!"
-     needs: []
+  test:
+    stage: test
+    image: gliderlabs/herokuish:latest
+    script:
+      - cp -R . /tmp/app
+      - /bin/herokuish buildpack test
+    after_script:
+      - echo "Our race track has been tested!"
+    needs: []
    ```
 5. Go ahead and click **Commit changes**, then use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink that starts with **_#_** on the most recently kicked off pipeline. As you watch you can see that the two jobs run in parallel.
 
@@ -46,118 +45,118 @@ This Challenge will build off of the simple pipeline we created in the first tra
 # Step 02 - DAG (Directed Acyclic Graph)
 
 1. Now what if we had many stages and relationships between jobs that we wanted to run as soon as possible? We can accomplish this using a DAG. Use the left hand navigation menu to click through **CI/CD -\> Editor** so we can create one.
-2. We won't be completing a fully flushed out DAG for this workshop as it is out of scope so we will need some dummy jobs to create what we need. First under the stages section we will want to add a **_deploy_** stage so your code should look like this:
+2. We won't be completing a fully flushed out DAG for this workshop as it is out of scope , instead we will be creating a DAG race. First under the stages section we will want to add a **_deploy_** stage so your code should look like this:
 
    ```plaintext
    stages:
      - build
      - test
-     - deploy
+     - race
    ```
-3. Below are the jobs we want to add under our **_code_quality_** job, there are quite a few so it's better to just copy paste the code:
+3. Below are the jobs we want to add under our **_super_fast_test_** job, there are quite a few so it's better to just copy paste the code:
 
    ```plaintext
-   build_a:
+   build_car_a:
     stage: build
     script:
-     - echo "build_a"
+     - echo "build_car_a"
    
-   build_b:
+   build_car_b:
     stage: build
     script:
-     - echo "build_b"
+     - echo "build_car_b"
    
-   build_c:
+   build_car_c:
     stage: build
     script:
-     - echo "build_c"
+     - echo "build_car_c"
    
-   build_d:
+   build_car_d:
     stage: build
     script:
-     - echo "build_d"
+     - echo "build_car_d"
    
    build_e:
     stage: build
     script:
      - echo "build_e"
    
-   build_f:
+   build_car_f:
     stage: build
     script:
-     - echo "build_f"
+     - echo "build_car_f"
    
-   test_a:
+   test_car_a:
     stage: test
-    needs: [build_a]
+    needs: [build_car_a]
     script:
-     - echo "test_a"
+     - echo "test_car_a"
    
-   test_b:
+   test_car_b:
     stage: test
-    needs: [build_b]
+    needs: [build_car_b]
     script:
-     - echo "test_b"
+     - echo "test_car_b"
    
-   test_c:
+   test_car_c:
     stage: test
-    needs: [build_c]
+    needs: [build_car_c]
     script:
-     - echo "test_c"
+     - echo "test_car_c"
    
-   test_d:
+   test_car_d:
     stage: test
-    needs: [build_d]
+    needs: [build_car_d]
     script:
-     - echo "test_d"
+     - echo "test_car_d"
    
-   test_e:
+   test_car_e:
     stage: test
-    needs: [build_e]
+    needs: [build_car_e]
     script:
-     - echo "test_e"
+     - echo "test_car_e"
    
-   test_f:
+   test_car_f:
     stage: test
-    needs: [build_f]
+    needs: [build_car_f]
     script:
-     - echo "test_f"
+     - echo "test_car_f"
    
-   deploy_a:
-    stage: deploy
-    needs: [test_a]
+   race_car_a:
+    stage: race
+    needs: [test_car_a]
     script:
-     - echo "deploy_a"
+     - echo "race_car_a"
    
-   deploy_b:
-    stage: deploy
-    needs: [test_b]
+   race_car_b:
+    stage: race
+    needs: [test_car_b]
     script:
-     - echo "deploy_b"
+     - echo "race_car_b"
    
-   deploy_c:
-    stage: deploy
-    needs: [test_c]
+   race_car_c:
+    stage: race
+    needs: [test_car_c]
     script:
-     - echo "deploy_c"
+     - echo "race_car_c"
    
-   deploy_d:
-    stage: deploy
-    needs: [test_d]
+   race_car_d:
+    stage: race
+    needs: [test_car_d]
     script:
-     - echo "deploy_d"
+     - echo "race_car_d"
    
-   deploy_e:
-    stage: deploy
-    needs: [test_e]
+   race_car_e:
+    stage: race
+    needs: [test_car_e]
     script:
-     - echo "deploy_e"
+     - echo "race_car_e"
    
-   deploy_f:
-    stage: deploy
-    needs: [test_f]
+   race_car_f:
+    stage: race
+    needs: [test_car_f]
     script:
-     - echo "deploy_f"
+     - echo "race_car_f"
    ```
 4. If you now click the visualize tab you can see just how complex the many stages are. Lets go ahead and go back to the **_Edit_** tab and click **Commit changes**.
 5. Once committed use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink starting with **_#_** on the most recently kicked off pipeline. Here we can watch all of the paths of our DAG run at the same time.
