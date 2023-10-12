@@ -76,10 +76,10 @@ This Challenge will build off of the simple pipeline we created in the first tra
     script:
      - echo "build_car_d"
    
-   build_e:
+   build_car_e:
     stage: build
     script:
-     - echo "build_e"
+     - echo "build_car_e"
    
    build_car_f:
     stage: build
@@ -159,7 +159,7 @@ This Challenge will build off of the simple pipeline we created in the first tra
      - echo "race_car_f"
    ```
 4. If you now click the visualize tab you can see just how complex the many stages are. Lets go ahead and go back to the **_Edit_** tab and click **Commit changes**.
-5. Once committed use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink starting with **_#_** on the most recently kicked off pipeline. Here we can watch all of the paths of our DAG run at the same time.
+5. Once committed use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink starting with **_#_** on the most recently kicked off pipeline. Here we can watch all of our cars race to be the first path done.
 
 > Example: **_#577244133_**
 
