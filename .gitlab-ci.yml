@@ -7,7 +7,6 @@ cache:
       - cache-default
     paths:
       - vendor/ruby
-      - Gemfile.lock
 
 services:
   - docker:dind
@@ -23,9 +22,6 @@ variables:
 stages:
   - build
   - test
-
-include:
-  - template: Jobs/Test.gitlab-ci.yml
  
 build:
   stage: build
