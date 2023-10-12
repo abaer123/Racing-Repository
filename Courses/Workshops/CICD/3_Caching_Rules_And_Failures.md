@@ -1,6 +1,6 @@
 # Introduction
 
-In this Challenge we will take our existing pipeline and modify it to show how useful rules and allow_failure can be
+In this Challenge we will take our existing pipeline and modify it to show how useful rules and the allow_failure kayword can be
 
 # Step 01 - Adding Rules
 
@@ -8,107 +8,108 @@ In this Challenge we will take our existing pipeline and modify it to show how u
 2. Remove the code that matches the code block below, everything else can stay as is:
 
    ```plaintext
-   build_a:
+
+    build_car_a:
     stage: build
     script:
-     - echo "build_a"
-   
-   build_b:
+      - echo "build_car_a"
+
+    build_car_b:
     stage: build
     script:
-     - echo "build_b"
-   
-   build_c:
+      - echo "build_car_b"
+
+    build_car_c:
     stage: build
     script:
-     - echo "build_c"
-   
-   build_d:
+      - echo "build_car_c"
+
+    build_car_d:
     stage: build
     script:
-     - echo "build_d"
-   
-   build_e:
+      - echo "build_car_d"
+
+    build_car_e:
     stage: build
     script:
-     - echo "build_e"
-   
-   build_f:
+      - echo "build_car_e"
+
+    build_car_f:
     stage: build
     script:
-     - echo "build_f"
-   
-   test_a:
+      - echo "build_car_f"
+
+    test_car_a:
     stage: test
-    needs: [build_a]
+    needs: [build_car_a]
     script:
-     - echo "test_a"
-   
-   test_b:
+      - echo "test_car_a"
+
+    test_car_b:
     stage: test
-    needs: [build_b]
+    needs: [build_car_b]
     script:
-     - echo "test_b"
-   
-   test_c:
+      - echo "test_car_b"
+
+    test_car_c:
     stage: test
-    needs: [build_c]
+    needs: [build_car_c]
     script:
-     - echo "test_c"
-   
-   test_d:
+      - echo "test_car_c"
+
+    test_car_d:
     stage: test
-    needs: [build_d]
+    needs: [build_car_d]
     script:
-     - echo "test_d"
-   
-   test_e:
+      - echo "test_car_d"
+
+    test_car_e:
     stage: test
-    needs: [build_e]
+    needs: [build_car_e]
     script:
-     - echo "test_e"
-   
-   test_f:
+      - echo "test_car_e"
+
+    test_car_f:
     stage: test
-    needs: [build_f]
+    needs: [build_car_f]
     script:
-     - echo "test_f"
-   
-   deploy_a:
-    stage: deploy
-    needs: [test_a]
+      - echo "test_car_f"
+
+    race_car_a:
+    stage: race
+    needs: [test_car_a]
     script:
-     - echo "deploy_a"
-   
-   deploy_b:
-    stage: deploy
-    needs: [test_b]
+      - echo "race_car_a"
+
+    race_car_b:
+    stage: race
+    needs: [test_car_b]
     script:
-     - echo "deploy_b"
-   
-   deploy_c:
-    stage: deploy
-    needs: [test_c]
+      - echo "race_car_b"
+
+    race_car_c:
+    stage: race
+    needs: [test_car_c]
     script:
-     - echo "deploy_c"
-   
-   deploy_d:
-    stage: deploy
-    needs: [test_d]
+      - echo "race_car_c"
+
+    race_car_d:
+    stage: race
+    needs: [test_car_d]
     script:
-     - echo "deploy_d"
-   
-   deploy_e:
-    stage: deploy
-    needs: [test_e]
+      - echo "race_car_d"
+
+    race_car_e:
+    stage: race
+    needs: [test_car_e]
     script:
-     - echo "deploy_e"
-   
-   deploy_f:
-    stage: deploy
-    needs: [test_f]
+      - echo "race_car_e"
+
+    race_car_f:
+    stage: race
+    needs: [test_car_f]
     script:
-     - echo "deploy_f"
+      - echo "race_car_f"
    ```
 
    and fix the stages:
