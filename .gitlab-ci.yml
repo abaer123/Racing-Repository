@@ -14,9 +14,6 @@ variables:
 stages:
   - build
   - test
-
-include:
-  - template: Jobs/Test.gitlab-ci.yml
  
 build:
   stage: build
