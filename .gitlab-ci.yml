@@ -3,16 +3,6 @@ image: docker:latest
 services:
   - docker:dind
 
-# Cache modules in between jobs
-cache:
-  - key: cache-$CI_COMMIT_REF_SLUG
-    fallback_keys:
-      - cache-$CI_DEFAULT_BRANCH
-      - cache-default
-    paths:
-      - vendor/ruby
-      - Gemfile.lock
-
 variables:
   CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
   DOCKER_DRIVER: overlay2
