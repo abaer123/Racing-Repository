@@ -1,11 +1,5 @@
 image: docker:latest
 
-include:
-  - template: Code-Quality.gitlab-ci.yml
-  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
-  - template: Jobs/SAST.gitlab-ci.yml
-  - template: Jobs/Secret-Detection.gitlab-ci.yml
-
 cache:
   - key: cache-$CI_COMMIT_REF_SLUG
     fallback_keys:
@@ -27,9 +21,8 @@ variables:
 
 stages:
   - build
-  - unit
   - test
-  - security
+  - extra-security
  
 build:
   stage: build
@@ -69,7 +62,8 @@ super_fast_test:
      - if: $CI_COMMIT_BRANCH == 'main'
        allow_failure: true
 
-# overwrite SAST job stage and start job as soon as pipeline begins
-sast:
-  stage: security
-  needs: []
+downstream_security:
+     stage: extra-security
+     trigger:
+       include:
+             - local: security-pipeline/security.gitlab-ci.yml
