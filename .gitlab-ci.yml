@@ -29,3 +29,10 @@ build:
     - docker build -t $IMAGE .
   after_script:
     - docker push $IMAGE
+
+test:
+  stage: test
+  image: gliderlabs/herokuish:latest
+  script:
+    - cp -R . /tmp/app
+    - /bin/herokuish buildpack test
