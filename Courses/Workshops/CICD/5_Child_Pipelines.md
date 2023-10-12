@@ -10,10 +10,7 @@ In this challenge will walk you through how to set up a child pipelines
 4. Copy and paste the code into the new pipeline config below. Notice that most of it is pulled from the existing pipeline we have been working on throughout the workshop:
 
    ```plaintext
-   image: node:17
-   
-   variables:
-     CS_DOCKERFILE_PATH: "../workshop-project/"
+   image: docker:latest
    
    include:
      - template: Code-Quality.gitlab-ci.yml
@@ -30,54 +27,68 @@ In this challenge will walk you through how to set up a child pipelines
 1. First we are going to want to remove all of the duplicated code in our existing pipeline. The code below will be our existing pipeline minus everything the security pipeline now covers:
 
    ```plaintext
-   stages:
-     - build
-     - test
-   
-   image: node:17
-   
-   # Cache modules in between jobs
-   cache:
-     key: ${CI_COMMIT_REF_SLUG}
-     paths:
-     - node_modules/
-   
-   
-   build_app:
-     stage: build
-     before_script:
-       - export NODE_OPTIONS=--openssl-legacy-provider
-     script:
-       - yarn install
-       - yarn upgrade
-       - yarn run build
-       - yarn cache clean
-     artifacts:
-       paths:
-         - dist
-       expire_in: 1 hour
-   
-   unit_test:
-     stage: test
-     before_script:
-       - yarn add chai mocha mocha-simple-html-reporter mocha-junit-reporter chai-http mocha-test-url
-     after_script:
-           - echo "build_app job has run!"
-     script:
-       - ./node_modules/mocha/bin/_mocha "test/*.js" --reporter mocha-junit-reporter --reporter-options mochaFile=./testresults/test-results.xml
-       - ./node_modules/mocha/bin/_mocha "test/*.js" --reporter mocha-simple-html-reporter --reporter-options output=./testresults/test-results.html
-     needs: []
-   
-   code_quality:
-     stage: test
-     script:
-       -  echo "This will run code quality in the future"
-       - exit 1
-     ### This job can run independently of any previous job completion, i.e. build job, in order to execute
-     needs: []
-     rules:
-       - if: $CI_COMMIT_BRANCH == 'main'
-         allow_failure: true
+    image: docker:latest
+
+    cache:
+      - key: cache-$CI_COMMIT_REF_SLUG
+        fallback_keys:
+          - cache-$CI_DEFAULT_BRANCH
+          - cache-default
+        paths:
+          - vendor/ruby
+
+    services:
+      - docker:dind
+
+    variables:
+      CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
+      DOCKER_DRIVER: overlay2
+      ROLLOUT_RESOURCE_TYPE: deployment
+      DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+      RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+      
+
+    stages:
+      - build
+      - test
+    
+    build:
+      stage: build
+      variables:
+        IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+      before_script:
+        - docker info
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+      script:
+        - docker build -t $IMAGE .
+      after_script:
+        - docker push $IMAGE
+      artifacts:
+        paths:
+          - Gemfile.lock
+        expire_in: 1 hour
+
+    test:
+      stage: test
+      image: gliderlabs/herokuish:latest
+      script:
+        - cp -R . /tmp/app
+        - /bin/herokuish buildpack test
+      after_script:
+        - echo "Our race track has been tested!"
+      needs: []
+      rules:
+        - if: $CI_COMMIT_BRANCH == 'main'
+
+    super_fast_test:
+      stage: test
+      script:
+        - echo "If your not first your last"
+        - return 1
+      needs: []
+      rules:
+        - if: $CI_COMMIT_BRANCH == 'main'
+          allow_failure: true
    ```
 2. Lets start by adding a new stage for our child pipeline. Edit the stage section to be the following:
 
