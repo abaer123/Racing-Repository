@@ -1,5 +1,11 @@
 image: docker:latest
 
+include:
+  - template: Code-Quality.gitlab-ci.yml
+  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+
 cache:
   - key: cache-$CI_COMMIT_REF_SLUG
     fallback_keys:
@@ -7,7 +13,6 @@ cache:
       - cache-default
     paths:
       - vendor/ruby
-      - Gemfile.lock
 
 services:
   - docker:dind
@@ -22,10 +27,9 @@ variables:
 
 stages:
   - build
+  - unit
   - test
-
-include:
-  - template: Jobs/Test.gitlab-ci.yml
+  - security
  
 build:
   stage: build
@@ -38,6 +42,10 @@ build:
     - docker build -t $IMAGE .
   after_script:
     - docker push $IMAGE
+  artifacts:
+    paths:
+      - Gemfile.lock
+    expire_in: 1 hour
 
 test:
   stage: test
@@ -61,3 +69,7 @@ super_fast_test:
      - if: $CI_COMMIT_BRANCH == 'main'
        allow_failure: true
 
+# overwrite SAST job stage and start job as soon as pipeline begins
+sast:
+  stage: security
+  needs: []
