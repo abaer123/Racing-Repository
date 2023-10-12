@@ -138,9 +138,6 @@ In this Challenge we will take our existing pipeline and modify it to show how u
     stages:
       - build
       - test
-
-    include:
-      - template: Jobs/Test.gitlab-ci.yml
     
     build:
       stage: build
