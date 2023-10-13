@@ -28,7 +28,7 @@ Following our shift left trend we will see how security results are included thr
 
 * [ ] Step 4: Take Action Our Vulnerabilities
   * Now that we have a protective policy in place lets go ahead and ensure it works by removing the Secrets currently in the code base. From the main page our project lets go ahead and click **Web IDE**
-  * Click into the **_run.py_** file and add our fake token **_aws_key_id = "AKIAIOSF0DNN7EXAMPLE"_** before line 4. Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & Push**
+  * Click into the **_config.ru_** file and add our fake token **_aws_key_id = "AKIAIOSF0DNN7EXAMPLE"_** on line 4. Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & Push**
   * On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
   * Scroll to the bottom, uncheck **_Delete source branch when merge request is accepted_**, and click **Create merge request**
   * On the resulting MR notice that our policy requires approval from **_lfstucker_** before we are able to merge. In order for us to merge in the future we will have to remove the token and wait for the full pipeline to run.
