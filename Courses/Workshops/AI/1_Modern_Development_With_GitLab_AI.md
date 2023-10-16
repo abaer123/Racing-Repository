@@ -28,12 +28,12 @@ The goal of this workshop is to give you a look into all of the features the Git
   * Spend some time taking a look at all of the information provided to you, exploring the job results and information tabs.
   * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Secure -\> Vulnerability report** to view the full report
   * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerablilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
-  * Next look for the **Possible SQL Injection')** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable.
+  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability funcationality.
   * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop.
   * If you are curious what triggered this response try clicking ***Show prompt*** to see the full prompt sent to GitLab duo to generate the suggested fix.
 * [ ] Step 4: Explain This Code
   * What if we wanted more context about the specific function above before we went and made a code change? Lets click the linked file in the **_Location_** section to be brought to our db.rb file.
-  * Once in the db.py file locate the line the sql injection vulnerability on line 42 and highlight the whole **_get_specific_** function.
+  * Once in the db.rb file locate the line the sql injection vulnerability on line 42 and highlight the whole **_get_specific_** function.
   * You should then see a small question mark to the left of the code, click it.
   * On the right hand side there will now be a small pop up to explain what your highlighted code does in natural language. Try highlighting other code sections as well.
   * At this point we should be fully aware of why and how our SQL injection vulnerability is occurring. In the next section we will use Code Suggestions to fix it
