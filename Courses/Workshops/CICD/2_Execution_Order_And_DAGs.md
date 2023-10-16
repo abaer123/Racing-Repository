@@ -39,8 +39,6 @@ This Challenge will build off of the simple pipeline we created in the first tra
       needs: []
    ```
 
-5. We want to speed up out 
-
 5. Go ahead and click **Commit changes**, then use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink that starts with **_#_** on the most recently kicked off pipeline. As you watch you can see that the two jobs run in parallel.
 
 > If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_execution-order_** and click **Run pipeline** once again.
