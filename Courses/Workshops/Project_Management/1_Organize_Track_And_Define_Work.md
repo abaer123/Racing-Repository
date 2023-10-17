@@ -6,10 +6,6 @@ Organizing and planning work
 
 ## Key Tasks to Complete
 
-TODO: walk through forking, everyhting revovles around this project now. Also add issue and mr summary, and gitlab duo
-
-Starting flow is: Create your sub group, fork in project
-
 * [ ] Step 1: Create a new Subgroup
   * Before we move over our template project, go ahead and click **Create new subgroup** in the group redeemed for us
   * Under **Subgroup name**, provide a group name (**Tanuki-Racing-Group**)
