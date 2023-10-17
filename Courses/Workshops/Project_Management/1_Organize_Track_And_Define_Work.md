@@ -6,14 +6,21 @@ Organizing and planning work
 
 ## Key Tasks to Complete
 
+TODO: walk through forking, everyhting revovles around this project now. Also add issue and mr summary, and gitlab duo
+
+Starting flow is: Create your sub group, fork in project
+
 * [ ] Step 1: Create a new Subgroup
-  * Click **Create new subgroup**
+  * Before we move over our template project, go ahead and click **Create new subgroup** in the group redeemed for us
   * Under **Subgroup name**, provide a group name (**Tanuki-Racing-Group**)
   * * Leave all other settings as is
   * Click **Create subgroup**
 * [ ] Step 2: Create a Project
   * Click **Create new project**
-  * Click **Create blank project**
+  * Click **Import project**
+  * Click **Repository by URL**
+
+
   * Under **Project name**, enter a project name (**Leaderboard-Project**)
   * Ensure **Initialize repository with a README** is checked so the git repository is initialized. This file will be used later in the workshop.
   * Leave all other settings as is
