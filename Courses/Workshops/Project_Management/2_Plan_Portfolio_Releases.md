@@ -6,7 +6,7 @@ Your organization now has a few different projects related to improving the app.
 
 * [ ] Create an Epic
   * First make sure you have navigated to your ***Tanuki Racing Group*** landing page and are not still in the project view. You can use the breadcrumbs at the top of the screen to do this
-  * Navigate to **Tanuki Racing Group**>**Epics** using the lefthand navigation menu
+  * Navigate to **Plan**>**Epics** using the lefthand navigation menu
   * Click **New epic**
   * Enter a title (**First-GitLab-Epic**)
   * Select a start date of **today**
@@ -29,6 +29,6 @@ Your organization now has a few different projects related to improving the app.
 > [Docs on Epics](https://docs.gitlab.com/ee/user/group/epics/)
 
 * [ ] Review the Roadmap to see when this epic is due to finish
-  * Navigate to **Epics**>**Roadmap**
+  * Navigate to **Plan**>**Roadmap**
   * Expand **First-GitLab-Epic**
   * Compare to [GitLab's roadmap](https://gitlab.com/groups/gitlab-org/-/roadmap?state=all&sort=start_date_asc&layout=WEEKS&progress=WEIGHT&show_progress=true&show_milestones=true&milestones_type=ALL)
