@@ -67,7 +67,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   > Please note that Code Suggestions uses your current file as reference for how to write the function, so you may need to do some slight editing for the final result
 
   * Your Project Manager has also asked you to write a brand new calculator class that will eventually be used to add up player track times.
-  * First right click the **lib/tanukiracing** folder then right-click **new file**. Name this new file **_calc.py_**.
+  * First right click the **lib/tanukiracing** folder then right-click **new file**. Name this new file **_calc.rb_**.
   * We then want to add the prompt below to let Code Suggestions know what we are trying to write:
 
   ```plaintext
@@ -87,7 +87,8 @@ The goal of this workshop is to give you a look into all of the features the Git
   * If we navigate to the changes tab at the top of the MR view we want to locate the changes we made in our db.rb file.
   * Next click the three dots at the top right corner of the view for that file.
   * Then click **Suggest test cases**, at which point a pop up on the right hand side will appear to give you a number of suggestions of test cases you could add to your project for unit testing.
-  * [ ] Step 7: Pipeline Root Cause Analysis
+  
+* [ ] Step 7: Pipeline Root Cause Analysis
   * Lastly we will show off a feature can assist you when writting your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
   * Use the left hand navigation menu to click through **Build \> Pipeline schedules** and change the pipeline config to be the code below:
 
