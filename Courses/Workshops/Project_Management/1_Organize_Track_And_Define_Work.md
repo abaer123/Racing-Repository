@@ -43,34 +43,44 @@ Starting flow is: Create your sub group, fork in project
   * Click **New label** and create another label for **Workflow::Planning**
   * Click **New label** and create another label for **Workflow::Review**
 * [ ] Step 4: Create New Board
-  * Use the lefthand navigation menu to click through **Issues -> Boards**
-  * Click the board selector dropdown that says **Development** and click **Create new board**
+  * Use the lefthand navigation menu to click through **Plan -> Issues boards**
+  * Click **New board** next to the dropdown that says **Development**.
   * Enter a title (**Team-Scoped-Board**)
   * Leave **Show the Open list** and **Show the Closed list** checkboxes selected
   * Click **Create board**
   * Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Planning**. Click **Add to board**.
   * Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Review**. Click **Add to board**.
+  * As we add issues in the future if they contain the scopped labels they will automatically appear in the labels board.
 * [ ] Step 5: Create Project Milestone
-  * Use the lefthand navigation menu to click through **Issues**>**Milestones**
+  * Use the lefthand navigation menu to click through **Plan**>**Milestones**
   * Click **New milestone**
-  * Enter a title (**GitLab-Migration-Milestone**)
+  * Enter a title (**Tanuki-Racing-Migration-Milestone**)
   * Set a start date as **today**
   * Set a due date as **one week from today**
   * Click **Create milestone**
 * [ ] Step 6: Create Issues
   * Create an Issue
-    * Navigate to **Issues** using the lefthand navigation menu
+    * Navigate to **Plan>Issues** using the lefthand navigation menu
     * Click **New issue**
-    * Give a title **Modify-README**
+    * Give a title **Update-Pipeline**
     * Click **Assign to me** to assign the issue to yourself. Even if your name dosent appear in the dropdown you can still write in your GitLab id
-    * Select the milestone (**GitLab-Migration-Milestone**)
+    * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
     * Assign the label **P2**
     * Give a weight (i.e. **2**)
     * Select a due date within the next week
     * Leave all other settings as is
     * Click **Create issue**
+  * Create an Second Issue
+    * Click **New issue**
+    * Give a title **Review-Pipeline**
+    * Click **Assign to me** to assign the issue to yourself. Even if your name dosent appear in the dropdown you can still write in your GitLab ID
+    * Assign the label **Workflow::Review**
+    * Give a weight (i.e. **1**)
+    * Select a due date within the next week
+    * Leave all other settings as is
+    * Click **Create issue**
   * Create an Issue using Quick Actions
-    * Navigate to **Issues** using the left hand navigation menu
+    * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Add SAST Scanner**
     * Under the ***Description Dropdown*** select workshop_template.
@@ -84,7 +94,7 @@ Starting flow is: Create your sub group, fork in project
 * [ ] Step 7: Move Issues in Boards
   * Navigate to **Issues**>**Boards**
   * If not already selected, select the **Team-Scoped-Board** board from the board selector dropdown
-  * Note the issues in the **Open** list
+  * Note the issues in the **Open** list & the one issue in the _Workflow::Review_ list
   * Click and drag the **Add SAST Scanner** issue into the **Workflow::Planning** list
   * Click on that issue and note the labels now include **Workflow::Planning**
   * Click and drag the same issue into **Workflow::Review**
@@ -93,7 +103,7 @@ Starting flow is: Create your sub group, fork in project
   * Note the issue labels no longer include **Workflow::Review** or **Workflow::Planning** and the issue is now closed
   * Before moving on drag the closed issue back to ***Planning***
 * [ ] Step 8: Review project milestone charts
-  * Navigate to **Issues**>**Milestones**
-  * Click **GitLab-Migration-Milestone**
+  * Navigate to **Plan**>**Milestones**
+  * Click **Tanuki-Racing-Migration-Milestone**
   * Notice the Burndown and Burnup charts
   * Notice the Unstarted Issues, Ongoing Issues, and Completed Issues tracked part of the milestone
