@@ -8,18 +8,24 @@ Git repository and Merge Requests
 
 
 * [ ] Create Merge Request from Issue
-  * The next part of our workshop will be back in the project we originally created. Use the breadcrumbs to get back to your group view and click into the project.
-  * Use the lefthand navigation menu to click into **Issues**
-  * Open issue My-Issue-Modify-README
+  * The next part of our workshop will be back in the tanuki racing procject we originially imported. Use the breadcrumbs to get back to your group view and click into the project.
+  * Use the lefthand navigation menu to click into **Plan>Issues**
+  * Open issue Update-Pipeline
   * Click **Create Merge Request**
   * Note the new branch
   * Note the the link to the issue
   * Note automatic Merge Request details, like Assignee & Milestone
   * Note history of Merge Request
   * Scroll down and click **Create merge request**
-* [ ] Modify README.md file
+* [ ] Modify The Pipeline
   * First click **Code**, then click **Open in Web IDE**
-  * Click on **README.md** and add a new line to the file
+  * Click on the _.gitlab-ci.yml_ file and add the code below to the end of the file:
+
+    ```
+    after_script:
+      - echo "testing is done!"
+    ```
+
   * Click the source control icon on the left hand side navigation menu
   * Add a commit message and then click **Commit & Push**. It will then ask if you want to commit to main and you want to click **No**. 
   * Once committed a popup will appear for you to click **Go to project**.
