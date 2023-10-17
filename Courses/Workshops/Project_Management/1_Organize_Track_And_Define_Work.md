@@ -15,22 +15,27 @@ Starting flow is: Create your sub group, fork in project
   * Under **Subgroup name**, provide a group name (**Tanuki-Racing-Group**)
   * * Leave all other settings as is
   * Click **Create subgroup**
-* [ ] Step 2: Create a Project
+* [ ] Step 2: Import Our Project
   * Click **Create new project**
   * Click **Import project**
   * Click **Repository by URL**
-
-
-  * Under **Project name**, enter a project name (**Leaderboard-Project**)
-  * Ensure **Initialize repository with a README** is checked so the git repository is initialized. This file will be used later in the workshop.
-  * Leave all other settings as is
+  * In the _Git repository URL_ section add the following URL: https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing.git
+  * Leave all other settings as is.
   * Click **Create project**
   * You may see a note regarding an SSH key. It is okay to ignore this message during the workshop.
 
 > [Docs for setting up your org](https://docs.gitlab.com/ee/topics/set_up_organization.html)
 
-* [ ] Step 3: Create at least 4 labels
-  * Navigate to **Project information** > **Labels**
+* [ ] Step 3: Planning With GitLab Duo Chat
+  * Once your project has been imported you may have a number of questions on how to get started. GitLab's newest AI feature **GitLab Duo Chat** can help answer that and more
+  * In the bottom left corner of your screen go ahead and click the **? Help** link, then click **GitLab Duo Chat**.
+
+  > Please note if you requested your group within the last hour there may be a delay up to 1 hour until AI features are available
+
+  * Lets start by asking chat _"Where can I see my projects issues?"_. You can also ask chat any GitLab related or coding questions. Feel free to use chat as an assistance tool for the rest of the workshop.
+
+* [ ] Step 4: Create at least 4 labels
+  * Use the left hand navigation menu to click through **Manage** > **Labels**
   * Click **New label**
   * Enter **P1** in the ***Title*** field and select a color
   * Click **Create label**
