@@ -15,7 +15,7 @@ This Challenge will build off of the simple pipeline we created in the first tra
     super_fast_test:
       stage: test
       script:
-        - echo "If your not first your last"
+        - echo "If youre not first youre last"
         - return 0
       needs: []
    ```

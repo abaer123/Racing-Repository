@@ -1,6 +1,6 @@
 # Introduction
 
-In this Challenge we will take our existing pipeline and modify it to show how useful rules and the allow_failure kayword can be
+In this Challenge we will take our existing pipeline and modify it to show how useful `rules` and the `allow_failure` keyword can be
 
 # Step 01 - Adding Rules
 
