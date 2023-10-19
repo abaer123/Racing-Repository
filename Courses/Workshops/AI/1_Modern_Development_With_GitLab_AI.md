@@ -15,8 +15,58 @@ The goal of this workshop is to give you a look into all of the features the Git
 > Presenter: please pause to make sure everyone has enabled code suggestions on their own account as well
 
 * [ ] Step 2: Pipeline Kickoff & GitLab Chat
-  * Use the left hand navigation menu to click through **Build \> Pipelines** and click **Run pipeline** in the top right.
-  * Make sure the **_ai-main-branch_** branch is selected and click **Run pipeline**.
+  * Use the left hand navigation menu to click through **Build \> Pipeline editor** and replace the current pipeline config with the code below:
+
+    ```
+    image: docker:latest
+
+    services:
+      - docker:dind
+
+    variables:
+      CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
+      DOCKER_DRIVER: overlay2
+      ROLLOUT_RESOURCE_TYPE: deployment
+      DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+      RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+      DAST_BAS_DISABLED: "true"
+      # FUZZAPI_PROFILE: Quick-10
+      FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
+      FUZZAPI_TARGET_URL: http://149.248.44.52:7777
+      CI_DEBUG_TRACE: "true"
+      # CI_PROJECT_PATH_SLUG: "tanukiracing"
+      
+
+    stages:
+      - build
+      - test
+
+    include:
+      - template: Jobs/Test.gitlab-ci.yml
+      - template: Jobs/Code-Intelligence.gitlab-ci.yml
+      - template: Jobs/Container-Scanning.gitlab-ci.yml
+      - template: Code-Quality.gitlab-ci.yml
+      - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+      - template: Jobs/SAST.gitlab-ci.yml
+      - template: Jobs/Secret-Detection.gitlab-ci.yml
+      - template: Jobs/SAST-IaC.gitlab-ci.yml
+
+    build:
+      stage: build
+      variables:
+        IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+      script:
+        - docker info
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker build -t $IMAGE .
+        - docker push $IMAGE
+
+    sast:
+      variables:
+          SEARCH_MAX_DEPTH: 12
+    ```
+
+  > Please note you can also merge the **_ai-main-branch_** branch into main as well.
   * Then let this pipeline run as we will come back to it later in the workshop.
   * What if we hadnt known where to access the pipelines from or how to open an MR? You now can use the new AI chat feature called Ask GitLab Duo. Go ahead and click the **? Help** button in the bottom left then select **Ask GitLab Duo**
   * You can ask GitLab Duo any related GitLab questions, but to start lets ask "Where can I find my running pipelines?", to which the chat will respond with the path to the pipelines page. Other examples of questions you can ask are "What is a fork?", "Summarize the issue \<Link to issue\>", or even ask it for quick code suggestions like "Write a tic tac toe game in Javascript". Please note that asking for code suggestions takes a few minutes so it is best to test out post workshop.
