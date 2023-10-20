@@ -96,7 +96,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   * We then want to click **New Branch**, name it **_AI-Test_**, then click **Create branch**. On the resulting page click **Create merge request**.
   * On the resulting page uncheck **Mark as draft**, leave all other settings as is and scroll to the bottom then click **Create merge request**.
   * Next click **Code** in the top right, then click **Open in Web IDE**.
-  * Once in the IDE navigate through **lib/tanukiracing/db.py** and take a look at the function on line 42. Lets used what we learned using Explain This Vulnerability to change the line of code to this:
+  * Once in the IDE navigate through **lib/tanukiracing/db.rb** and take a look at the function on line 42. Lets used what we learned using Explain This Vulnerability to change the line of code to this:
 
   ```plaintext
   Leaderboard.first.where("player = ?", sanitize_sql(id))
@@ -125,7 +125,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```
   * Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the space bar or enter.
   * Code suggestions will write a very in depth calculator function and eventually will loop but feel free to stop it after 5 methods.
-  * Code Suggestions dosent just work for python files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date projects.
+  * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date projects.
   * Choose one of the projects and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want.
   * Now we want to commit this code to main. Go ahead and click the **Source Control** button on the left hand side and write a commit message. Next click **Commit & Push**.
   * Next on the resulting dropdown make sure you click commit to our mr branch, then on the popup click the **Go to merge request** button.
