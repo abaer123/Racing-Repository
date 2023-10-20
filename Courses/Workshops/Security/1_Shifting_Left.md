@@ -37,7 +37,6 @@ stages:
 
 include:
   - template: Jobs/Test.gitlab-ci.yml
-  - template: Jobs/Code-Intelligence.gitlab-ci.yml
   - template: Jobs/Container-Scanning.gitlab-ci.yml
   - template: Code-Quality.gitlab-ci.yml
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
