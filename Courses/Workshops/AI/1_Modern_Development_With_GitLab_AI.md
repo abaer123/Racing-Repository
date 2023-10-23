@@ -140,7 +140,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   
 * [ ] Step 7: Pipeline Root Cause Analysis
   * Lastly we will show off a feature can assist you when writting your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
-  * Use the left hand navigation menu to click through **Build \> Pipeline schedules** and change the pipeline config to be the code below:
+  * Use the left hand navigation menu to click through **Build \> Pipeline Editor** and change the pipeline config to be the code below:
 
   ```yaml
   image: docker:latest
