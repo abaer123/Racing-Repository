@@ -23,9 +23,6 @@ variables:
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
   DAST_BAS_DISABLED: "true"
-  # FUZZAPI_PROFILE: Quick-10
-  FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
-  FUZZAPI_TARGET_URL: http://149.248.44.52:7777
   CI_DEBUG_TRACE: "true"
   # CI_PROJECT_PATH_SLUG: "tanukiracing"
   
@@ -33,7 +30,6 @@ variables:
 stages:
   - build
   - test
-  - fuzz
 
 include:
   - template: Jobs/Test.gitlab-ci.yml
@@ -43,8 +39,6 @@ include:
   - template: Jobs/SAST.gitlab-ci.yml
   - template: Jobs/Secret-Detection.gitlab-ci.yml
   - template: Jobs/SAST-IaC.gitlab-ci.yml
-  - template: Coverage-Fuzzing.gitlab-ci.yml
-  - template: API-Fuzzing.gitlab-ci.yml
 
 build:
   stage: build
