@@ -14,7 +14,7 @@ With the uptick of major security breaches hitting headlines many governments ha
 * [ ] Step 2: License Compliance
   * Using the left hand navigation menu click through the **Secure \> License Compliance** to view all of the licenses detected in your project.
   * Lets say we decided we no longer want to allow the use of the MIT License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
-  * Click **Select policy under Scan result policy**
+  * Click **Select policy** under **Scan result policy**
   * In the **New scan result policy form** that appears, provide the following mandatory information:
     * Name: Deny MIT License
     * Policy status: Enabled
@@ -24,5 +24,6 @@ With the uptick of major security breaches hitting headlines many governments ha
     * Actions: Require 1 approval from: **Individual users** **lfstucker**
     * Click **Configure with a merge request**
   * Merge the new merge request into the existing security policy project.
-  * Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the MIT license from being merged.
-  * For any recent scans that have detected the MIT license, you can click the **Detected in project** tab within the License Compliance page and you will see that the MIT License is denied and violating our set policy.
+  * _Remember to go back to your project using the breadcrumb, clicking on your group, then clicking on your project._
+  * Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the MIT license from being merged and the security bot will notify you that you have a policy violation
+  * Lastly if you use the left hand navigation menu you can click through **Secure > License Compliance** and see that we have been notified that the MIT license is a Policy violation.

@@ -7,8 +7,8 @@ In case of security risks events these tools are extremely handy at quickly trou
 * [ ] Step 1: Set Up an On Demand Scan
   * Using the left hand navigation menu click through **Secure > On-demand scans**. We then want to click **New scan**.
   * In the ***Scan configuration*** section add a name and description but leave the rest blank.
-  * Next in the ***DAST configuration*** section click **Select scanner profile** twice, give it a name, then save the rest as is and click **Save profile**.
-  * We then want to double click **Select site profile**, and under ***Target URL*** enter http://www.example.com/home. It is out of scope to fully deploy out this application therefore the DAST scanner will not run, but think about how you could customize these settings for your own application.
+  * Next in the ***DAST configuration*** section click **Select scanner profile** then **New scanner profile**, give it a name, leave the rest as is and click **Save profile**.
+  * We then want to click **Select site profile** followed by **New site profile**. Give it a name an under ***Target URL*** enter http://www.example.com/home. It is out of scope to fully deploy out this application therefore the DAST scanner will not run, but think about how you could customize these settings for your own application.
   * Then click **Save profile** and scroll down to **Save scan**.
   * Your presenter can also show you what this scan looks like on a live [Tanuki Racing deployment](https://gitlab.com/gitlab-learn-labs/webinars/tanuki-racing/tanuki-racing-application/-/on_demand_scans#/all)
 
@@ -32,6 +32,6 @@ In case of security risks events these tools are extremely handy at quickly trou
     *.yml @gitlab_id
     ```
   * Now we want to commit this code to main. Go ahead and click the **Source Control** button on the left hand side, add a commit message then click **Commit & Push**. Next on the resulting dropdown make sure you click commit to main, then on the popup click the **Go to project** button. 
-  * Depending on the time your instructor may show you how to open a new mr against the ci yml file, otherwise now if you were to try and edit and file within the project ending in ***.yml*** it would require an approval from the ID you specified in your CODEOWNERS file.
+  * Depending on the time your instructor may show you how to open a new mr against the ci yml file, otherwise now if you were to try and edit a file within the project ending in ***.yml*** it would require an approval from the ID you specified in your CODEOWNERS file.
 
 > [Docs for CodeOwners](https://docs.gitlab.com/ee/user/project/code_owners.html)

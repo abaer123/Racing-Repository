@@ -19,16 +19,17 @@ Following our shift left trend we will see how security results are included thr
   * Inside the vulnerability we will want to click the _Try it out_ button within the **Explain this vulnerability** section. This will result in a popup appearing on the right hand side with some information on what the vulnerability is and how you can fix it. The Explain This Vulnerability feature currently works on any SAST vulnerabilities.
 * [ ] Step 3: Preventive Security Policies
   * We next want to change the filter for **Severity**  to _critical_ & change **Tool** to _Secret Detection_. We can click into any of the vulnerabilities present. We can see that one of our AWS tokens has already been leaked into the codebase.
-  * To prevent this from ever happening in the future we can set up a new policy to run on all future merge requests. For our use case leaked tokens can are easy mistakes that can lead to massive problems so we will create a quick policy to stop that. Use the left hand navigation menu to click through **Secure \> Policies** and then click **New policy**. On the resulting page click **Select policy** under **_Scan result policy_**.
-  * Add a name to the policy, then under the **_Rules_** section we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
+  * To prevent this from ever happening in the future we can set up a new policy to run on all future merge requests. For our use case leaked tokens are easy mistakes that can lead to massive problems so we will create a quick policy to stop that. Use the left hand navigation menu to click through **Secure \> Policies** and then click **New policy**. On the resulting page click **Select policy** under **_Scan result policy_**.
+  * Add a name to the policy, then under the **_Rules_** section we want to select **Security Scan** in the **When** dropdown list. Then we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
   * Then under actions choose **individual users** as the **_Choose approver type_** and add **_lfstucker_** as the required approver and click **Configure with a merge request**. On the resulting merge request click ***merge*** and you will be brought to your new policy project that is applied to our workshop application. If you were to create another merge request with the leaked token still in the code based merging would be prevented until it was removed or you added your approval.
   * Before we move on lets go back to our project. Use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
 
 > [Docs for policies](https://docs.gitlab.com/ee/user/application_security/policies/)
 
-* [ ] Step 4: Take Action Our Vulnerabilities
-  * Now that we have a protective policy in place lets go ahead and ensure it works by removing the Secrets currently in the code base. From the main page our project lets go ahead and click **Web IDE**
-  * Click into the **_config.ru_** file and add our fake token **_aws_key_id = "AKIAIOSF0DNN7EXAMPLE"_** on line 4. Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & Push**
+* [ ] Step 4: Take Action on Our Vulnerabilities
+  * Now that we have a protective policy in place lets go ahead and ensure it works by removing the Secrets currently in the code base. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+  * Click into the **_cf-sample-scripts/eks.yaml_** file and add our fake token **_aws_key_id AKIAIOSF0DNN7EXAMPLE_** at the end of the line 6. eg: Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
+  * Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & Push**
   * On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
   * Scroll to the bottom, uncheck **_Delete source branch when merge request is accepted_**, and click **Create merge request**
   * On the resulting MR notice that our policy requires approval from **_lfstucker_** before we are able to merge. In order for us to merge in the future we will have to remove the token and wait for the full pipeline to run.
