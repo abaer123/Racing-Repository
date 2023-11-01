@@ -8,7 +8,7 @@ The goal of this workshop is to give you a look into all of the features the Git
 
 * [ ] Step 1: Enable Code Suggestions
   * Please notes that a number of top level group settings have been enabled to turn on all of the AI featuers. If you want to do this on your own instance you will have to make sure you enable **Experiment features** and **Third-party AI services** at the top level of your group.
-  * **Ensure as a student you complete this step or Code Suggestions will not work for you later on**. In the top left corner and click our profile icon, then right click **preferences** and select **_open in new tab_**.
+  * **Ensure as a student you complete this step or Code Suggestions will not work for you later on**. In the top left corner, click your profile icon, then right click **preferences** and select **_open in new tab_**.
   * Scroll down to the **_Code Suggestions_** section and click **Enable Code Suggestions**. Then scroll to the end of the page and click **Save changes**. Navigate back to your project screen before moving on.
   * We have now turned all of the existing AI/ML features in our groups & Code Suggestions within the built in Web IDE. If you want to try out Code Suggestions in VSC, there is an optional issue that will walk you through the setup you can do post workshop.
 
