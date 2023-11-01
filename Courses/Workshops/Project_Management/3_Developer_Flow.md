@@ -8,10 +8,10 @@ Git repository and Merge Requests
 
 
 * [ ] Issue Summary
-  * The next part of our workshop will be back in the tanuki racing procject we originially imported. Use the breadcrumbs to get back to your group view and click into the project.
-  * Use the lefthand navigation menu to click into **Plan>Issues**
+  * The next part of our workshop will be back in the tanuki racing project we originally imported. Use the breadcrumbs to get back to your group view and click into the project.
+  * Use the left hand navigation menu to click into **Plan>Issues**
   * Open issue Update-Pipeline
-  * You should have an option to click a **View summary** which will provide a concise summary of your issue so far. As your issues grow and more comments are made this feature will always be a great tool for statying up to date with your issues.
+  * You should have an option to click a **View summary** which will provide a concise summary of your issue so far. As your issues grow and more comments are made this feature will always be a great tool for staying up to date with your issues.
 * [ ] Create Merge Request from Issue
   * Click **Create Merge Request**
   * Note the new branch
@@ -35,7 +35,7 @@ Git repository and Merge Requests
   * Use the left hand navigation menu to click into **Merge Requests** and then click into your existing merge request.
   * Click on **Commits** to see the commit history
   * Click **Changes** to see the code diff
-  * click the three dots in the top right, then click **View summary notes**. This new AI feature will then give a qucik sumamry on all of the changes that are involved in this MR.
+  * click the three dots in the top right, then click **View summary notes**. This new AI feature will then give a quick summary on all of the changes that are involved in this MR.
   * Click **Overview** and click the **Mark as ready** button to signify the change is ready for review
   * In the **Reviewers** section in the right panel, click **Edit** and assign yourself (click away to save)
   * Once the pipeline has ran click into the pipeline and then click on our test job. At the end of this job we should see the text output from out _after_script_ code addition.
