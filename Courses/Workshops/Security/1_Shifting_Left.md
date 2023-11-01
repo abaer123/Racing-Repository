@@ -67,6 +67,6 @@ sast:
   * For the rest of the workshop you can use this chat bot to ask any questions that may come up. You can even ask it coding questions if you get stuck!
   
 * [ ] Step 3: Creating the Merge Request
-  * Now to actually merge in the code we want to use the left hand navigation menu to click through **Code \> Branches** & then click **Merge request** in the completed-pipeline section. **ENSURE YOU HAVE REMOVED THE FORK RELATIONSHIP BEFORE DOING THIS**
+  * Now to actually merge in the code we want to use the left hand navigation menu to click through **Code \> Branches** & then click **Merge request** in the secure-pipeline section. **ENSURE YOU HAVE REMOVED THE FORK RELATIONSHIP BEFORE DOING THIS**
   * On the resulting page scroll down to the **_Merge options_** and uncheck **Delete source branch when merge request is accepted**. You can leave the rest of the settings as is then click **Create merge request**.
   * first resolve any merge conflicts that may exist, but you should see a pipeline kick off. If you click the hyperlink it will bring you to the pipeline view where you can see all of the various jobs that we added to our yaml file. While this runs we are going to move forward to set up our compliance framework pipeline but we will check back in a bit to see the results of our scanners.
