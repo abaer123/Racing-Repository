@@ -56,7 +56,7 @@ sast:
 ```
 
 * First looking at the **_include_** section you can see that a number of security templates have been brought into our project. These define different scans and jobs that will now be ran based off of our **_stages_**. To get a better look into the templates you can click **Full configuration** which will show the true pipeline yaml with all of the templates brought in. You can also click the branch icon in the top left to then click into a specific template to get its definition.
-* Click **Edit** again to be brought back to our normal editor. Notice that we have defined an additional 2 extra jobs, one to build our application and the other to override one of the SAST jobs we have brought in through the **_Jobs/SAST.gitlab-ci.yml_** template.
+* Click **Edit** again to be brought back to our normal editor. Notice that we have defined an additional job to override one of the SAST jobs we have brought in through the **_Jobs/SAST.gitlab-ci.yml_** template.
 * Now that our changes are in lets click **Commit changes** at the bottom of the page.
 
 > [Docs for GitLab CICD](https://docs.gitlab.com/ee/ci/)
