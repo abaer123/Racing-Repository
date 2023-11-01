@@ -28,7 +28,7 @@ Organizing and planning work
 
   > Please note if you requested your group within the last hour there may be a delay up to 1 hour until AI features are available
 
-  * Lets start by asking chat _"Where can I see my projects issues?"_. You can also ask chat any GitLab related or coding questions. Feel free to use chat as an assistance tool for the rest of the workshop.
+  * Let's start by asking chat _"Where can I see my project's issues?"_. You can also ask chat any GitLab related or coding questions. Feel free to use chat as an assistance tool for the rest of the workshop.
 
 * [ ] Step 4: Create at least 4 labels
   * Use the left hand navigation menu to click through **Manage** > **Labels**
@@ -39,16 +39,16 @@ Organizing and planning work
   * Click **New label** and create another label for **Workflow::Planning**
   * Click **New label** and create another label for **Workflow::Review**
 * [ ] Step 4: Create New Board
-  * Use the lefthand navigation menu to click through **Plan -> Issues boards**
+  * Use the left hand navigation menu to click through **Plan -> Issues boards**
   * Click **New board** next to the dropdown that says **Development**.
   * Enter a title (**Team-Scoped-Board**)
   * Leave **Show the Open list** and **Show the Closed list** checkboxes selected
   * Click **Create board**
   * Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Planning**. Click **Add to board**.
   * Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Review**. Click **Add to board**.
-  * As we add issues in the future if they contain the scopped labels they will automatically appear in the labels board.
+  * As we add issues in the future if they contain the scoped labels they will automatically appear in the labels board.
 * [ ] Step 5: Create Project Milestone
-  * Use the lefthand navigation menu to click through **Plan**>**Milestones**
+  * Use the left hand navigation menu to click through **Plan**>**Milestones**
   * Click **New milestone**
   * Enter a title (**Tanuki-Racing-Migration-Milestone**)
   * Set a start date as **today**
@@ -56,10 +56,10 @@ Organizing and planning work
   * Click **Create milestone**
 * [ ] Step 6: Create Issues
   * Create an Issue
-    * Navigate to **Plan>Issues** using the lefthand navigation menu
+    * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Update-Pipeline**
-    * Click **Assign to me** to assign the issue to yourself. Even if your name dosent appear in the dropdown you can still write in your GitLab id
+    * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab id
     * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
     * Assign the label **P2**
     * Give a weight (i.e. **2**)
@@ -69,7 +69,7 @@ Organizing and planning work
   * Create an Second Issue
     * Click **New issue**
     * Give a title **Review-Pipeline**
-    * Click **Assign to me** to assign the issue to yourself. Even if your name dosent appear in the dropdown you can still write in your GitLab ID
+    * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab ID
     * Assign the label **Workflow::Review**
     * Give a weight (i.e. **1**)
     * Select a due date within the next week
@@ -103,3 +103,5 @@ Organizing and planning work
   * Click **Tanuki-Racing-Migration-Milestone**
   * Notice the Burndown and Burnup charts
   * Notice the Unstarted Issues, Ongoing Issues, and Completed Issues tracked part of the milestone
+
+
