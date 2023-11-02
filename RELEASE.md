@@ -1,4 +1,13 @@
 # Tanuki Racing Release Notes
+## Version: 1.0.1, Nov 1, 2023
+
+#### Updates:
+- Spelling corrections in the Project Management course
+
+#### Contributors:
+- Chris Guitarte @cguitarte
+
+
 ## Version: 1.0.0, Oct 18, 2023
 
 #### Updates:
