@@ -33,5 +33,4 @@ test:
   script:
     - cp -R . /tmp/app
     - /bin/herokuish buildpack test
-  after_script:
-   - echo "Our race track has been tested!"
+
