@@ -2,7 +2,13 @@
 
 In this challenge we will add security testing to our existing pipeline
 
-# Step 01 - Preparing the Pipeline
+# Step 01 - Root Cause Analysis
+
+1. What if we hadnt known why our pipeline was failing? Lets use the new Root Cause Analysis feature to help explain why our pipeline failed. Still within the pipeline view go ahead and click the failed _super_fast_test_ job.
+2. At the top of the job view there should be a button for **Root Cause Analysis**. Go ahead and click it.
+3. On the resulting pop up click **Generate root cause Analysis**. This will generate a reason for why our pipeline failed as well as provide solutions to quickly help you with any cicd issues in the future.
+
+# Step 02 - Preparing the Pipeline
 
 1. First we need to get back to editing our pipeline from the last track. Make sure your still in your **_workshop-project_** space and use the left hand navigation menu to click through **Build -\> Pipeline editor** so we can edit our pipeline .yml file.
 2. Under where we define the image for our pipeline we will add the below code to include the SAST template:
@@ -33,7 +39,7 @@ In this challenge we will add security testing to our existing pipeline
    ```
 8. Also if you click the tree icon or **_Full configuration_** tab you should be able to see the content of all of the new security templates we have added. Before committing we will add some inheritance in the next step.
 
-# Step 02 - Using Inheritance to Enhance Our Pipeline
+# Step 03 - Using Inheritance to Enhance Our Pipeline
 
 1. Now we will create a new **_sast_** job that will overwrite some of the functionality from the template we included. The below code sets up the new job and has it run as soon as the pipeline begins:
 
@@ -45,7 +51,7 @@ In this challenge we will add security testing to our existing pipeline
    ```
 2. Before commiting the code we are going to add the **_artifact_** keyword in the next step.
 
-# Step 03 - Storing with Artifacts
+# Step 04 - Storing with Artifacts
 
 1. Let's say a requirement comes in that we want to store the results of the **_build_** job in an artifact. Let's add a change the job to do just that:
 
