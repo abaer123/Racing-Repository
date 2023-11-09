@@ -26,7 +26,7 @@ In this challenge will walk you through how to set up a child pipelines
 
 1. First we are going to want to remove all of the duplicated code in our existing pipeline. The code below will be our existing pipeline minus everything the security pipeline now covers:
 
-   ```plaintext
+```plaintext
 image: docker:latest
 
 cache:
@@ -88,7 +88,7 @@ super_fast_test:
  rules:
    - if: $CI_COMMIT_BRANCH == 'main'
      allow_failure: true
-   ```
+```
 2. Lets start by adding a new stage for our child pipeline. Edit the stage section to be the following:
 
    ```plaintext
