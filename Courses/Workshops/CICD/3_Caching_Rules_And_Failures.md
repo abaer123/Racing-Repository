@@ -122,52 +122,52 @@ In this Challenge we will take our existing pipeline and modify it to show how u
 3. To ensure we are all back at the same point here is what your code in .gitlab-ci.yml should be right now:
 
    ```plaintext
-    image: docker:latest
+  image: docker:latest
 
-    services:
-      - docker:dind
+  services:
+    - docker:dind
 
+  variables:
+    CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
+    DOCKER_DRIVER: overlay2
+    ROLLOUT_RESOURCE_TYPE: deployment
+    DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+    RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+  
+
+  stages:
+    - build
+    - test
+ 
+  build:
+    stage: build
     variables:
-      CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
-      DOCKER_DRIVER: overlay2
-      ROLLOUT_RESOURCE_TYPE: deployment
-      DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
-      RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
-      
+      IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+    before_script:
+      - docker info
+      - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    script:
+      - docker build -t $IMAGE .
+    after_script:
+      - docker push $IMAGE
 
-    stages:
-      - build
-      - test
-    
-    build:
-      stage: build
-      variables:
-        IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
-      before_script:
-        - docker info
-        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-      script:
-        - docker build -t $IMAGE .
-      after_script:
-        - docker push $IMAGE
+  test:
+    stage: test
+    image: gliderlabs/herokuish:latest
+    script:
+      - cp -R . /tmp/app
+      - /bin/herokuish buildpack test
+    after_script:
+    - echo "Our race track has been tested!"
+    needs: []
 
-    test:
-      stage: test
-      image: gliderlabs/herokuish:latest
-      script:
-        - cp -R . /tmp/app
-        - /bin/herokuish buildpack test
-      after_script:
-        - echo "Our race track has been tested!"
-      needs: []
-
-    super_fast_test:
-      stage: test
-      script:
-        - echo "If your not first your last"
-        - return 0
-      needs: []
-   ```
+  super_fast_test:
+    stage: test
+    script:
+      - echo "If your not first your last"
+      - return 0
+    needs: []
+    ```
 4. Now it's time to add some rules. Let's start with a basic one on our **_test_** job. Let's say we only care about this job running if it is being merged into main. To do this add the rule definition defined below to the end of the **_test_** job:
 
    ```plaintext
@@ -196,19 +196,19 @@ In this Challenge we will take our existing pipeline and modify it to show how u
 
 # Step 03 - Adjusting for Failure
 
-1. What if our **_super_fast_test_** job had been failing? Lets add a new line to the **_script_** to make it fail:
+1. What if our **_super_fast_test_** job had been failing? Lets replace the existing script with a new line to make it fail:
 
    ```plaintext
    - exit 1
    ```
-2. What if we also wanted to allow failure on a rule that we had set? Let's test that out on the **_code_quality_** job. **Change** the rules to be the below code:
+2. What if we also wanted to allow failure on a rule that we had set? Let's test that out on the **_super_fast_test_** job. **Change** the rules to be the below code:
 
    ```plaintext
    rules:
        - if: $CI_COMMIT_BRANCH == 'main'
          allow_failure: true
    ```
-3. Your yaml for the **_code_quality & unit_test_** job should look like this:
+3. Your yaml for the **_super_fast_test & unit_test_** job should look like this:
 
    ```plaintext
     test:
