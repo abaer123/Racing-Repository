@@ -12,12 +12,12 @@ This Challenge will build off of the simple pipeline we created in the first tra
 3. To edit our pipeline use the left hand navigation menu to click through **CI/CD -\> Editor**. Right now we only have the **_test_** job running during the test stage, so let's add the **_super_fast_test_** job below the **_test_** job.:
 
    ```plaintext
-    super_fast_test:
-      stage: test
-      script:
-        - echo "If youre not first youre last"
-        - return 0
-      needs: []
+   super_fast_test:
+     stage: test
+     script:
+       - echo "If youre not first youre last"
+       - return 0
+     needs: []
    ```
 4. Now that we have the two jobs we also want to modify the execution order so that they run at the same time. Add the following line to the end of the **_test_** code block:
 
@@ -28,15 +28,15 @@ This Challenge will build off of the simple pipeline we created in the first tra
    The new **_test_** should look like this:
 
    ```plaintext
-    test:
-      stage: test
-      image: gliderlabs/herokuish:latest
-      script:
-        - cp -R . /tmp/app
-        - /bin/herokuish buildpack test
-      after_script:
-        - echo "Our race track has been tested!"
-      needs: []
+   test:
+     stage: test
+     image: gliderlabs/herokuish:latest
+     script:
+       - cp -R . /tmp/app
+       - /bin/herokuish buildpack test
+     after_script:
+       - echo "Our race track has been tested!"
+     needs: []
    ```
 
 5. Go ahead and click **Commit changes**, then use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink that starts with **_#_** on the most recently kicked off pipeline. As you watch you can see that the two jobs run in parallel.
