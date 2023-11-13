@@ -23,6 +23,23 @@ Build, test, & scan automation through GitLab CI/CD
     include:
       - template: Auto-DevOps.gitlab-ci.yml
     ```
+  * As Auto DevOps introduces addtional stages, those stages need to be declared within the **stages** section of the _.gitlab-ci.yml_ file. Therefore, add the following lines to your decared stags:
+
+  ```
+    - dast
+    - review
+    - cleanup
+    - staging
+    - canary
+    - production
+    - incremental rollout 10%
+    - incremental rollout 25%
+    - incremental rollout 50%
+    - incremental rollout 100%
+    - performance
+    - deploy
+  ```
+
   * Now if you click the **Tree** icon next to the branch dropdown in the top left you can see all the various jobs brought in by our one includes.
   * We can click Full Configuration again to see what rules will actually be applied when our pipeline is ran. 
   * Provide a **Commit message** and click **Commit changes**
