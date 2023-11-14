@@ -23,7 +23,9 @@ You will lose some capabilities we went over during the workshop when you transf
   * There are a number of ways to do this, we will walk through what is arguably the easiest way to transfer a group. First decide the location of where you are trying to transfer the group to and grab the gitlab path. Example below:
 
     URL https://gitlab.com/gitlab-com/customer-success/demo-engineering/sandbox/iu8ul5wa 
+    
     becomes: gitlab-com/customer-success/demo-engineering/sandbox/iu8ul5wa 
+
   * Go back to our workshop group and use the left hand navigation menu to click **Settings > General** and then scroll down and expand the _Advanced_ section.
   * Keep scrolling down to the **Transfer group** section where we will want to click the **Select parent group** dropdown. Search for the group path we copied earlier and click it.
   * Lastly click **Transfer group**, complete the check and then your group will be transferred.
