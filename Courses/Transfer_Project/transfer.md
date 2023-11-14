@@ -20,8 +20,10 @@ You will lose some capabilities we went over during the workshop when you transf
 
 * [ ] Transferring Group
   * If you completed step 1 and dont need to reference any of the other projects in the future, skip this step and end the workshop.
-  * First copy the URL of your current group. It should be similar to the example below:
-    > https://gitlab.com/gitlab-learn-labs/environments/session-{your session id}/{your group id}
-  * Next locate where you want to transfer the project to. More often than not it will be under your personal namespace or a different group you have already created. Go ahead and click **New group** or **New subgroup** then select **Import group/import an existing group**.
-  * From here we will want to input the URL of our existing group we copied earlier then click **Connect instance**. At that point GitLab will begin to move over your group for you so that you can reference it even when the workshop infra is torn down.
-  * If this is disabled by your admin you can also try the import by file option: https://docs.gitlab.com/ee/user/group/import/#migrate-groups-by-uploading-an-export-file-deprecated
+  * There are a number of ways to do this, we will walk through what is arguably the easiest way to transfer a group. First decide the location of where you are trying to transfer the group to and grab the gitlab path. Example below:
+
+    URL https://gitlab.com/gitlab-com/customer-success/demo-engineering/sandbox/iu8ul5wa 
+    becomes: gitlab-com/customer-success/demo-engineering/sandbox/iu8ul5wa 
+  * Go back to our workshop group and use the left hand navigation menu to click **Settings > General** and then scroll down and expand the _Advanced_ section.
+  * Keep scrolling down to the **Transfer group** section where we will want to click the **Select parent group** dropdown. Search for the group path we copied earlier and click it.
+  * Lastly click **Transfer group**, complete the check and then your group will be transferred.
