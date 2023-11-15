@@ -61,9 +61,12 @@ The goal of this workshop is to give you a look into all of the features the Git
     ```
 
   > Please note you can also merge the **_ai-main-branch_** branch into main as well.
-  * Then let this pipeline run as we will come back to it later in the workshop.
+  * Once changed scroll down and click **Commit changes**. Then let this pipeline run as we will come back to it later in the workshop.
   * What if we hadnt known where to access the pipelines from or how to open an MR? You now can use the new AI chat feature called Ask GitLab Duo. Go ahead and click the **? Help** button in the bottom left then select **Ask GitLab Duo**
-  * You can ask GitLab Duo any related GitLab questions, but to start lets ask "Where can I find my running pipelines?", to which the chat will respond with the path to the pipelines page. Other examples of questions you can ask are "What is a fork?", "Summarize the issue \<Link to issue\>", or even ask it for quick code suggestions like "Write a tic tac toe game in Javascript". Please note that asking for code suggestions takes a few minutes so it is best to test out post workshop.
+  * You can ask GitLab Duo any related GitLab questions, but to start lets ask "Where can I find my running pipelines?", to which the chat will respond with the path to the pipelines page. 
+  * We can also ask GitLab Duo Chat to do things like write us starting pipeline configs. Next lets ask the chat "Create a .gitlab-ci.yml configuration file for testing and building a Ruby Sinatra application in a GitLab CI/CD pipeline".
+  * Lastly we can have our chat write documentation for the code we create. First click the project name in the top left, then click through **tanuki-racing/lib/tanukiracing/app.rb**. With chat still open ask "write documentation for app.rb".
+  * Other examples of questions you can ask are "What is a fork?", "Summarize the issue \<Link to issue\>", or even ask it for quick code suggestions like "Write a tic tac toe game in Javascript". Please note that asking for code suggestions takes a few minutes so it is best to test out post workshop.
   * Next we can ask the chat "Does gitlab have any ai or ml features?" To get linked to the docs that list all of our existing AI features. Keep in mind that you will have a short trial period post workshop with access to this group that has all of the features enabled, so feel free to try any out that we dont directly cover during the workshop.
   * While the pipeline runs your Instructor will take some time to go through the current AI/ML features GitLab offers [here](https://docs.gitlab.com/ee/user/ai_features.html)
 * [ ] Step 3: Security Results & AI
