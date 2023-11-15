@@ -1,4 +1,13 @@
 # Tanuki Racing Release Notes
+
+## Version: 1.0.3, Nov 15, 2023
+
+#### Updates:
+- Adding Basics workshop v1
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.2, Nov 15, 2023
 
 #### Updates:
