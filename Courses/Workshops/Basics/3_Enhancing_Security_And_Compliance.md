@@ -12,21 +12,37 @@ Take a deeper dive into how GitLab enables you through shifting left and the var
   * Once merged use the left hand navigation menu to click through **CICD > Pipelines** and click into the most recently kicked off pipeline. At this point your instructor will move onto the next section with a project that already has the code merged.
  
 * [ ] Step 2: Merge Request Security Results
-  * Now that your ***main*** pipeline has completed the reports under ***Security & Compliance*** have been generated. These reports will only be generated if you run a pipeline against main.
-  * Use the left hand navigation menu to click through **Security & Compliance -> Security Dashboard**. This will bring up a dashboard view of all of the security vulnerabilities & their counts over time so you can track your work as you secure your project. This dashboard takes a long time to collect data so if yours still has no results check out gitlab.com's security dashboard [here](https://gitlab.com/gitlab-org/gitlab/-/security/dashboard)
-  * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Security & Compliance -> Vulnerability Report** to view the full report
-  * We are back at the ***Vulnerability Report*** where we want to click into any of the critical vulnerabilities present.
-  * Here we get more details on where the flaw may have occurred and how to create a new bug issue to get this quickly resolved.
+  * Now that your ***main*** pipeline has completed the reports under ***Secure*** have been generated. These reports will only be generated if you run a pipeline against main.
+  * Use the left hand navigation menu to click through **Securite -> Security Dashboard**. This will bring up a dashboard view of all of the security vulnerabilities & their counts over time so you can track your work as you secure your project. This dashboard takes a long time to collect data so if yours still has no results your presenter will show you the dashboard of a deployed Tanuki Racing application [here](https://gitlab.com/gitlab-learn-labs/webinars/tanuki-racing/tanuki-racing-application/-/security/dashboard)
+  * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Secure -> Vulnerability Report** to view the full report
+  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability funcationality.
+  * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop.
+  * If you are curious what triggered this response try clicking ***Show prompt*** to see the full prompt sent to GitLab duo to generate the suggested fix.
+  * What if we wanted more context about the specific function above before we went and made a code change? Lets click the linked file in the **_Location_** section to be brought to our db.rb file.
+  * Once in the db.rb file locate the line the sql injection vulnerability on line 42 and highlight the whole **_get_specific_** function.
+  * You should then see a small question mark to the left of the code, click it.
+  * On the right hand side there will now be a small pop up to explain what your highlighted code does in natural language. Try highlighting other code sections as well.
 
 * [ ] Step 3: Review & Download SBOM report
-  * Using the left hand navigation menu click through **Security & Compliance > Dependency list** to view all of the dependencies that are directly and indirectly included in your application. 
+  * Using the left hand navigation menu click through **Secure > Dependency list** to view all of the dependencies that are directly and indirectly included in your application. 
   * Click through a few of the pages and notice the components that are all directly/indirectly included in your application. 
   * Next click **Export** to download the SBOM report in CycloneDX json format. If you then open the download you can see all of the information displayed. To learn more about CycloneDX format go [here](https://cyclonedx.org/)
 
 > [See how you could have used GitLab to detect log4j](https://about.gitlab.com/blog/2021/12/15/use-gitlab-to-detect-vulnerabilities/)
 
 * [ ] Step 4: License Compliance
-  * Using the left hand navigation menu click through the **Security & Compliance > License Compliance** to view all of the licenses detected in your project. Lets say we decided we no longer want to allow the use of the MIT License, so we can click the **Policies** tab then click **Add license policy**.
-  * Next type in and search for the ***MIT License***, then select ***Deny*** and click **Submit**.
-  * Now if we click the **Detected in project** tab you will see that the MIT License is denied and violating our set policy.
-  * It is out of scope for this workshop, but we also could have set ***License Approvals*** to require approval from a group or individual when a denied license was found in our application.
+  * Using the left hand navigation menu click through the **Secure \> License Compliance** to view all of the licenses detected in your project.
+  * Lets say we decided we no longer want to allow the use of the MIT License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
+  * Click **Select policy** under **Scan result policy**
+  * In the **New scan result policy form** that appears, provide the following mandatory information:
+    * Name: Deny MIT License
+    * Policy status: Enabled
+    * Rules: If **Select scan type** == **License Scan**, rest of first section stays as is
+    * **Status is** both **Newly Detected** and **Pre-existing**
+    * License is **matching** **_MIT_**
+    * Actions: Require 1 approval from: **Individual users** **lfstucker**
+    * Click **Configure with a merge request**
+  * Merge the new merge request into the existing security policy project.
+  * _Remember to go back to your project using the breadcrumb, clicking on your group, then clicking on your project._
+  * Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the MIT license from being merged and the security bot will notify you that you have a policy violation
+  * Lastly if you use the left hand navigation menu you can click through **Secure > License Compliance** and see that we have been notified that the MIT license is a Policy violation.
