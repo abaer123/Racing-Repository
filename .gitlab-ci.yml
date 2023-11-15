@@ -10,11 +10,7 @@ variables:
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
   DAST_BAS_DISABLED: "true"
-  # FUZZAPI_PROFILE: Quick-10
-  FUZZAPI_POSTMAN_COLLECTION: postman_collection.v2.1.json
-  FUZZAPI_TARGET_URL: http://149.248.44.52:7777
   CI_DEBUG_TRACE: "true"
-  # CI_PROJECT_PATH_SLUG: "tanukiracing"
   
 
 stages:
@@ -23,7 +19,6 @@ stages:
 
 include:
   - template: Jobs/Test.gitlab-ci.yml
-  - template: Jobs/Code-Intelligence.gitlab-ci.yml
   - template: Jobs/Container-Scanning.gitlab-ci.yml
   - template: Code-Quality.gitlab-ci.yml
   - template: Jobs/Dependency-Scanning.gitlab-ci.yml
