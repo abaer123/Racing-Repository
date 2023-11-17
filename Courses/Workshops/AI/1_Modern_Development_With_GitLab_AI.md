@@ -140,6 +140,11 @@ The goal of this workshop is to give you a look into all of the features the Git
   * If we navigate to the changes tab at the top of the MR view we want to locate the changes we made in our db.rb file.
   * Next click the three dots at the top right corner of the view for that file.
   * Then click **Suggest test cases**, at which point a pop up on the right hand side will appear to give you a number of suggestions of test cases you could add to your project for unit testing.
+  * You can also leverage the power of **Duo Chat** here and ask for test cases generation directly from the main repository UI.
+    * Navigate to your repository by clicking on its name in the left sidebar.
+    * Then navigate to the folder where your file is located: **lib/tanukiracing**
+    * Then Open **GitLab Duo Chat**
+    * Finally ask `Generate test case for calc.rb`.
   
 * [ ] Step 7: Pipeline Root Cause Analysis
   * Lastly we will show off a feature that can assist you when writing your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
