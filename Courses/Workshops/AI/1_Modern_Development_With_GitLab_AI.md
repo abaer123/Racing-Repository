@@ -7,7 +7,7 @@ The goal of this workshop is to give you a look into all of the features the Git
 ## Key Tasks to Complete
 
 * [ ] Step 1: Enable Code Suggestions
-  * Please notes that a number of top level group settings have been enabled to turn on all of the AI featuers. If you want to do this on your own instance you will have to make sure you enable **Experiment features** and **Third-party AI services** at the top level of your group.
+  * Please notes that a number of top level group settings have been enabled to turn on all of the AI features. If you want to do this on your own instance you will have to make sure you enable **Experiment features** and **Third-party AI services** at the top level of your group.
   * **Ensure as a student you complete this step or Code Suggestions will not work for you later on**. In the top left corner, click your profile icon, then right click **preferences** and select **_open in new tab_**.
   * Scroll down to the **_Code Suggestions_** section and click **Enable Code Suggestions**. Then scroll to the end of the page and click **Save changes**. Navigate back to your project screen before moving on.
   * We have now turned all of the existing AI/ML features in our groups & Code Suggestions within the built in Web IDE. If you want to try out Code Suggestions in VSC, there is an optional issue that will walk you through the setup you can do post workshop.
@@ -70,10 +70,11 @@ The goal of this workshop is to give you a look into all of the features the Git
   * We can check the status of our pipeline by using the left hand navigation to click through **Build \> Pipelines** the security features the platform offers.
   * Next use the left hand navigation menu to click through **Build \> Pipelines** and ensure that the most recent pipeline we kicked off is complete.
   * Spend some time taking a look at all of the information provided to you, exploring the job results and information tabs.
+  * Here you can move to the **Security** tab and explore the vulnerabilities that have been identified by this pipeline.
   * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Secure -\> Vulnerability report** to view the full report
   * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerablilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
-  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability funcationality.
-  * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop.
+  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **Explain vulnerability** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability funcationality.
+  * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop. Note: since AI is not predictive, you may have a slightly different solution proposed.
   * If you are curious what triggered this response try clicking ***Show prompt*** to see the full prompt sent to GitLab duo to generate the suggested fix.
 * [ ] Step 4: Explain This Code
   * What if we wanted more context about the specific function above before we went and made a code change? Lets click the linked file in the **_Location_** section to be brought to our db.rb file.
@@ -119,8 +120,11 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```
   * Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the space bar or enter.
   * Code suggestions will write a very in depth calculator function and eventually will loop but feel free to stop it after 5 methods.
-  * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date projects.
-  * Choose one of the projects and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want.
+  * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date languages supported. This list is also availabe in our documentation: (https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages)[https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages]
+  * Choose one of the files here, in any language you want to try, and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want. eg: click on `tanuki-racing/ai-sandbox/test.java`. Then click on the `Edit` dropdown button and select `Open in the Web IDE`. Then type the following prompt:
+  ```plaintext
+  // Write a HelloWorld
+  ```
   * Now we want to commit this code to main. Go ahead and click the **Source Control** button on the left hand side and write a commit message. Next click **Commit & Push**.
   * Next on the resulting dropdown make sure you click commit to our mr branch, then on the popup click the **Go to merge request** button.
 * [ ] Step 6: AI in the Merge Request
