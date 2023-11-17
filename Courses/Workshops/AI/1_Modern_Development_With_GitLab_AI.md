@@ -1,13 +1,13 @@
 ## Theme
 
-The goal of this workshop is to give you a look into all of the features the GitLab AI team is developing, not just Code Suggestions. We put a big emphasis are trying to help developers throughout the entire SDLC and not just their coding tasks.
+The goal of this workshop is to give you a look into all of the features the GitLab AI team is developing, not just Code Suggestions. We put a big emphasis on trying to help developers throughout the entire SDLC and not just their coding tasks.
 
-**PLEASE NOTE:** Many of these features are in the [experimental phase](https://docs.gitlab.com/ee/policy/experiment-beta-support.html#experiment), which means they may be prone to outages as the dev team is actively working on enhancing them. Additionally there may be a short delay (up to 1 hour) where these features may not appear visual to you as they are being provisioned. If this occurs and you didnt see a feature demo live that you hopped to see, please reach out to the account team and we will provide recordings & additional info on when it may be available.
+**PLEASE NOTE:** Many of these features are in the [experimental phase](https://docs.gitlab.com/ee/policy/experiment-beta-support.html#experiment), which means they may be prone to outages as the dev team is actively working on enhancing them. Additionally there may be a short delay (up to 1 hour) where these features may not appear visual to you as they are being provisioned. If this occurs and you didnt see a feature demo live that you hoped to see, please reach out to the account team and we will provide recordings & additional info on when it may be available.
 
 ## Key Tasks to Complete
 
 * [ ] Step 1: Enable Code Suggestions
-  * Please notes that a number of top level group settings have been enabled to turn on all of the AI featuers. If you want to do this on your own instance you will have to make sure you enable **Experiment features** and **Third-party AI services** at the top level of your group.
+  * Please note that a number of top level group settings have been enabled to turn on all of the AI features. If you want to do this on your own instance you will have to make sure you enable **Experimental features** and **Third-party AI services** at the top level of your group.
   * **Ensure as a student you complete this step or Code Suggestions will not work for you later on**. In the top left corner, click your profile icon, then right click **preferences** and select **_open in new tab_**.
   * Scroll down to the **_Code Suggestions_** section and click **Enable Code Suggestions**. Then scroll to the end of the page and click **Save changes**. Navigate back to your project screen before moving on.
   * We have now turned all of the existing AI/ML features in our groups & Code Suggestions within the built in Web IDE. If you want to try out Code Suggestions in VSC, there is an optional issue that will walk you through the setup you can do post workshop.
@@ -74,8 +74,8 @@ The goal of this workshop is to give you a look into all of the features the Git
   * Next use the left hand navigation menu to click through **Build \> Pipelines** and ensure that the most recent pipeline we kicked off is complete.
   * Spend some time taking a look at all of the information provided to you, exploring the job results and information tabs.
   * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Secure -\> Vulnerability report** to view the full report
-  * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerablilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
-  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability funcationality.
+  * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerabilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
+  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability functionality.
   * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop.
   * If you are curious what triggered this response try clicking ***Show prompt*** to see the full prompt sent to GitLab duo to generate the suggested fix.
 * [ ] Step 4: Explain This Code
@@ -120,7 +120,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```plaintext
    #define a calculator class for other functions to use
   ```
-  * Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the space bar or enter.
+  * Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the spacebar or enter.
   * Code suggestions will write a very in depth calculator function and eventually will loop but feel free to stop it after 5 methods.
   * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date projects.
   * Choose one of the projects and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want.
@@ -129,14 +129,14 @@ The goal of this workshop is to give you a look into all of the features the Git
 * [ ] Step 6: AI in the Merge Request
   * Now that we are back in our MR we should see that our code changes have kicked off another run of our pipeline. We have made a number of changes, so lets use the AI **View summary notes** button to add a detailed comment around all of the changes we have made.
   * To do this, locate the three dots button next to _Code_ in the top right of the merge request view. Click it, then on the resulting dropdown click the **View summary notes** option.
-  * You will may need to wait for the pipeline that was kicked off to complete, but once it has there will be a quick write up of all the changes you made in the context of the merge request. This functionality also exists in the content of an issue. You can find steps to test that out within the _optional_ issue of this project.
+  * You may need to wait for the pipeline that was kicked off to complete, but once it has there will be a quick write up of all the changes you made in the context of the merge request. This functionality also exists in the content of an issue. You can find steps to test that out within the _optional_ issue of this project.
   * Now that we have added code and seen the security results we also want to add some testing to make sure it stays secure.
   * If we navigate to the changes tab at the top of the MR view we want to locate the changes we made in our db.rb file.
   * Next click the three dots at the top right corner of the view for that file.
   * Then click **Suggest test cases**, at which point a pop up on the right hand side will appear to give you a number of suggestions of test cases you could add to your project for unit testing.
   
 * [ ] Step 7: Pipeline Root Cause Analysis
-  * Lastly we will show off a feature can assist you when writting your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
+  * Lastly we will show off a feature that can assist you when writing your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
   * Use the left hand navigation menu to click through **Build \> Pipeline Editor** and change the pipeline config to be the code below:
 
   ```yaml
