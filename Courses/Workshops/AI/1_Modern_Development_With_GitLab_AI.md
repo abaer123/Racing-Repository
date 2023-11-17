@@ -110,7 +110,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   * We are then going to navigate to the ***lib/tanukiracing/app.rb*** file to use the new method that we wrote. On a new line within the class use the prompt below to generate our new delete route:
 
   ```plaintext
-  # write a post route that calls the delete_leader function from TanukiRacing::DB
+  # write a post route that calls the delete_leaderboard function from TanukiRacing::DB
   ```
   > Please note that Code Suggestions uses your current file as reference for how to write the function, so you may need to do some slight editing for the final result
 
