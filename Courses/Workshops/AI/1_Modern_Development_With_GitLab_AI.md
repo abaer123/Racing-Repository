@@ -120,7 +120,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```
   * Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the space bar or enter.
   * Code suggestions will write a very in depth calculator function and eventually will loop but feel free to stop it after 5 methods.
-  * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date languages supported. This list is also availabe in our documentation: (https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages)[https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages]
+  * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date languages supported. This list is also availabe in our documentation: [https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages](https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages)  
   * Choose one of the files here, in any language you want to try, and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want. eg: click on `tanuki-racing/ai-sandbox/test.java`. Then click on the `Edit` dropdown button and select `Open in the Web IDE`. Then type the following prompt:
   ```plaintext
   // Write a HelloWorld
@@ -129,7 +129,9 @@ The goal of this workshop is to give you a look into all of the features the Git
   * Next on the resulting dropdown make sure you click commit to our mr branch, then on the popup click the **Go to merge request** button.
 * [ ] Step 6: AI in the Merge Request
   * Now that we are back in our MR we should see that our code changes have kicked off another run of our pipeline. We have made a number of changes, so lets use the AI **View summary notes** button to add a detailed comment around all of the changes we have made.
-  * To do this, locate the three dots button next to _Code_ in the top right of the merge request view. Click it, then on the resulting dropdown click the **View summary notes** option.
+  * To do this, you can either:
+    * unfold the block `Latest AI-generated summary` at the top of the `Overview` tab of your MR, or
+    * locate the three dots button next to _Code_ in the top right of the merge request view. Click it, then on the resulting dropdown click the **View summary notes** option.
   * You will may need to wait for the pipeline that was kicked off to complete, but once it has there will be a quick write up of all the changes you made in the context of the merge request. This functionality also exists in the content of an issue. You can find steps to test that out within the _optional_ issue of this project.
   * Now that we have added code and seen the security results we also want to add some testing to make sure it stays secure.
   * If we navigate to the changes tab at the top of the MR view we want to locate the changes we made in our db.rb file.
@@ -137,7 +139,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   * Then click **Suggest test cases**, at which point a pop up on the right hand side will appear to give you a number of suggestions of test cases you could add to your project for unit testing.
   
 * [ ] Step 7: Pipeline Root Cause Analysis
-  * Lastly we will show off a feature can assist you when writting your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
+  * Lastly we will show off a feature that can assist you when writting your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
   * Use the left hand navigation menu to click through **Build \> Pipeline Editor** and change the pipeline config to be the code below:
 
   ```yaml
@@ -177,7 +179,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```
   * Next scroll down and click **Commit changes**. We then will want to use the left hand navigation menu to click through **Build \> Pipelines** and click into the last kicked off pipeline.
   * We expect the _build_ job to fail, and once it does lets click into the job. At the top of the view we want to click **Root cause analysis,** at which point a pop up will appear on the left hand side of the screen with an in depth analysis on why you job failed. In this case its because of the `apt list --installed` line we added to the build job which our image does not support.
-  * That is the end of the hands on portion for this lab, but if you check out the [issues](https://gitlab.com/gitlab-learn-labs/sample-projects/ai-workshop/workshop-project/-/issues) there are additional steps to enable code suggestions in VSC and show off some of our Plan stage AI/ML features
+  * That is the end of the hands on portion for this lab, but if you check out the [sibling files](../AI/) there are additional steps to [enable code suggestions](../AI/Optional_Enable_Code_Suggestions_In_VSC.md) in VSC and show off some of our [Plan stage AI/ML features](../AI/Optional_GitLab_AI_Experimental_Features.md).
 
 
 
