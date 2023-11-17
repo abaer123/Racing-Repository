@@ -73,10 +73,11 @@ The goal of this workshop is to give you a look into all of the features the Git
   * We can check the status of our pipeline by using the left hand navigation to click through **Build \> Pipelines** the security features the platform offers.
   * Next use the left hand navigation menu to click through **Build \> Pipelines** and ensure that the most recent pipeline we kicked off is complete.
   * Spend some time taking a look at all of the information provided to you, exploring the job results and information tabs.
+  * Here you can move to the **Security** tab and explore the vulnerabilities that have been identified by this pipeline.
   * We have already seen how to view the vulnerabilities in the pipeline view, but now lets use the left hand navigation menu and click through **Secure -\> Vulnerability report** to view the full report
-  * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerabilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
-  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **try it out** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability functionality.
-  * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop.
+  * Once in the **_Vulnerability Report_** we first can click into any of the vulnerabilities present. Notice that there are a number of vulnerablilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform.
+  * Next look for the **Possible SQL Injection** vulnerability by filtering the **_Severity_** to ***Low*** and the **_Tool_** to ***SAST***. Click into the vulnerability, then click the **Explain vulnerability** button for an explanation on what a SQL injection risk is and why our application is vulnerable using GitLab's Explain This Vulnerability functionality.
+  * At the end of the report check out the **_Fixed Code_** section and we can see that if we add `sanitize_sql(id)` around our id value we will be protected from most attacks. We will use this knowledge later in the workshop. _Note: since AI is not predictive, you may have a slightly different solution proposed._
   * If you are curious what triggered this response try clicking ***Show prompt*** to see the full prompt sent to GitLab duo to generate the suggested fix.
 * [ ] Step 4: Explain This Code
   * What if we wanted more context about the specific function above before we went and made a code change? Lets click the linked file in the **_Location_** section to be brought to our db.rb file.
@@ -122,18 +123,28 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```
   * Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the spacebar or enter.
   * Code suggestions will write a very in depth calculator function and eventually will loop but feel free to stop it after 5 methods.
-  * Code Suggestions dosent just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date projects.
-  * Choose one of the projects and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want.
+  * Code Suggestions does not just work for ruby files either, and it supports multiple languages per project. Navigate into the **ai-sandbox/** folder for a list of currently up to date languages supported. This list is also availabe in our documentation: [https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages](https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-languages)  
+  * Choose one of the files here, in any language you want to try, and test out code suggestions to write a hello world example or something more advanced. Your Instructor will give you time to do this now, but also keep in mind that you have access to the infra for another 48 hours to test what you want. eg: click on `tanuki-racing/ai-sandbox/test.java`. Then click on the `Edit` dropdown button and select `Open in the Web IDE`. Then type the following prompt:
+  ```plaintext
+  // Write a HelloWorld
+  ```
   * Now we want to commit this code to main. Go ahead and click the **Source Control** button on the left hand side and write a commit message. Next click **Commit & Push**.
   * Next on the resulting dropdown make sure you click commit to our mr branch, then on the popup click the **Go to merge request** button.
 * [ ] Step 6: AI in the Merge Request
   * Now that we are back in our MR we should see that our code changes have kicked off another run of our pipeline. We have made a number of changes, so lets use the AI **View summary notes** button to add a detailed comment around all of the changes we have made.
-  * To do this, locate the three dots button next to _Code_ in the top right of the merge request view. Click it, then on the resulting dropdown click the **View summary notes** option.
+  * To do this, you can either:
+    * unfold the block `Latest AI-generated summary` at the top of the `Overview` tab of your MR, or
+    * locate the three dots button next to _Code_ in the top right of the merge request view. Click it, then on the resulting dropdown click the **View summary notes** option.
   * You may need to wait for the pipeline that was kicked off to complete, but once it has there will be a quick write up of all the changes you made in the context of the merge request. This functionality also exists in the content of an issue. You can find steps to test that out within the _optional_ issue of this project.
   * Now that we have added code and seen the security results we also want to add some testing to make sure it stays secure.
   * If we navigate to the changes tab at the top of the MR view we want to locate the changes we made in our db.rb file.
   * Next click the three dots at the top right corner of the view for that file.
   * Then click **Suggest test cases**, at which point a pop up on the right hand side will appear to give you a number of suggestions of test cases you could add to your project for unit testing.
+  * You can also leverage the power of **Duo Chat** here and ask for test cases generation directly from the main repository UI.
+    * Navigate to your repository by clicking on its name in the left sidebar.
+    * Then navigate to the folder where your file is located: **lib/tanukiracing**
+    * Then Open **GitLab Duo Chat**
+    * Finally ask `Generate test case for calc.rb`.
   
 * [ ] Step 7: Pipeline Root Cause Analysis
   * Lastly we will show off a feature that can assist you when writing your own pipelines, root cause analysis. This tool makes troubleshooting a failed pipeline a piece of cake.
@@ -176,7 +187,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   ```
   * Next scroll down and click **Commit changes**. We then will want to use the left hand navigation menu to click through **Build \> Pipelines** and click into the last kicked off pipeline.
   * We expect the _build_ job to fail, and once it does lets click into the job. At the top of the view we want to click **Root cause analysis,** at which point a pop up will appear on the left hand side of the screen with an in depth analysis on why you job failed. In this case its because of the `apt list --installed` line we added to the build job which our image does not support.
-  * That is the end of the hands on portion for this lab, but if you check out the [issues](https://gitlab.com/gitlab-learn-labs/sample-projects/ai-workshop/workshop-project/-/issues) there are additional steps to enable code suggestions in VSC and show off some of our Plan stage AI/ML features
+  * That is the end of the hands on portion for this lab, but if you check out the [sibling files](../AI/) there are additional steps to [enable code suggestions](../AI/Optional_Enable_Code_Suggestions_In_VSC.md) in VSC and show off some of our [Plan stage AI/ML features](../AI/Optional_GitLab_AI_Experimental_Features.md).
 
 
 
