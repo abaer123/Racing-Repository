@@ -37,6 +37,7 @@ In this challenge we will add security testing to our existing pipeline
      - test
      - security
    ```
+
 8. Also if you click the tree icon or **_Full configuration_** tab you should be able to see the content of all of the new security templates we have added. Before committing we will add some inheritance in the next step.
 
 # Step 03 - Using Inheritance to Enhance Our Pipeline

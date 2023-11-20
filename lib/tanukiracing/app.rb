@@ -17,8 +17,6 @@ module TanukiRacing
     set :views, File.expand_path('views', __dir__)
     set :player_test, 'test'
 
-    aws_key_id = "AKIAIOSF0DNN7EXAMPLE"
-
     TanukiRacing::DB.initialize("leaderboard.db")
     TanukiRacing::DB.create_table
 

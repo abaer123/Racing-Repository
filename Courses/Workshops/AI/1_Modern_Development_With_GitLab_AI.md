@@ -30,6 +30,7 @@ The goal of this workshop is to give you a look into all of the features the Git
       DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
       RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
       CI_DEBUG_TRACE: "true"
+      SECRET_DETECTION_EXCLUDED_PATHS: "Courses"
       
 
     stages:
