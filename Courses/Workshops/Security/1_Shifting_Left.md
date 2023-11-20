@@ -60,6 +60,8 @@ sast:
 * Click **Edit** again to be brought back to our normal editor. Notice that we have defined an additional job to override one of the SAST jobs we have brought in through the **_Jobs/SAST.gitlab-ci.yml_** template.
 * Now that our changes are in lets click **Commit changes** at the bottom of the page.
 
+> If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_security-workshop-pipeline_** and click **Run pipeline** once again.
+
 > [Docs for GitLab CICD](https://docs.gitlab.com/ee/ci/)
 
 * [ ] Step 2: Ask GitLab Duo
