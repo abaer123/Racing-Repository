@@ -94,7 +94,7 @@ The goal of this workshop is to give you a look into all of the features the Git
   * We then want to click **New Branch**, name it **_AI-Test_**, then click **Create branch**. On the resulting page click **Create merge request**.
   * On the resulting page uncheck **Mark as draft**, leave all other settings as is and scroll to the bottom then click **Create merge request**.
   * Next click **Code** in the top right, then click **Open in Web IDE**.
-  * Once in the IDE navigate through **lib/tanukiracing/db.rb** and take a look at the function on line 42. Lets used what we learned using Explain This Vulnerability to change the line of code to this:
+  * Once in the IDE navigate through **lib/tanukiracing/db.rb** and take a look at the function on line 42. Lets use what we learned using Explain This Vulnerability to change the line of code to this:
 
   ```plaintext
   Leaderboard.first.where("player = ?", sanitize_sql(id))
