@@ -17,6 +17,7 @@ variables:
   ROLLOUT_RESOURCE_TYPE: deployment
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+  SECRET_DETECTION_EXCLUDED_PATHS: "Courses"
   
 
 stages:
