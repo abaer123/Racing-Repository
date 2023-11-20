@@ -25,7 +25,7 @@ variables:
   DAST_BAS_DISABLED: "true"
   CI_DEBUG_TRACE: "true"
   # CI_PROJECT_PATH_SLUG: "tanukiracing"
-  SECRET_DETECTION_EXCLUDED_PATHS: "./Courses/**"
+  SECRET_DETECTION_EXCLUDED_PATHS: "Courses"
   
 
 stages:
