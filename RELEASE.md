@@ -1,5 +1,14 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.4, Nov 20, 2023
+
+#### Updates:
+- Refactored SD section
+- Filtered SD on all needed pipelines
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.3, Nov 15, 2023
 
 #### Updates:
