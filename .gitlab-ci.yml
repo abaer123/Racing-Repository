@@ -9,28 +9,35 @@ variables:
   ROLLOUT_RESOURCE_TYPE: deployment
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+  DAST_BAS_DISABLED: "true"
+  CI_DEBUG_TRACE: "true"
+  # CI_PROJECT_PATH_SLUG: "tanukiracing"
+  SECRET_DETECTION_EXCLUDED_PATHS: "Courses"
   
 
 stages:
   - build
   - test
- 
+
+include:
+  - template: Jobs/Test.gitlab-ci.yml
+  - template: Jobs/Container-Scanning.gitlab-ci.yml
+  - template: Code-Quality.gitlab-ci.yml
+  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+  - template: Jobs/SAST-IaC.gitlab-ci.yml
+
 build:
   stage: build
   variables:
     IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
-  before_script:
+  script:
     - docker info
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-  script:
     - docker build -t $IMAGE .
-  after_script:
     - docker push $IMAGE
 
-test:
-  stage: test
-  image: gliderlabs/herokuish:latest
-  script:
-    - cp -R . /tmp/app
-    - /bin/herokuish buildpack test
-
+sast:
+  variables:
+      SEARCH_MAX_DEPTH: 12
