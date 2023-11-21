@@ -1,59 +1,98 @@
-# Create Group, Project, Labels, Boards, Project Milestone, and Issues
+## Create Group, Project, Labels, Boards, Project Milestone, and Issues
 
-## Theme
+### Theme
 
 Organizing and planning work
 
-## Key Tasks to Complete
+### Key Tasks to Complete
 
-* [ ] Step 1: Create a new Subgroup
-  * Before we move over our template project, go ahead and click **Create new subgroup** in the group redeemed for us
-  * Under **Subgroup name**, provide a group name (**Tanuki-Racing-Group**)
-  * * Leave all other settings as is
-  * Click **Create subgroup**
-* [ ] Step 2: Import Our Project
-  * Click **Create new project**
-  * Click **Import project**
-  * Click **Repository by URL**
-  * In the _Git repository URL_ section add the following URL: https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing.git
-  * Leave all other settings as is.
-  * Click **Create project**
-  * You may see a note regarding an SSH key. It is okay to ignore this message during the workshop.
+# Step 1: Create a new Subgroup
+
+1. Before we move over our template project, go ahead and click **Create new subgroup** in the group redeemed for us
+  
+2. Under **Subgroup name**, provide a group name (**Tanuki-Racing-Group**)
+
+3. Leave all other settings as is
+
+4. Click **Create subgroup**
+ 
+# Step 2: Import Our Project
+
+1. Click **Create new project**
+  
+2. Click **Import project**
+  
+3. Click **Repository by URL**
+  
+4. In the _Git repository URL_ section add the following URL: https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing.git
+  
+5. Leave all other settings as is.
+  
+6. Click **Create project**
+  
+7. You may see a note regarding an SSH key. It is okay to ignore this message during the workshop.
 
 > [Docs for setting up your org](https://docs.gitlab.com/ee/topics/set_up_organization.html)
 
-* [ ] Step 3: Planning With GitLab Duo Chat
-  * Once your project has been imported you may have a number of questions on how to get started. GitLab's newest AI feature **GitLab Duo Chat** can help answer that and more
-  * In the bottom left corner of your screen go ahead and click the **? Help** link, then click **GitLab Duo Chat**.
+
+# Step 3: Planning With GitLab Duo Chat
+
+1. Once your project has been imported you may have a number of questions on how to get started. GitLab's newest AI feature **GitLab Duo Chat** can help answer that and more
+  
+2. In the bottom left corner of your screen go ahead and click the **? Help** link, then click **GitLab Duo Chat**.
 
   > Please note if you requested your group within the last hour there may be a delay up to 1 hour until AI features are available
 
-  * Let's start by asking chat _"Where can I see my project's issues?"_. You can also ask chat any GitLab related or coding questions. Feel free to use chat as an assistance tool for the rest of the workshop.
+3. Let's start by asking chat _"Where can I see my project's issues?"_. You can also ask chat any GitLab related or coding questions. Feel free to use chat as an assistance tool for the rest of the workshop.
 
-* [ ] Step 4: Create at least 4 labels
-  * Use the left hand navigation menu to click through **Manage** > **Labels**
-  * Click **New label**
-  * Enter **P1** in the ***Title*** field and select a color
-  * Click **Create label**
-  * Click **New label** and create another label for **P2**
-  * Click **New label** and create another label for **Workflow::Planning**
-  * Click **New label** and create another label for **Workflow::Review**
-* [ ] Step 4: Create New Board
-  * Use the left hand navigation menu to click through **Plan -> Issues boards**
-  * Click **New board** next to the dropdown that says **Development**.
-  * Enter a title (**Team-Scoped-Board**)
-  * Leave **Show the Open list** and **Show the Closed list** checkboxes selected
-  * Click **Create board**
-  * Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Planning**. Click **Add to board**.
-  * Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Review**. Click **Add to board**.
-  * As we add issues in the future if they contain the scoped labels they will automatically appear in the labels board.
-* [ ] Step 5: Create Project Milestone
-  * Use the left hand navigation menu to click through **Plan**>**Milestones**
-  * Click **New milestone**
-  * Enter a title (**Tanuki-Racing-Migration-Milestone**)
-  * Set a start date as **today**
-  * Set a due date as **one week from today**
-  * Click **Create milestone**
+# Step 4: Create at least 4 labels
+
+1. Use the left hand navigation menu to click through **Manage** > **Labels**
+  
+2. Click **New label**
+  
+3. Enter **P1** in the ***Title*** field and select a color
+  
+4. Click **Create label**
+  
+5. Click **New label** and create another label for **P2**
+  
+6. Click **New label** and create another label for **Workflow::Planning**
+  
+7. Click **New label** and create another label for **Workflow::Review**
+
+# Step 5: Create New Board
+
+1. Use the left hand navigation menu to click through **Plan -> Issues boards**
+  
+2. Click **New board** next to the dropdown that says **Development**.
+
+3. Enter a title (**Team-Scoped-Board**)
+  
+4. Leave **Show the Open list** and **Show the Closed list** checkboxes selected
+  
+5. Click **Create board**
+  
+6. Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Planning**. Click **Add to board**.
+  
+7. Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Review**. Click **Add to board**.
+  
+8. As we add issues in the future if they contain the scoped labels they will automatically appear in the labels board.
+
+# Step 6: Create Project Milestone
+
+1. Use the left hand navigation menu to click through **Plan**>**Milestones**
+  
+2. Click **New milestone**
+  
+3. Enter a title (**Tanuki-Racing-Migration-Milestone**)
+  
+4. Set a start date as **today**
+  
+5. Set a due date as **one week from today**
+  
+6. Click **Create milestone**
+
 * [ ] Step 6: Create Issues
   * Create an Issue
     * Navigate to **Plan>Issues** using the left hand navigation menu
