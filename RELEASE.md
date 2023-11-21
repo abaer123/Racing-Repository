@@ -1,5 +1,13 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.5, Nov 21, 2023
+
+#### Updates:
+- Course formatting updated to be more readable, cc @abaer2
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.4, Nov 20, 2023
 
 #### Updates:
