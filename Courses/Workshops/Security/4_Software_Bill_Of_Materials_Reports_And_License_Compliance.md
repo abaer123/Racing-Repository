@@ -18,16 +18,16 @@ With the uptick of major security breaches hitting headlines many governments ha
 
 1. Using the left hand navigation menu click through the **Secure \> License Compliance** to view all of the licenses detected in your project.
   
-2. Lets say we decided we no longer want to allow the use of the MIT License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
+2. Lets say we decided we want to prevent the use of the BitTorrent Open Source License v1.1 License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
   
 3. Click **Select policy** under **Scan result policy**
   
 4. In the **New scan result policy form** that appears, provide the following mandatory information:
-    * Name: Deny MIT License
+    * Name: Deny BitTorrent Open Source License v1.1 License
     * Policy status: Enabled
     * Rules: If **Select scan type** == **License Scan**, rest of first section stays as is
     * **Status is** both **Newly Detected** and **Pre-existing**
-    * License is **matching** **_MIT_**
+    * License is **matching** **_BitTorrent Open Source License v1.1_**
     * Actions: Require 1 approval from: **Individual users** **lfstucker**
     * Click **Configure with a merge request**
 
@@ -35,6 +35,5 @@ With the uptick of major security breaches hitting headlines many governments ha
   
 6. _Remember to go back to your project using the breadcrumb, clicking on your group, then clicking on your project._
   
-7. Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the MIT license from being merged and the security bot will notify you that you have a policy violation
-  
-8. Lastly if you use the left hand navigation menu you can click through **Secure > License Compliance** and see that we have been notified that the MIT license is a Policy violation.
+7. Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the BitTorrent Open Source License v1.1 license from being merged and the security bot will notify you that you have a policy violation.
+
