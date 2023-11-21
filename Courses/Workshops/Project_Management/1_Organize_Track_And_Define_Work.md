@@ -93,8 +93,9 @@ Organizing and planning work
   
 6. Click **Create milestone**
 
-* [ ] Step 6: Create Issues
-  * Create an Issue
+# Step 7: Create Issues
+
+1. Create an Issue
     * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Update-Pipeline**
@@ -105,7 +106,8 @@ Organizing and planning work
     * Select a due date within the next week
     * Leave all other settings as is
     * Click **Create issue**
-  * Create an Second Issue
+
+2. Create an Second Issue
     * Click **New issue**
     * Give a title **Review-Pipeline**
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab ID
@@ -114,7 +116,8 @@ Organizing and planning work
     * Select a due date within the next week
     * Leave all other settings as is
     * Click **Create issue**
-  * Create an Issue using Quick Actions
+
+3. Create an Issue using Quick Actions
     * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Add SAST Scanner**
@@ -125,22 +128,36 @@ Organizing and planning work
 
 > [Docs for setting up your org](https://docs.gitlab.com/ee/user/project/quick_actions.html)
 
+# Step 8: Move Issues in Boards
 
-* [ ] Step 7: Move Issues in Boards
-  * Navigate to **Issues**>**Boards**
-  * If not already selected, select the **Team-Scoped-Board** board from the board selector dropdown
-  * Note the issues in the **Open** list & the one issue in the _Workflow::Review_ list
-  * Click and drag the **Add SAST Scanner** issue into the **Workflow::Planning** list
-  * Click on that issue and note the labels now include **Workflow::Planning**
-  * Click and drag the same issue into **Workflow::Review**
-  * Note the issue labels now include **Workflow::Review** and *not* **Workflow::Planning**
-  * Click and drag the same issue into Closed
-  * Note the issue labels no longer include **Workflow::Review** or **Workflow::Planning** and the issue is now closed
-  * Before moving on drag the closed issue back to ***Planning***
-* [ ] Step 8: Review project milestone charts
-  * Navigate to **Plan**>**Milestones**
-  * Click **Tanuki-Racing-Migration-Milestone**
-  * Notice the Burndown and Burnup charts
-  * Notice the Unstarted Issues, Ongoing Issues, and Completed Issues tracked part of the milestone
+1. Navigate to **Issues**>**Boards**
+  
+2. If not already selected, select the **Team-Scoped-Board** board from the board selector dropdown
+  
+3. Note the issues in the **Open** list & the one issue in the _Workflow::Review_ list
+  
+4. Click and drag the **Add SAST Scanner** issue into the **Workflow::Planning** list
+  
+5. Click on that issue and note the labels now include **Workflow::Planning**
+  
+6. Click and drag the same issue into **Workflow::Review**
+  
+7. Note the issue labels now include **Workflow::Review** and *not* **Workflow::Planning**
+  
+8. Click and drag the same issue into Closed
+  
+9. Note the issue labels no longer include **Workflow::Review** or **Workflow::Planning** and the issue is now closed
+  
+10. Before moving on drag the closed issue back to ***Planning***
+
+# Step 9: Review project milestone charts
+  
+1. Navigate to **Plan**>**Milestones**
+  
+2. Click **Tanuki-Racing-Migration-Milestone**
+  
+3. Notice the Burndown and Burnup charts
+  
+4. Notice the Unstarted Issues, Ongoing Issues, and Completed Issues tracked part of the milestone
 
 
