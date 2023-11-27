@@ -28,7 +28,7 @@ Following our shift left trend we will see how security results are included thr
   
 4. First change the _All tools_ section under **Tools** to just filter on SAST. We can then click into any of the SAST vulnerabilities shown.
   
-5. Inside the vulnerability we will want to click the _Try it out_ button within the **Explain this vulnerability** section. This will result in a popup appearing on the right hand side with some information on what the vulnerability is and how you can fix it. The Explain This Vulnerability feature currently works on any SAST vulnerabilities.
+5. Inside the vulnerability we will want to click the _Explain vulnerability_ button within the **Explain this vulnerability and how to mitigate it with AI** section. This will result in a popup appearing on the right hand side with some information on what the vulnerability is and how you can fix it. The Explain This Vulnerability feature currently works on any SAST vulnerabilities.
 
 # Step 3: Preventive Security Policies
 
@@ -38,9 +38,13 @@ Following our shift left trend we will see how security results are included thr
   
 3. Add a name to the policy, then under the **_Rules_** section we want to select **Security Scan** in the **When** dropdown list. Then we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
   
-4. Then under actions choose **individual users** as the **_Choose approver type_** and add **_lfstucker_** as the required approver and click **Configure with a merge request**. On the resulting merge request click ***merge*** and you will be brought to your new policy project that is applied to our workshop application. If you were to create another merge request with the leaked token still in the code based merging would be prevented until it was removed or you added your approval.
+4. Then under actions choose **individual users** as the **_Choose approver type_** and add **_lfstucker_** as the required approver. Next uncheck **Prevent pushing and force pushing**.
+
+> Please ensure you do this step or you will be blocked later on in the workshop
+
+5. Lastly click **Configure with a merge request**. On the resulting merge request click ***merge*** and you will be brought to your new policy project that is applied to our workshop application. If you were to create another merge request with the leaked token still in the code based merging would be prevented until it was removed or you added your approval.
   
-5. Before we move on lets go back to our project. Use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
+6. Before we move on lets go back to our project. Use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
 
 > [Docs for policies](https://docs.gitlab.com/ee/user/application_security/policies/)
 
@@ -50,7 +54,7 @@ Following our shift left trend we will see how security results are included thr
   
 2. Click into the **_cf-sample-scripts/eks.yaml_** file and add our fake token **_aws_key_id AKIAIOSF0DNN7EXAMPLE_** at the end of the line 6. eg: Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
   
-3. Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & Push**
+3. Once added click the source control button on the left hand side, add a quick commit message, then click the down arrow.
   
 4. On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
 

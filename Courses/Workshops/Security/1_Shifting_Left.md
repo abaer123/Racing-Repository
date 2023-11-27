@@ -80,7 +80,7 @@ sast:
   
 #  Step 3: Creating the Merge Request
 
-1. Now to actually merge in the code we want to use the left hand navigation menu to click through **Code \> Branches** & then click **Merge request** in the secure-pipeline section. **ENSURE YOU HAVE REMOVED THE FORK RELATIONSHIP BEFORE DOING THIS**
+1. Now to actually merge in the new pipeline we want to use the left hand navigation menu to click through **Code \> Branches** & then click **Merge request** in the secure-pipeline section. **ENSURE YOU HAVE REMOVED THE FORK RELATIONSHIP BEFORE DOING THIS**
   
 2. On the resulting page scroll down to the **_Merge options_** and uncheck **Delete source branch when merge request is accepted**. You can leave the rest of the settings as is then click **Create merge request**.
   

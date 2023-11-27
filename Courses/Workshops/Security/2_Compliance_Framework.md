@@ -19,7 +19,7 @@ We are going to be creating a compliance framework that will ensure our pipeline
 
 # Step 2: Applying the framework
 
-1. You can now close this tab and navigate back to your **Workshop Project**. Once there use the left hand navigation menu to click through **Settings > General**. Next scroll down to the ***Compliance framework*** and click the **Choose your framework** dropdown.
+1. You can now close this tab and navigate back to your **Tanuki Racing** project. Once there use the left hand navigation menu to click through **Settings > General**. Next scroll down to the ***Compliance framework*** and click the **Choose your framework** dropdown.
   
 2. On the resulting drop down select **Tanuki Racing CF** then click **Save changes**.
   
