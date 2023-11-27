@@ -29,6 +29,7 @@ With the uptick of major security breaches hitting headlines many governments ha
     * **Status is** both **Newly Detected** and **Pre-existing**
     * License is **matching** **_BitTorrent Open Source License v1.1_**
     * Actions: Require 1 approval from: **Individual users** **lfstucker**
+    * Uncheck **Prevent pushing and force pushing**
     * Click **Configure with a merge request**
 
 5. Merge the new merge request into the existing security policy project.
