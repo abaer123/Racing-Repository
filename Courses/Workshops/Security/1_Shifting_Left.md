@@ -84,4 +84,4 @@ sast:
   
 2. On the resulting page scroll down to the **_Merge options_** and uncheck **Delete source branch when merge request is accepted**. You can leave the rest of the settings as is then click **Create merge request**.
   
-3. first resolve any merge conflicts that may exist, but you should see a pipeline kick off. If you click the hyperlink it will bring you to the pipeline view where you can see all of the various jobs that we added to our yaml file. While this runs we are going to move forward to set up our compliance framework pipeline but we will check back in a bit to see the results of our scanners.
+3. First resolve any merge conflicts that may exist, but you should see a pipeline kick off. If you click the hyperlink it will bring you to the pipeline view where you can see all of the various jobs that we added to our yaml file. While this runs we are going to move forward to set up our compliance framework pipeline but we will check back in a bit to see the results of our scanners.
