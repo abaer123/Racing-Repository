@@ -13,6 +13,8 @@ Git repository and Merge Requests
 2. Use the left hand navigation menu to click into **Plan>Issues**
   
 3. Open issue Update-Pipeline
+
+4. Scroll to the bottom and add a quick comment saying "Checking this issue out", then click **comment**
   
 4. You should have an option to click a **View summary** which will provide a concise summary of your issue so far. As your issues grow and more comments are made this feature will always be a great tool for staying up to date with your issues.
 
