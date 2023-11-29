@@ -6,7 +6,7 @@ We are going to be creating a compliance framework that will ensure our pipeline
 
 # Step 1: Defining Our Framework
 
-1. First in a new tab navigate [here](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing-compliance-framework/-/blob/main/.compliance-gitlab-ci.yml) to see the compliance framework we intend on applying to our codebase.
+1. First we are going to just take a look at the compliance framework we plan to apply to our project. In a new tab navigate [here](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing-compliance-framework/-/blob/main/.compliance-gitlab-ci.yml) to see the compliance framework we intend on applying to our codebase.
   
 2. First take a look at the stages section, where each stage defined must be run in order for each pipeline the framework is applied to. Note that the ***.pre*** stage starts with "." so that it dosent have to be defined to be run.
   
