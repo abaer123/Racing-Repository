@@ -57,7 +57,7 @@ Build, test, & scan automation through GitLab CI/CD
   
 5. Provide a **Commit message** and click **Commit changes**
   
-6. [ ] Verify Pipeline Run & View Logs
+6. Verify Pipeline Run & View Logs
   
 7. Navigate to **CI/CD -> Pipelines**
   
