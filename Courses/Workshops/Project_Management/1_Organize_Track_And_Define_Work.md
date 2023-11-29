@@ -45,6 +45,8 @@ Organizing and planning work
 
 3. Let's start by asking chat _"Where can I see my project's issues?"_. You can also ask chat any GitLab related or coding questions. Feel free to use chat as an assistance tool for the rest of the workshop.
 
+  > Duo Chat can also be used to write docs for your code, summarise open issues/epics/etc, and more.
+
 # Step 4: Create at least 4 labels
 
 1. Use the left hand navigation menu to click through **Manage** > **Labels**
@@ -99,6 +101,7 @@ Organizing and planning work
     * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Update-Pipeline**
+    * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown. Provide a short description around updating our pipeline to use Auto DevOps then click **Submit**.
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab id
     * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
     * Assign the label **P2**
@@ -110,6 +113,7 @@ Organizing and planning work
 2. Create an Second Issue
     * Click **New issue**
     * Give a title **Review-Pipeline**
+    * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown. Provide a short description around reviewing and testing the new Auto DevOps pipeline we have created.
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab ID
     * Assign the label **Workflow::Review**
     * Give a weight (i.e. **1**)
