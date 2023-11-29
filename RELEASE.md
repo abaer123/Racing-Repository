@@ -1,5 +1,13 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.7, Nov 27, 2023
+
+#### Updates:
+- PM Workshop updated to include various AI features
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.6, Nov 27, 2023
 
 #### Updates:
