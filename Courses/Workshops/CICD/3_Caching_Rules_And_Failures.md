@@ -177,7 +177,7 @@ super_fast_test:
    rules:
      - if: $CI_COMMIT_BRANCH == 'main'
    ```
-5. Before committing the changes we are going to add the **_allow_failure_** keyword in the next step.
+5. Before committing the changes we are going to add **_cache_** and then **_allow_failure_** keyword in the next steps.
 
 # :rocket: Step 02 - Pipeline Speed With Caching
 
@@ -195,7 +195,7 @@ cache:
       - vendor/ruby
       - Gemfile.lock
 ```
-3. Now that this code is added the shared runners will cache this information in S3's for us to pull next time we run the pipeline. Before committing we will complete the next step.
+3. Now that this code is added the shared runners will cache this information in GCP Cloud Storage for us to pull next time we run the pipeline. Before committing we will complete the next step.
 
 # Step 03 - Adjusting for Failure
 
