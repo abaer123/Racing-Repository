@@ -50,11 +50,11 @@ Following our shift left trend we will see how security results are included thr
 
 # Step 4: Take Action on Our Vulnerabilities
 
-1. Now that we have a protective policy in place lets go ahead and ensure it works by removing the Secrets currently in the code base. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+1. Now that we have a protective policy in place, let's ensure it works and is able to detect a secret in the code base. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
   
-2. Click into the **_cf-sample-scripts/eks.yaml_** file and add our fake token **_aws_key_id AKIAIOSF0DNN7EXAMPLE_** at the end of the line 6. eg: Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
+2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
   
-3. Once added click the source control button on the left hand side, add a quick commit message, then click the down arrow.
+3. Once added click the source control button on the left hand side, add a quick commit message, then click the **down arrow**.
   
 4. On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
 
