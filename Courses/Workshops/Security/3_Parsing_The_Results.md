@@ -36,7 +36,7 @@ Following our shift left trend we will see how security results are included thr
   
 2. To prevent this from ever happening in the future we can set up a new policy to run on all future merge requests. For our use case leaked tokens are easy mistakes that can lead to massive problems so we will create a quick policy to stop that. Use the left hand navigation menu to click through **Secure \> Policies** and then click **New policy**. On the resulting page click **Select policy** under **_Scan result policy_**.
   
-3. Add a name to the policy, then under the **_Rules_** section we want to select **Security Scan** in the **When** dropdown list. Then we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
+3. Add a **name** to the policy, then under the **_Rules_** section we want to select **Security Scan** in the **When** dropdown list. Then we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
   
 4. Then under actions choose **individual users** as the **_Choose approver type_** and add **_lfstucker_** as the required approver. Next uncheck **Prevent pushing and force pushing**.
 
