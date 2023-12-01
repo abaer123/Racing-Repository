@@ -32,7 +32,7 @@ Following our shift left trend we will see how security results are included thr
 
 # Step 3: Preventive Security Policies
 
-1. We next want to change **Tool** to _Secret Detection_. Notice that we havent leaked any secure tokens and want to keep it that way in the future as it happens far too often.
+1. We next want to change **Tool** to _Secret Detection_. Notice that the result list is empty! This means we haven't leaked any secure tokens so far. We surely want to keep it that way - it happens far too often.
   
 2. To prevent this from ever happening in the future we can set up a new policy to run on all future merge requests. For our use case leaked tokens are easy mistakes that can lead to massive problems so we will create a quick policy to stop that. Use the left hand navigation menu to click through **Secure \> Policies** and then click **New policy**. On the resulting page click **Select policy** under **_Scan result policy_**.
   
