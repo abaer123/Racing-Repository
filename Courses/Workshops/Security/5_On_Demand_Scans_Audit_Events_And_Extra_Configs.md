@@ -1,4 +1,4 @@
-### We will wrap up the last few security capabilities that GitLab offers beyond what is possible within our CICD configuration by adding on demand scans, audit events, and further configurations for our scans
+### We will wrap up the last few security capabilities that GitLab offers beyond what is possible within our CI/CD configuration by adding on demand scans, audit events, and further configurations for our scans
 
 ### Theme
 

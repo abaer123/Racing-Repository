@@ -12,7 +12,7 @@ This section focuses on shifting left as a security practice and how your code c
   
 3. This pipeline does very little in terms of security scanning and only has a simple unit test defined currently. Lets go ahead and create a new branch to add out changes. Use the left hand navigation menu to click through **Code \> Branches** then click **New branch**. Name the branch **_secure-pipeline_** and make sure it is based off of **_main_**, then click **Create Branch**.
   
-4. Once again use the left hand navigation menu to click through **Build \> Pipeline editor** to get back to the editor page. Then in the top left of the editor view you can click the branch dropdown to then select **_secure-pipeline_**. We then want to change the pipeline yaml to be the code below:
+4. Once again use the left hand navigation menu to click through **Build \> Pipeline editor** to get back to the editor page. Make sure that the branch dropdown in the top left of the editor view shows **_secure-pipeline_**, or select the branch if it doesn't. We then want to change the pipeline yaml to be the code below:
 
 ```plaintext
 image: docker:latest
@@ -62,19 +62,19 @@ sast:
 
 5. First looking at the **_include_** section you can see that a number of security templates have been brought into our project. These define different scans and jobs that will now be ran based off of our **_stages_**. To get a better look into the templates you can click **Full configuration** which will show the true pipeline yaml with all of the templates brought in. You can also click the branch icon in the top left to then click into a specific template to get its definition.
 
-6. Click **Edit** again to be brought back to our normal editor. Notice that we have defined an additional job to override one of the SAST jobs we have brought in through the **_Jobs/SAST.gitlab-ci.yml_** template.
+6. Click on the **Edit** tab again to be brought back to our normal editor. Notice that at the end of the file we have defined an additional job to override one of the values in one of the SAST jobs we have brought in through the **_Jobs/SAST.gitlab-ci.yml_** template.
 
 7. Now that our changes are in lets click **Commit changes** at the bottom of the page.
 
 > If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_security-workshop-pipeline_** and click **Run pipeline** once again.
 
-> [Docs for GitLab CICD](https://docs.gitlab.com/ee/ci/)
+> [Docs for GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
 
 # Step 2: Ask GitLab Duo
 
 1. What if we hadnt known where to find our running pipelines? Or we wanted to learn more about the includes keyword in the pipeline above? We can use the new GitLab Duo Chatbot to do that and more.
   
-2. Click the **? Help** button in the bottom left of the screen, then click **Ask GitLab Duo.** This will open up a chat prompt on the right hand side of the screen for you to type your questions. Go ahead and type "What Security features does GitLab have?"
+2. Click the **? Help** button in the bottom left of the screen, then click **GitLab Duo Chat**. This will open up a chat prompt on the right hand side of the screen for you to type your questions. Go ahead and type "What Security features does GitLab have?"
   
 3. For the rest of the workshop you can use this chat bot to ask any questions that may come up. You can even ask it coding questions if you get stuck!
   

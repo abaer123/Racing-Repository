@@ -32,11 +32,11 @@ Following our shift left trend we will see how security results are included thr
 
 # Step 3: Preventive Security Policies
 
-1. We next want to change **Tool** to _Secret Detection_. Notice that we havent leaked any secure tokens and want to keep it that way in the future as it happens far too often.
+1. We next want to change **Tool** to _Secret Detection_. Notice that the result list is empty! This means we haven't leaked any secure tokens so far. We surely want to keep it that way - it happens far too often.
   
 2. To prevent this from ever happening in the future we can set up a new policy to run on all future merge requests. For our use case leaked tokens are easy mistakes that can lead to massive problems so we will create a quick policy to stop that. Use the left hand navigation menu to click through **Secure \> Policies** and then click **New policy**. On the resulting page click **Select policy** under **_Scan result policy_**.
   
-3. Add a name to the policy, then under the **_Rules_** section we want to select **Security Scan** in the **When** dropdown list. Then we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
+3. Add a **name** to the policy, then under the **_Rules_** section we want to select **Security Scan** in the **When** dropdown list. Then we want to change **All scanners** to be **_Secret Detection_** and **All protected branches** to **default branch**.
   
 4. Then under actions choose **individual users** as the **_Choose approver type_** and add **_lfstucker_** as the required approver. Next uncheck **Prevent pushing and force pushing**.
 
@@ -50,11 +50,11 @@ Following our shift left trend we will see how security results are included thr
 
 # Step 4: Take Action on Our Vulnerabilities
 
-1. Now that we have a protective policy in place lets go ahead and ensure it works by removing the Secrets currently in the code base. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+1. Now that we have a protective policy in place, let's ensure it works and is able to detect a secret in the code base. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
   
-2. Click into the **_cf-sample-scripts/eks.yaml_** file and add our fake token **_aws_key_id AKIAIOSF0DNN7EXAMPLE_** at the end of the line 6. eg: Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
+2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
   
-3. Once added click the source control button on the left hand side, add a quick commit message, then click the down arrow.
+3. Once added click the source control button on the left hand side, add a quick commit message, then click the **down arrow**.
   
 4. On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
 
