@@ -74,7 +74,7 @@ sast:
 
 1. What if we hadnt known where to find our running pipelines? Or we wanted to learn more about the includes keyword in the pipeline above? We can use the new GitLab Duo Chatbot to do that and more.
   
-2. Click the **? Help** button in the bottom left of the screen, then click **Ask GitLab Duo.** This will open up a chat prompt on the right hand side of the screen for you to type your questions. Go ahead and type "What Security features does GitLab have?"
+2. Click the **? Help** button in the bottom left of the screen, then click **GitLab Duo Chat**. This will open up a chat prompt on the right hand side of the screen for you to type your questions. Go ahead and type "What Security features does GitLab have?"
   
 3. For the rest of the workshop you can use this chat bot to ask any questions that may come up. You can even ask it coding questions if you get stuck!
   
