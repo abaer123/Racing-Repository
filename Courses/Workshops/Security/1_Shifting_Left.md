@@ -12,7 +12,7 @@ This section focuses on shifting left as a security practice and how your code c
   
 3. This pipeline does very little in terms of security scanning and only has a simple unit test defined currently. Lets go ahead and create a new branch to add out changes. Use the left hand navigation menu to click through **Code \> Branches** then click **New branch**. Name the branch **_secure-pipeline_** and make sure it is based off of **_main_**, then click **Create Branch**.
   
-4. Once again use the left hand navigation menu to click through **Build \> Pipeline editor** to get back to the editor page. Then in the top left of the editor view you can click the branch dropdown to then select **_secure-pipeline_**. We then want to change the pipeline yaml to be the code below:
+4. Once again use the left hand navigation menu to click through **Build \> Pipeline editor** to get back to the editor page. Make sure that the branch dropdown in the top left of the editor view shows **_secure-pipeline_**, or select the branch if it doesn't. We then want to change the pipeline yaml to be the code below:
 
 ```plaintext
 image: docker:latest
