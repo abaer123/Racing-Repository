@@ -57,7 +57,7 @@ test:
     - echo "Our race track has been tested!"
   needs: []
   rules:
-     - if: $CI_COMMIT_BRANCH == 'main'
+     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 super_fast_test:
   stage: test
@@ -66,7 +66,7 @@ super_fast_test:
     - return 1
   needs: []
   rules:
-     - if: $CI_COMMIT_BRANCH == 'main'
+     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
        allow_failure: true
 
 # overwrite SAST job stage and start job as soon as pipeline begins
