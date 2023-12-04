@@ -78,7 +78,7 @@ test:
    - echo "Our race track has been tested!"
  needs: []
  rules:
-   - if: $CI_COMMIT_BRANCH == 'main'
+   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 super_fast_test:
  stage: test
@@ -87,7 +87,7 @@ super_fast_test:
    - return 1
  needs: []
  rules:
-   - if: $CI_COMMIT_BRANCH == 'main'
+   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
      allow_failure: true
 ```
 2. Lets start by adding a new stage for our child pipeline. Edit the stage section to be the following:
