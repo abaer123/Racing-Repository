@@ -47,19 +47,3 @@ Following our shift left trend we will see how security results are included thr
 6. Before we move on lets go back to our project. Use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
 
 > [Docs for policies](https://docs.gitlab.com/ee/user/application_security/policies/)
-
-# Step 4: Take Action on Our Vulnerabilities
-
-1. Now that we have a protective policy in place, let's ensure it works and is able to detect a secret in the code base. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
-  
-2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
-  
-3. Once added click the source control button on the left hand side, add a quick commit message, then click the **down arrow**.
-  
-4. On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
-
-5. Scroll to the bottom, uncheck **_Delete source branch when merge request is accepted_**, and click **Create merge request**
-  
-6. On the resulting MR notice that our policy requires approval from **_lfstucker_** before we are able to merge. In order for us to merge in the future we will have to remove the token and wait for the full pipeline to run.
-
-> [Docs on automatically revoking secrets](https://docs.gitlab.com/ee/user/application_security/secret_detection/#responding-to-a-leaked-secret)

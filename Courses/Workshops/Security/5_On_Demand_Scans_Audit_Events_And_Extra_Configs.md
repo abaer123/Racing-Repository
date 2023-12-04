@@ -43,11 +43,34 @@ In case of security risks events these tools are extremely handy at quickly trou
 2. Add the code below to the file. **MAKE SURE YOU REPLACE GITLAB ID WITH YOUR ID**:
     ```
     [Infrastructure]
-    *.yml @gitlab_id
+    *.gemspec @gitlab_id
     ```
 
 3. Now we want to commit this code to main. Go ahead and click the **Source Control** button on the left hand side, add a commit message then click **Commit & Push**. Next on the resulting dropdown make sure you click commit to main, then on the popup click the **Go to project** button. 
 
-4. Depending on the time your instructor may show you how to open a new mr against the ci yml file, otherwise now if you were to try and edit a file within the project ending in ***.yml*** it would require an approval from the ID you specified in your CODEOWNERS file.
-
 > [Docs for CodeOwners](https://docs.gitlab.com/ee/user/project/code_owners.html)
+
+# Step 5: Compliance In Action
+
+1. Now we want to see both of our policies and CODEOWNERS working in action. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+  
+2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
+  
+3. Next locate the **tanuki-racing.gemspec** file. On line 22 you can see that there are a number of runtime dependencies listed. We known we want to build out some command line options to interact with tanuki racing so we are going to include the thor & spring-commands-thor gems:
+
+    ```
+    s.add_runtime_dependency 'thor', '~> 1.3'
+    s.add_runtime_dependency 'spring-commands-thor', '~> 1.0', '>= 1.0.1'
+    ```
+
+3. Once added click the source control button on the left hand side, add a quick commit message, then click the **down arrow**.
+  
+4. On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
+
+5. Scroll to the bottom, uncheck **_Delete source branch when merge request is accepted_**, and click **Create merge request**
+  
+6. On the resulting MR notice that our policy requires approval from **_lfstucker_** and is blocked by our two policies before we are able to merge. Wait for the entire pipeline to finish running.
+
+7. Once done running you can see that all of our policies have been enacted restricting us from committing this code. If we wouldnt have used a blocked license or added a token we now would be able to merge our code.
+
+> [Docs on automatically revoking secrets](https://docs.gitlab.com/ee/user/application_security/secret_detection/#responding-to-a-leaked-secret)

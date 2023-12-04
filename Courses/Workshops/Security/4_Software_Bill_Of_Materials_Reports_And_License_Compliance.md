@@ -10,24 +10,26 @@ With the uptick of major security breaches hitting headlines many governments ha
   
 2. Click through a few of the pages and notice the components that are all directly/indirectly included in your application.
   
-3. Next click **Export** to download the SBOM report in CycloneDX json format. If you then open the download you can see all of the information displayed. To learn more about CycloneDX format go [here](https://cyclonedx.org/)
+3. Next to export these findings in the CycloneDX format we will use the left hand navigation menu to click through **Build > Pipelines** and take a look at the pipeline most recently ran against **main**
+
+4. Next click the ***download*** icon next to that pipeline listing and then click the container_scanning:cyclonedx artifact. This will download your SBOM report in CycloneDX format. To learn more about CycloneDX format go [here](https://cyclonedx.org/)
 
 > [See how you could have used GitLab to detect log4j](https://about.gitlab.com/blog/2021/12/15/use-gitlab-to-detect-vulnerabilities/)
 
-# Step 2: License Compliance
+# Step 2: License Compliance TODO change to something thor brings in
 
 1. Using the left hand navigation menu click through the **Secure \> License Compliance** to view all of the licenses detected in your project.
   
-2. Lets say we decided we want to prevent the use of the BitTorrent Open Source License v1.1 License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
+2. Lets say we decided we want to prevent the use of the Apache 2.0 License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
   
 3. Click **Select policy** under **Scan result policy**
   
 4. In the **New scan result policy form** that appears, provide the following mandatory information:
-    * Name: Deny BitTorrent Open Source License v1.1 License
+    * Name: Deny Apache 2.0 License
     * Policy status: Enabled
     * Rules: If **Select scan type** == **License Scan**, rest of first section stays as is
     * **Status is** both **Newly Detected** and **Pre-existing**
-    * License is **matching** **_BitTorrent Open Source License v1.1_**
+    * License is **matching** **_Apache 2.0_**
     * Actions: Require 1 approval from: **Individual users** **lfstucker**
     * Uncheck **Prevent pushing and force pushing**
     * Click **Configure with a merge request**
@@ -36,5 +38,5 @@ With the uptick of major security breaches hitting headlines many governments ha
   
 6. _Remember to go back to your project using the breadcrumb, clicking on your group, then clicking on your project._
   
-7. Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the BitTorrent Open Source License v1.1 license from being merged and the security bot will notify you that you have a policy violation.
+7. Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the Apache 2.0 license from being merged and the security bot will notify you that you have a policy violation.
 
