@@ -175,7 +175,7 @@ super_fast_test:
 
    ```plaintext
    rules:
-     - if: $CI_COMMIT_BRANCH == 'main'
+     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
    ```
 5. Before committing the changes we are going to add **_cache_** and then **_allow_failure_** keyword in the next steps.
 
@@ -208,7 +208,7 @@ cache:
 
    ```plaintext
    rules:
-       - if: $CI_COMMIT_BRANCH == 'main'
+       - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
          allow_failure: true
    ```
 3. Your yaml for the **_super_fast_test & unit_test_** job should look like this:
@@ -224,7 +224,7 @@ test:
     - echo "Our race track has been tested!"
   needs: []
   rules:
-  - if: $CI_COMMIT_BRANCH == 'main'
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 super_fast_test:
  stage: test
@@ -232,7 +232,7 @@ super_fast_test:
  - exit 1
  needs: []
  rules:
-    - if: $CI_COMMIT_BRANCH == 'main'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       allow_failure: true
 ```
 4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **CI/CD -\> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **_#_**. In the pipeline view as the jobs run click into each of them to see how our added **_rules & allow_failure_** have changed the output. We should also see that the code_quality job fails with a warning but the pipeline succeeds. Later we will add more stages to the pipeline as well so you can see that even though this job fails the pipeline continues to run. Note that if you use the completed **_rules & allow_failure_** the target branch for the rule will change.
