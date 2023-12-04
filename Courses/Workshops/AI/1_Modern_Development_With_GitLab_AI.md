@@ -158,7 +158,7 @@ The goal of this workshop is to give you a look into all of the features the Git
 11. We then want to add the prompt below to let Code Suggestions know what we are trying to write:
 
   ```plaintext
-   #define a calculator class for other functions to use
+   # define a calculator class for other functions to use
   ```
 12. Click enter and then wait a second for the suggestion to come in. As you are given suggestions, hit the TAB key to accept them. If it ever gets stuck try hitting the spacebar or enter.
   
