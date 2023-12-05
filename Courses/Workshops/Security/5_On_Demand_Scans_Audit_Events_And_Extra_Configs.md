@@ -56,11 +56,10 @@ In case of security risks events these tools are extremely handy at quickly trou
   
 2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
   
-3. Next locate the **tanuki-racing.gemspec** file. On line 22 you can see that there are a number of runtime dependencies listed. We known we want to build out some command line options to interact with tanuki racing so we are going to include the thor & spring-commands-thor gems:
+3. Next locate the **tanuki-racing.gemspec** file. On line 22 you can see that there are a number of runtime dependencies listed. Your project manager has expressed interest in using a graph database in the future so you decide to add neo-4j to cehck it out:
 
     ```
-    s.add_runtime_dependency 'thor', '~> 1.3'
-    s.add_runtime_dependency 'spring-commands-thor', '~> 1.0', '>= 1.0.1'
+    s.add_runtime_dependency 'neo4j-community', '~> 2.2'
     ```
 
 3. Once added click the source control button on the left hand side, add a quick commit message, then click the **down arrow**.
