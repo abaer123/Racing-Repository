@@ -16,7 +16,7 @@ With the uptick of major security breaches hitting headlines many governments ha
 
 > [See how you could have used GitLab to detect log4j](https://about.gitlab.com/blog/2021/12/15/use-gitlab-to-detect-vulnerabilities/)
 
-# Step 2: License Compliance TODO change to something thor brings in
+# Step 2: License Compliance
 
 1. Using the left hand navigation menu click through the **Secure \> License Compliance** to view all of the licenses detected in your project.
   
