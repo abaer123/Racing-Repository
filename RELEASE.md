@@ -1,5 +1,13 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.9, Dec 7, 2023
+
+#### Updates:
+- AI optional VSC content update
+
+#### Contributors:
+- Ron Koster @ronkoster
+
 ## Version: 1.0.8, Dec 4, 2023
 
 #### Updates:
