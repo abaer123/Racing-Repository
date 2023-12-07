@@ -26,7 +26,7 @@ Build, test, & scan automation through GitLab CI/CD
   
 9. Remove the placeholder code so that we have an empty file
 
-# Step 2: AutoDevOps CI/CD
+# Step 2: Auto DevOps CI/CD
 
 1. While you are still in the pipeline editor with an empty configuration file, we just need to add the line below:
 
@@ -53,7 +53,7 @@ Build, test, & scan automation through GitLab CI/CD
 
 1. Pick a job that has started or passed and view the trace logs for the selected job
 
-> [Docs for Customizing AutoDevOps in GitLab CI/CD](https://docs.gitlab.com/ee/topics/autodevops/customize.html#customize-gitlab-ciyml)
+> [Docs for Customizing Auto DevOps in GitLab CI/CD](https://docs.gitlab.com/ee/topics/autodevops/customize.html#customize-gitlab-ciyml)
 
 
 
