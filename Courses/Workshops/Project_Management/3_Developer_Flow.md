@@ -51,7 +51,7 @@ Git repository and Merge Requests
 
 # Step 4: Prepare for Review
 
-1. Use the left hand navigation menu to click into **Merge Requests** and then click into your existing merge request.
+1. Use the left hand navigation menu to navigate to **Code**>**Merge requests** and then click into your existing merge request.
   
 2. Click on **Commits** to see the commit history
   
@@ -77,6 +77,6 @@ Git repository and Merge Requests
 
 1. We have confirmed that our pipeline change was added, so now lets go ahead and close the relevant issue.
   
-2. Navigate to **Issues**>**Boards** to see the issue is now closed
+2. Navigate to **Plan**>**Issue boards** to see the issue is now closed
   
 3. Click on the issue to see the Merge Request history captured in the issue
