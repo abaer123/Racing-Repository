@@ -1,13 +1,11 @@
 You can also find a blog about other supported [Web IDE's here](https://about.gitlab.com/blog/2023/06/01/extending-code-suggestions/)
 
 # Step 1: Connecting VSC
-1. Make sure you have VSC installed on your device, if you dont you can download it [here](https://code.visualstudio.com/Download)
+1. Make sure you have VSC installed on your device, if you don't you can download it [here](https://code.visualstudio.com/Download)
 
-2. First we want to make sure that we have our project ready to go on VSC. Navigate to the home page of our **_workshop-project_** and click the **clone** button. We then want to copy the whole URL in the **_Clone with HTTPS_** option.
+2. Next navigate to your VSC instance and on the left hand navigation menu click the **Extensions** button. Once there we want to put 'GitLab Workflow' in the search bar and install.
 
-3. Next navigate to your VSC instance and on the left hand navigation menu click the **Extensions** button. Once there we want to put 'GitLab Workflow' in the search bar and install.
-
-4. Once installed and enabled click the settings icon then click **Extension settings**. On the resulting page at the top of the settings click the checkbox next to **Enable code completion**
+3. Once installed and enabled click the settings icon then click **Extension settings**. On the resulting page at the top of the settings click the checkbox next to **Enable code completion**
 
 # Step 2: Authenticating With GitLab
   **OAuth Method (recommended)**
@@ -35,3 +33,6 @@ You can also find a blog about other supported [Web IDE's here](https://about.gi
 6. We then want to input 'https://gitlab.com/', then provide your personal access token that we got earlier.
 
 You should now start seeing code suggestions pop up in VSC, same as you do in the Web IDE. If you want to use other editors such as JetBrains IDEs, Neovim, and more check out our docs [here](https://docs.gitlab.com/ee/user/project/repository/code_suggestions/#supported-editor-extensions).
+
+# Step 3: Clone your Workshop Project
+1. Now we need to make sure that we have our project ready to go on VSC. Navigate to the home page of our **_workshop-project_** and click the **clone** button. We then want to copy the whole URL in the **_Clone with HTTPS_** option.
