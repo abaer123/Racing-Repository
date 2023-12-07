@@ -47,9 +47,7 @@ Build, test, & scan automation through GitLab CI/CD
   
 1. Confirm a new pipeline run is listed
   
-1. Select the pipeline by clicking on its status (*pending*, *running*, *passed*) or pipeline ID
-
-  > Example: #525355261
+1. Select the pipeline by clicking on its status (*pending*, *running*, *passed*) or pipeline ID `Example: #525355261``
 
 1. Pick a job that has started or passed and view the trace logs for the selected job
 
