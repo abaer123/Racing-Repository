@@ -1,5 +1,16 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.8, Dec 4, 2023
+
+#### Updates:
+- CICD code snippet fixes
+- Changing branches from main to default branch throughout
+- Security SBOM redone
+- Security policies and CODEOWNERS changed
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.7, Nov 27, 2023
 
 #### Updates:

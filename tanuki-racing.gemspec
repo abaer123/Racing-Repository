@@ -19,16 +19,15 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '~> 3.1'
 
 
-  s.add_runtime_dependency 'sequel'
-  s.add_runtime_dependency 'sinatra'
-  s.add_runtime_dependency 'webrick'
-  s.add_runtime_dependency 'sqlite3'
-  s.add_runtime_dependency 'test-unit'
-  s.add_runtime_dependency 'activerecord'
+  s.add_runtime_dependency 'sequel', '~> 5.72.0'
+  s.add_runtime_dependency 'sinatra', '~> 3.1.0'
+  s.add_runtime_dependency 'webrick', '~> 1.8.1'
+  s.add_runtime_dependency 'sqlite3', '~> 1.6.6'
+  s.add_runtime_dependency 'test-unit', '~> 3.6.1'
+  s.add_runtime_dependency 'activerecord', '~> 7.0.8'
 
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rack'
-  s.add_development_dependency 'rack-test'
-#   s.add_development_dependency 'puma'
-  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'rake', '~> 13.0.6'
+  s.add_development_dependency 'rack', '~> 2.2.8'
+  s.add_development_dependency 'rack-test', '~> 2.1.0'
+  s.add_development_dependency 'rubocop', '~> 1.56.3'
 end
