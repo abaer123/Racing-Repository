@@ -1,5 +1,13 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.10, Dec 8, 2023
+
+#### Updates:
+- Adding Scan Execution Policy to the security workshop
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.9, Dec 7, 2023
 
 #### Updates:
