@@ -44,6 +44,18 @@ Following our shift left trend we will see how security results are included thr
 
 5. Lastly click **Configure with a merge request**. On the resulting merge request click ***merge*** and you will be brought to your new policy project that is applied to our workshop application. If you were to create another merge request with the leaked token still in the code based merging would be prevented until it was removed or you added your approval.
   
-6. Before we move on lets go back to our project. Use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
+6. Lastly use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
 
 > [Docs for policies](https://docs.gitlab.com/ee/user/application_security/policies/)
+
+# Step 4: Scan Execution Policy
+
+1. Our new secret detection policy will now be enforced with every commit. However approval mistakes happen, so we are going to set an additional scan execution policy to check for secrets that were mistakenly approved daily. 
+
+2. Once again use the left hand navigation menu to click through **Secure > Policies**, then click **New policy**. On the resulting page click **Select policy** under **_Scan execution policy_**.
+
+3. Add a **name** to the policy, description, then under the **_Actions_** section we want to select _Run a_ **Secret Dectection**. Then we want to scroll to the _Conditions_ section and change _Triggers:_ to _Schedules:_, change _specific protected branches_ to **default** branch, then select your timezone.
+
+5. Lastly click **Configure with a merge request**. On the resulting merge request click ***merge*** and you will be brought to your new policy project that is applied to our workshop application. Now this scan will run daily and alert us if a secret was accidentally approved into our default branch.
+  
+6. Lastly use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
