@@ -1,5 +1,13 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.11, Dec 11, 2023
+
+#### Updates:
+- Updated supported languages in the AI sandbox
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.10, Dec 8, 2023
 
 #### Updates:
