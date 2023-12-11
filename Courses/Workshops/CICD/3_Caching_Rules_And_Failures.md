@@ -10,106 +10,106 @@ In this Challenge we will take our existing pipeline and modify it to show how u
    ```plaintext
 
     build_car_a:
-    stage: build
-    script:
-      - echo "build_car_a"
+      stage: build
+      script:
+        - echo "build_car_a"
 
     build_car_b:
-    stage: build
-    script:
-      - echo "build_car_b"
+      stage: build
+      script:
+        - echo "build_car_b"
 
     build_car_c:
-    stage: build
-    script:
-      - echo "build_car_c"
+      stage: build
+      script:
+        - echo "build_car_c"
 
     build_car_d:
-    stage: build
-    script:
-      - echo "build_car_d"
+      stage: build
+      script:
+        - echo "build_car_d"
 
     build_car_e:
-    stage: build
-    script:
-      - echo "build_car_e"
+      stage: build
+      script:
+        - echo "build_car_e"
 
     build_car_f:
-    stage: build
-    script:
-      - echo "build_car_f"
+      stage: build
+      script:
+        - echo "build_car_f"
 
     test_car_a:
-    stage: test
-    needs: [build_car_a]
-    script:
-      - echo "test_car_a"
+      stage: test
+      needs: [build_car_a]
+      script:
+        - echo "test_car_a"
 
     test_car_b:
-    stage: test
-    needs: [build_car_b]
-    script:
-      - echo "test_car_b"
+      stage: test
+      needs: [build_car_b]
+      script:
+        - echo "test_car_b"
 
     test_car_c:
-    stage: test
-    needs: [build_car_c]
-    script:
-      - echo "test_car_c"
+      stage: test
+      needs: [build_car_c]
+      script:
+        - echo "test_car_c"
 
     test_car_d:
-    stage: test
-    needs: [build_car_d]
-    script:
-      - echo "test_car_d"
+      stage: test
+      needs: [build_car_d]
+      script:
+        - echo "test_car_d"
 
     test_car_e:
-    stage: test
-    needs: [build_car_e]
-    script:
-      - echo "test_car_e"
+      stage: test
+      needs: [build_car_e]
+      script:
+        - echo "test_car_e"
 
     test_car_f:
-    stage: test
-    needs: [build_car_f]
-    script:
-      - echo "test_car_f"
+      stage: test
+      needs: [build_car_f]
+      script:
+        - echo "test_car_f"
 
     race_car_a:
-    stage: race
-    needs: [test_car_a]
-    script:
-      - echo "race_car_a"
+      stage: race
+      needs: [test_car_a]
+      script:
+        - echo "race_car_a"
 
     race_car_b:
-    stage: race
-    needs: [test_car_b]
-    script:
-      - echo "race_car_b"
+      stage: race
+      needs: [test_car_b]
+      script:
+        - echo "race_car_b"
 
     race_car_c:
-    stage: race
-    needs: [test_car_c]
-    script:
-      - echo "race_car_c"
+      stage: race
+      needs: [test_car_c]
+      script:
+        - echo "race_car_c"
 
     race_car_d:
-    stage: race
-    needs: [test_car_d]
-    script:
-      - echo "race_car_d"
+      stage: race
+      needs: [test_car_d]
+      script:
+        - echo "race_car_d"
 
     race_car_e:
-    stage: race
-    needs: [test_car_e]
-    script:
-      - echo "race_car_e"
+      stage: race
+      needs: [test_car_e]
+      script:
+        - echo "race_car_e"
 
     race_car_f:
-    stage: race
-    needs: [test_car_f]
-    script:
-      - echo "race_car_f"
+      stage: race
+      needs: [test_car_f]
+      script:
+        - echo "race_car_f"
    ```
 
    and fix the stages:
@@ -235,6 +235,6 @@ super_fast_test:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       allow_failure: true
 ```
-4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **CI/CD -\> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **_#_**. In the pipeline view as the jobs run click into each of them to see how our added **_rules & allow_failure_** have changed the output. We should also see that the code_quality job fails with a warning but the pipeline succeeds. Later we will add more stages to the pipeline as well so you can see that even though this job fails the pipeline continues to run. Note that if you use the completed **_rules & allow_failure_** the target branch for the rule will change.
+4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **CI/CD -\> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **_#_**. In the pipeline view as the jobs run click into each of them to see how our added **_rules & allow_failure_** have changed the output. We should also see that the super_fast_test job fails with a warning but the pipeline succeeds. Later we will add more stages to the pipeline as well so you can see that even though this job fails the pipeline continues to run. Note that if you use the completed **_rules & allow_failure_** the target branch for the rule will change.
 
 > If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_rules-and-failures_** and click **Run pipeline** once again.

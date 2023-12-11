@@ -1,12 +1,42 @@
 # Tanuki Racing Release Notes
 
-## Version: 1.0.8, Dec 11, 2023
+## Version: 1.0.11, Dec 11, 2023
 
 #### Updates:
+- Updated supported languages in the AI sandbox
 - PM Workshop updated for clarity
 
 #### Contributors:
+- Logan Stucker @lfstucker
 - Chris Guitarte @cguitarte
+
+## Version: 1.0.10, Dec 8, 2023
+
+#### Updates:
+- Adding Scan Execution Policy to the security workshop
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
+## Version: 1.0.9, Dec 7, 2023
+
+#### Updates:
+- AI optional VSC content update
+
+#### Contributors:
+- Ron Koster @ronkoster
+
+## Version: 1.0.8, Dec 4, 2023
+
+#### Updates:
+- CICD code snippet fixes
+- Changing branches from main to default branch throughout
+- Security SBOM redone
+- Security policies and CODEOWNERS changed
+
+#### Contributors:
+- Logan Stucker @lfstucker
+>>>>>>> RELEASE.md
 
 ## Version: 1.0.7, Nov 27, 2023
 

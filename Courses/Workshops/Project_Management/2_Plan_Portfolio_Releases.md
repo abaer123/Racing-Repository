@@ -24,7 +24,7 @@ Your organization now has a few different projects related to improving the app.
 
 # Step 2: Create sub-epics
 
-1. On the newly created Epic **First-GitLab--Epic**, click **Add** in the ***Child issues and epics*** section
+1. On the newly created Epic **First-GitLab-Epic**, click **Add** in the ***Child issues and epics*** section
   
 2. Then click **Add a new epic**
   
