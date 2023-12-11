@@ -36,7 +36,6 @@
 
 #### Contributors:
 - Logan Stucker @lfstucker
->>>>>>> RELEASE.md
 
 ## Version: 1.0.7, Nov 27, 2023
 
