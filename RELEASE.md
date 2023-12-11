@@ -3,6 +3,14 @@
 ## Version: 1.0.7, Nov 27, 2023
 
 #### Updates:
+- PM Workshop updated for clarity
+
+#### Contributors:
+- Chris Guitarte @cguitarte
+
+## Version: 1.0.7, Nov 27, 2023
+
+#### Updates:
 - PM Workshop updated to include various AI features
 
 #### Contributors:
