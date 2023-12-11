@@ -26,52 +26,32 @@ Build, test, & scan automation through GitLab CI/CD
   
 9. Remove the placeholder code so that we have an empty file
 
-# Step 2: Advanced CI/CD
+# Step 2: Auto DevOps CI/CD
 
-1. Still within the editor, we just need to add the line below:
+1. While you are still in the pipeline editor with an empty configuration file, we just need to add the line below:
 
     ```
     include:
       - template: Auto-DevOps.gitlab-ci.yml
     ```
-2. As Auto DevOps introduces addtional stages, those stages need to be declared within the **stages** section of the _.gitlab-ci.yml_ file. Therefore, add the following lines to your decared stags:
 
-  ```
-    - dast
-    - review
-    - cleanup
-    - staging
-    - canary
-    - production
-    - incremental rollout 10%
-    - incremental rollout 25%
-    - incremental rollout 50%
-    - incremental rollout 100%
-    - performance
-    - deploy
-  ```
+1. Now if you click the **Tree** icon next to the branch dropdown in the top left you can see all the various jobs brought in by our one includes.
 
-3. Now if you click the **Tree** icon next to the branch dropdown in the top left you can see all the various jobs brought in by our one includes.
+1. We can click Full Configuration again to see what rules will actually be applied when our pipeline is ran. 
+  
+1. Provide a **Commit message** and click **Commit changes**
+  
+1. Verify Pipeline Run & View Logs
+  
+1. Navigate to **Build -> Pipelines**
+  
+1. Confirm a new pipeline run is listed
+  
+1. Select the pipeline by clicking on its status (*pending*, *running*, *passed*) or pipeline ID `Example: #525355261`
 
-4. We can click Full Configuration again to see what rules will actually be applied when our pipeline is ran. 
-  
-5. Provide a **Commit message** and click **Commit changes**
-  
-6. Verify Pipeline Run & View Logs
-  
-7. Navigate to **CI/CD -> Pipelines**
-  
-8. Confirm a new pipeline run is listed
-  
-9. Select the pipeline by clicking on its status (*pending*, *running*, *passed*) or pipeline ID
+1. Pick a job that has started or passed and view the trace logs for the selected job
 
-  > Example: #525355261
-
-10. Pick a job that has started or passed and view the trace logs for the selected job
-
-> [Docs for GitLab CICD](https://docs.gitlab.com/ee/ci/)
-  
-11. It is out of scope for this workshop to actively deploy out our application, but your Instructor can show you the deployment pipeline and live application here: https://gitlab.com/gitlab-learn-labs/webinars/tanuki-racing/tanuki-racing-application
+> [Docs for Customizing Auto DevOps in GitLab CI/CD](https://docs.gitlab.com/ee/topics/autodevops/customize.html#customize-gitlab-ciyml)
 
 
 

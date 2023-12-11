@@ -65,7 +65,7 @@ Organizing and planning work
 
 # Step 5: Create New Board
 
-1. Use the left hand navigation menu to click through **Plan -> Issues boards**
+1. Use the left hand navigation menu to click through **Plan -> Issue boards**
   
 2. Click **New board** next to the dropdown that says **Development**.
 
@@ -101,7 +101,7 @@ Organizing and planning work
     * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Update-Pipeline**
-    * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown. Provide a short description around updating our pipeline to use Auto DevOps then click **Submit**.
+    * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown and use this prompt: `Provide a short description around updating our pipeline to use Auto DevOps` then click **Submit**.
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab id
     * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
     * Assign the label **P2**
@@ -110,10 +110,12 @@ Organizing and planning work
     * Leave all other settings as is
     * Click **Create issue**
 
-2. Create an Second Issue
+2. Create a Second Issue
+    * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Review-Pipeline**
-    * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown. Provide a short description around reviewing and testing the new Auto DevOps pipeline we have created.
+    * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown and use this prompt:
+     `Provide a short description around reviewing and testing the new Auto DevOps pipeline we have created.` then click **Submit**.
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab ID
     * Assign the label **Workflow::Review**
     * Give a weight (i.e. **1**)
@@ -134,7 +136,7 @@ Organizing and planning work
 
 # Step 8: Move Issues in Boards
 
-1. Navigate to **Issues**>**Boards**
+1. Navigate to **Plan**>**Issue Boards**
   
 2. If not already selected, select the **Team-Scoped-Board** board from the board selector dropdown
   

@@ -4,9 +4,11 @@
 
 #### Updates:
 - Updated supported languages in the AI sandbox
+- PM Workshop updated for clarity
 
 #### Contributors:
 - Logan Stucker @lfstucker
+- Chris Guitarte @cguitarte
 
 ## Version: 1.0.10, Dec 8, 2023
 
