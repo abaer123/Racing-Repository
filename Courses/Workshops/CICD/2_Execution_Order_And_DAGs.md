@@ -4,12 +4,12 @@ This Challenge will build off of the simple pipeline we created in the first tra
 
 # Step 01 - Execution Order
 
-1. If you are coming right from the last track you should still be on the pipeline page. If you navigated away, just go back to your project and use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink starting with **_#_** of the most recently run pipeline.
+1. If you are coming right from the last track you should still be on the pipeline page. If you navigated away, just go back to your project and use the left hand navigation menu to click through **Build -\> Pipelines** and click the hyperlink starting with **_#_** of the most recently run pipeline.
 
 > Example: **_#577244133_**
 
 2. You can see that our pipeline jobs ran sequentially, but what if we wanted 2 jobs to run parallel? We can do that with the **_needs_** keyword. Lets navigate back to our **_.gitlab-ci.yml_** file to accomplish this.
-3. To edit our pipeline use the left hand navigation menu to click through **CI/CD -\> Editor**. Right now we only have the **_test_** job running during the test stage, so let's add the **_super_fast_test_** job below the **_test_** job.:
+3. To edit our pipeline use the left hand navigation menu to click through **Build -\> Pipeline editor**. Right now we only have the **_test_** job running during the test stage, so let's add the **_super_fast_test_** job below the **_test_** job.:
 
    ```plaintext
    super_fast_test:
@@ -39,13 +39,13 @@ This Challenge will build off of the simple pipeline we created in the first tra
      needs: []
    ```
 
-5. Go ahead and click **Commit changes**, then use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink that starts with **_#_** on the most recently kicked off pipeline. As you watch you can see that the two jobs run in parallel.
+5. Go ahead and click **Commit changes**, then use the left hand navigation menu to click through **Build -\> Pipelines** and click the hyperlink that starts with **_#_** on the most recently kicked off pipeline. As you watch you can see that the two jobs run in parallel.
 
-> If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_execution-order_** and click **Run pipeline** once again.
+> If you run into any issues you can use the left hand navigation menu to click through **Build -\> Pipelines**, click **Run pipeline**, select **_execution-order_** and click **Run pipeline** once again.
 
 # Step 02 - DAG (Directed Acyclic Graph)
 
-1. Now what if we had many stages and relationships between jobs that we wanted to run as soon as possible? We can accomplish this using a DAG. Use the left hand navigation menu to click through **CI/CD -\> Editor** so we can create one.
+1. Now what if we had many stages and relationships between jobs that we wanted to run as soon as possible? We can accomplish this using a DAG. Use the left hand navigation menu to click through **Build -\> Pipeline editor** so we can create one.
 2. We won't be completing a fully flushed out DAG for this workshop as it is out of scope , instead we will be creating a DAG race. First under the stages section we will want to add a **_deploy_** stage so your code should look like this:
 
    ```plaintext
@@ -160,8 +160,8 @@ This Challenge will build off of the simple pipeline we created in the first tra
      - echo "race_car_f"
    ```
 4. If you now click the visualize tab you can see just how complex the many stages are. Lets go ahead and go back to the **_Edit_** tab and click **Commit changes**.
-5. Once committed use the left hand navigation menu to click through **CI/CD -\> Pipelines** and click the hyperlink starting with **_#_** on the most recently kicked off pipeline. Here we can watch all of our cars race to be the first path done.
+5. Once committed use the left hand navigation menu to click through **Build -\> Pipelines** and click the hyperlink starting with **_#_** on the most recently kicked off pipeline. Here we can watch all of our cars race to be the first path done.
 
 > Example: **_#577244133_**
 
-> If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_DAG_** and click **Run pipeline** once again.
+> If you run into any issues you can use the left hand navigation menu to click through **Build -\> Pipelines**, click **Run pipeline**, select **_DAG_** and click **Run pipeline** once again.
