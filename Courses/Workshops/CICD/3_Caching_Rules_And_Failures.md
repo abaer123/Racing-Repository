@@ -4,7 +4,7 @@ In this Challenge we will take our existing pipeline and modify it to show how u
 
 # Step 01 - Adding Rules
 
-1. First we need to reset our existing pipeline from the previous track and remove all of the temporary DAG jobs. Make sure your still in your **_workshop-project_** project and use the left hand navigation menu to click through **CI/CD -\> Editor** so we can edit our pipeline .yml file.
+1. First we need to reset our existing pipeline from the previous track and remove all of the temporary DAG jobs. Make sure your still in your **_workshop-project_** project and use the left hand navigation menu to click through **Build -\> Pipeline editor** so we can edit our pipeline .yml file.
 2. Remove the code that matches the code block below, everything else can stay as is:
 
    ```plaintext
@@ -235,6 +235,6 @@ super_fast_test:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       allow_failure: true
 ```
-4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **CI/CD -\> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **_#_**. In the pipeline view as the jobs run click into each of them to see how our added **_rules & allow_failure_** have changed the output. We should also see that the super_fast_test job fails with a warning but the pipeline succeeds. Later we will add more stages to the pipeline as well so you can see that even though this job fails the pipeline continues to run. Note that if you use the completed **_rules & allow_failure_** the target branch for the rule will change.
+4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **Build -\> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **_#_**. In the pipeline view as the jobs run click into each of them to see how our added **_rules & allow_failure_** have changed the output. We should also see that the super_fast_test job fails with a warning but the pipeline succeeds. Later we will add more stages to the pipeline as well so you can see that even though this job fails the pipeline continues to run. Note that if you use the completed **_rules & allow_failure_** the target branch for the rule will change.
 
-> If you run into any issues you can use the left hand navigation menu to click through **CI/CD -\> Pipelines**, click **Run pipeline**, select **_rules-and-failures_** and click **Run pipeline** once again.
+> If you run into any issues you can use the left hand navigation menu to click through **Build -\> Pipelines**, click **Run pipeline**, select **_rules-and-failures_** and click **Run pipeline** once again.
