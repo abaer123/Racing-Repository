@@ -42,3 +42,5 @@
 # Step 4: Show Deployment Frequency Forecast
 
 1.  We have also applied AI to our current analytics features like a deployment frequency forecast chart. Because we arent doing real development in this demo space it would be difficult to show off, but you can [check out the docs on it here](https://docs.gitlab.com/ee/user/ai_features.html#show-deployment-frequency-forecast)
+
+2. Alternatively, you can see what this feature looks like in GitLab's gitlab-org group [here](https://gitlab.com/groups/gitlab-org/-/analytics/ci_cd?tab=deployment-frequency). Pls. ensure you enable the ![Show Forecast](image.png) button.
