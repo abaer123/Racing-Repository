@@ -181,7 +181,7 @@ super_fast_test:
 
 # :rocket: Step 02 - Pipeline Speed With Caching
 
-1. We saw after committing our last change that the pipeline does take some time to run. Our next few pipelines will build off of our current configuration, so why dont we add some caching for the node_modules so that they dont have to be pulled next time.
+1. We saw after committing our last change that the pipeline does take some time to run. Our next few pipelines will build off of our current configuration, so why dont we add some caching for the _vendor/ruby & Gemfile.lock_ so that they dont have to be pulled next time.
 2. Lets go ahead add the code below right under our **_image_** definition so that our node modules will be cached:
 
 ```plaintext
