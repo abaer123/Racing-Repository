@@ -5,7 +5,7 @@ In this challenge will walk you through how to set up a child pipelines
 # Step 01 - Preparing the child pipeline
 
 1. Your security team got wind of all of the security scanning you added to your pipeline and wants it to be added to a new pipeline that they have access to and can control which jobs are ran. To do this we are going to create a child pipeline that we can link from our existing pipeline. In this case we will just be adding the second pipeline to this project, but it could have been added in a separate project and been linked.
-2. To create this pipeline we will first want to click the name of our project in the top left then click **Web IDE** from the main project page. Once in the IDE at the top level of the project we will want to create a new folder and call it **security-pipeline**.
+2. To create this pipeline we will first want to click the name of our project in the top left then click **Edit > Web IDE** from the main project page. Once in the IDE at the top level of the project we will want to create a new folder and call it **security-pipeline**.
 3. Within the **_security-pipeline_** folder lets go ahead and create a new file as well named **security.gitlab-ci.yml**. Click into that project.
 4. Copy and paste the code into the new pipeline config below. Notice that most of it is pulled from the existing pipeline we have been working on throughout the workshop:
 
@@ -19,7 +19,7 @@ In this challenge will walk you through how to set up a child pipelines
      - template: Jobs/Secret-Detection.gitlab-ci.yml
    ```
 5. This pipeline now has all it needs to run our security tests.
-6. Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & Push**. On the resulting drop down click no to open a new branch and just commit to **_main_**. Once done a popup will appear and we want to click **Go to project**.
+6. Once added click the source control button on the left hand side, add a quick commit message, then click **Commit & 'main**. Once done a popup will appear and we want to click **Go to project**.
 7. Once back in the project use the left hand navigation menu to click through **Build \> Pipeline editor** so we can now set up the connection to our security pipeline.
 
 # Step 02 - Linking the Pipelines
