@@ -1,5 +1,16 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.12, Dec 14, 2023
+
+#### Updates:
+- AI Workshop Restructoring
+- Added plan features to AI workshops
+- New task ordering
+
+#### Contributors:
+- Logan Stucker @lfstucker
+- Madou Coulibaly @madou
+
 ## Version: 1.0.11, Dec 11, 2023
 
 #### Updates:
