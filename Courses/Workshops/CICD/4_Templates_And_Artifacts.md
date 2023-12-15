@@ -54,7 +54,7 @@ In this challenge we will add security testing to our existing pipeline
 
 # Step 04 - Storing with Artifacts
 
-1. Let's say a requirement comes in that we want to store the results of the **_build_** job in an artifact. Let's add a change the job to do just that:
+1. Let's say a requirement comes in that we want to store the results of the **_build_** job in an artifact. Let's change the job to do just that:
 
 ```plaintext
 build:
