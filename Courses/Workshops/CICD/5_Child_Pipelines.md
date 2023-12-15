@@ -83,8 +83,7 @@ test:
 super_fast_test:
  stage: test
  script:
-   - echo "If your not first your last"
-   - return 1
+   - exit 1
  needs: []
  rules:
    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
