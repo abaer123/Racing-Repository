@@ -46,7 +46,7 @@ This Challenge will build off of the simple pipeline we created in the first tra
 # Step 02 - DAG (Directed Acyclic Graph)
 
 1. Now what if we had many stages and relationships between jobs that we wanted to run as soon as possible? We can accomplish this using a DAG. Use the left hand navigation menu to click through **Build -\> Pipeline editor** so we can create one.
-2. We won't be completing a fully flushed out DAG for this workshop as it is out of scope , instead we will be creating a DAG race. First under the stages section we will want to add a **_deploy_** stage so your code should look like this:
+2. We won't be completing a fully flushed out DAG for this workshop as it is out of scope , instead we will be creating a DAG race. First under the stages section we will want to add a **_race_** stage so your code should look like this:
 
    ```plaintext
    stages:
@@ -61,98 +61,98 @@ This Challenge will build off of the simple pipeline we created in the first tra
     stage: build
     script:
      - echo "build_car_a"
-   
+
    build_car_b:
     stage: build
     script:
      - echo "build_car_b"
-   
+
    build_car_c:
     stage: build
     script:
      - echo "build_car_c"
-   
+
    build_car_d:
     stage: build
     script:
      - echo "build_car_d"
-   
+
    build_car_e:
     stage: build
     script:
      - echo "build_car_e"
-   
+
    build_car_f:
     stage: build
     script:
      - echo "build_car_f"
-   
+
    test_car_a:
     stage: test
     needs: [build_car_a]
     script:
      - echo "test_car_a"
-   
+
    test_car_b:
     stage: test
     needs: [build_car_b]
     script:
      - echo "test_car_b"
-   
+
    test_car_c:
     stage: test
     needs: [build_car_c]
     script:
      - echo "test_car_c"
-   
+
    test_car_d:
     stage: test
     needs: [build_car_d]
     script:
      - echo "test_car_d"
-   
+
    test_car_e:
     stage: test
     needs: [build_car_e]
     script:
      - echo "test_car_e"
-   
+
    test_car_f:
     stage: test
     needs: [build_car_f]
     script:
      - echo "test_car_f"
-   
+
    race_car_a:
     stage: race
     needs: [test_car_a]
     script:
      - echo "race_car_a"
-   
+
    race_car_b:
     stage: race
     needs: [test_car_b]
     script:
      - echo "race_car_b"
-   
+
    race_car_c:
     stage: race
     needs: [test_car_c]
     script:
      - echo "race_car_c"
-   
+
    race_car_d:
     stage: race
     needs: [test_car_d]
     script:
      - echo "race_car_d"
-   
+
    race_car_e:
     stage: race
     needs: [test_car_e]
     script:
      - echo "race_car_e"
-   
+
    race_car_f:
     stage: race
     needs: [test_car_f]
