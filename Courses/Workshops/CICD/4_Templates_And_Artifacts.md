@@ -11,16 +11,16 @@ In this challenge we will add security testing to our existing pipeline
 # Step 02 - Preparing the Pipeline
 
 1. First we need to get back to editing our pipeline from the last track. Make sure your still in your **_workshop-project_** space and use the left hand navigation menu to click through **Build -\> Pipeline editor** so we can edit our pipeline .yml file.
-2. Under where we define the image for our pipeline we will add the below code to include the SAST template:
+1. Under where we define the image for our pipeline we will add the below code to include the SAST template:
 
    ```plaintext
    include:
      - template: Security/SAST.gitlab-ci.yml
    ```
-3. To take a look at the template we just added look near the top of the edit page next to where you can select the branch (branch will show **_main_** right now) there will be a **_tree expand icon_** we want to click. From here we can see a link to all of the templates we currently have included in our pipeline.
-4. We then want to click the link for **Jobs/SAST.gitlab-ci.yml** that will open a new window where you can view the contents of the job we have included. Spend some time looking this over then close out the window to get back to our pipeline editor screen.
-5. You can also click the **_Full configuration_** to see the complete yaml output of your .gitlab-ci.yml file plus all templates you have included.
-6. Now that we have SAST lets add a few more security templates to our project to confirm that our code is secure. Edit your **_includes_** section below to be:
+1. To take a look at the template we just added look near the top of the edit page next to where you can select the branch (branch will show **_main_** right now) there will be a **_tree expand icon_** we want to click. From here we can see a link to all of the templates we currently have included in our pipeline.
+1. We then want to click the link for **Jobs/SAST.gitlab-ci.yml** that will open a new window where you can view the contents of the job we have included. Spend some time looking this over then close out the window to get back to our pipeline editor screen.
+1. You can also click the **_Full configuration_** to see the complete yaml output of your .gitlab-ci.yml file plus all templates you have included.
+1. Now that we have SAST lets add a few more security templates to our project to confirm that our code is secure. Edit your **_includes_** section below to be:
 
    ```plaintext
    include:
@@ -29,16 +29,8 @@ In this challenge we will add security testing to our existing pipeline
      - template: Jobs/SAST.gitlab-ci.yml
      - template: Jobs/Secret-Detection.gitlab-ci.yml
    ```
-7. We will also now want to edit our stages to ensure we can run all of these templates:
 
-   ```plaintext
-   stages:
-     - build
-     - test
-     - security
-   ```
-
-8. Also if you click the tree icon or **_Full configuration_** tab you should be able to see the content of all of the new security templates we have added. Before committing we will add some inheritance in the next step.
+1. Also if you click the tree icon or **_Full configuration_** tab you should be able to see the content of all of the new security templates we have added. Before committing we will add some inheritance in the next step.
 
 # Step 03 - Using Inheritance to Enhance Our Pipeline
 
@@ -50,6 +42,16 @@ In this challenge we will add security testing to our existing pipeline
      stage: security
      needs: []
    ```
+
+1. We will also now want to edit our stages to ensure we can run all of these templates:
+
+   ```plaintext
+   stages:
+     - build
+     - test
+     - security
+   ```
+
 2. Before commiting the code we are going to add the **_artifact_** keyword in the next step.
 
 # Step 04 - Storing with Artifacts
