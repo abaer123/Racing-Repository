@@ -199,7 +199,7 @@ cache:
 
 # Step 03 - Adjusting for Failure
 
-1. What if our **_super_fast_test_** job had been failing? Lets replace the existing script with a new line to make it fail:
+1. What if our **_super_fast_test_** job had been failing? Lets replace the **existing script _- echo "If youre not first youre last"_** and **_- return 0_** with a new line to make it fail:
 
    ```plaintext
    - exit 1
