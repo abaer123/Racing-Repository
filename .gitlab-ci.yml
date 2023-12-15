@@ -1,5 +1,13 @@
 image: docker:latest
 
+cache:
+  - key: cache-$CI_COMMIT_REF_SLUG
+    fallback_keys:
+      - cache-$CI_DEFAULT_BRANCH
+      - cache-default
+    paths:
+      - vendor/ruby
+
 services:
   - docker:dind
 
@@ -9,11 +17,12 @@ variables:
   ROLLOUT_RESOURCE_TYPE: deployment
   DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
   RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
-  
+  SECRET_DETECTION_EXCLUDED_PATHS: "Courses"
 
 stages:
   - build
   - test
+  - extra-security
  
 build:
   stage: build
@@ -26,11 +35,35 @@ build:
     - docker build -t $IMAGE .
   after_script:
     - docker push $IMAGE
+  artifacts:
+    paths:
+      - Gemfile.lock
+    expire_in: 1 hour
 
 test:
-  stage: test
-  image: gliderlabs/herokuish:latest
-  script:
-    - cp -R . /tmp/app
-    - /bin/herokuish buildpack test
+ stage: test
+ image: gliderlabs/herokuish:latest
+ script:
+   - cp -R . /tmp/app
+   - /bin/herokuish buildpack test
+ after_script:
+   - echo "Our race track has been tested!"
+ needs: []
+ rules:
+   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+super_fast_test:
+ stage: test
+ script:
+   - exit 1
+ needs: []
+ rules:
+   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+     allow_failure: true
+
+downstream_security:
+  stage: extra-security
+  trigger:
+    include:
+          - local: security-pipeline/security.gitlab-ci.yml
 
