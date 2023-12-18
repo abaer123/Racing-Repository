@@ -26,76 +26,76 @@ In this challenge will walk you through how to set up a child pipelines
 
 1. First we are going to want to remove all of the duplicated code in our existing pipeline. The code below will be our existing pipeline minus everything the security pipeline now covers:
 
-```plaintext
-image: docker:latest
-
-cache:
-  - key: cache-$CI_COMMIT_REF_SLUG
-    fallback_keys:
-      - cache-$CI_DEFAULT_BRANCH
-      - cache-default
-    paths:
-      - vendor/ruby
-
-services:
-  - docker:dind
-
-variables:
-  CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
-  DOCKER_DRIVER: overlay2
-  ROLLOUT_RESOURCE_TYPE: deployment
-  DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
-  RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
-
-stages:
-  - build
-  - test
- 
-build:
-  stage: build
-  variables:
-    IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
-  before_script:
-    - docker info
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-  script:
-    - docker build -t $IMAGE .
-  after_script:
-    - docker push $IMAGE
-  artifacts:
-    paths:
-      - Gemfile.lock
-    expire_in: 1 hour
-
-test:
- stage: test
- image: gliderlabs/herokuish:latest
- script:
-   - cp -R . /tmp/app
-   - /bin/herokuish buildpack test
- after_script:
-   - echo "Our race track has been tested!"
- needs: []
- rules:
-   - if: $CI_COMMIT_BRANCH == 'main'
-
-super_fast_test:
- stage: test
- script:
-   - echo "If your not first your last"
-   - return 1
- needs: []
- rules:
-   - if: $CI_COMMIT_BRANCH == 'main'
-     allow_failure: true
-```
+   ```plaintext
+   image: docker:latest
+   
+   cache:
+     - key: cache-$CI_COMMIT_REF_SLUG
+       fallback_keys:
+         - cache-$CI_DEFAULT_BRANCH
+         - cache-default
+       paths:
+         - vendor/ruby
+   
+   services:
+     - docker:dind
+   
+   variables:
+     CS_DEFAULT_BRANCH_IMAGE: $CI_REGISTRY_IMAGE/$CI_DEFAULT_BRANCH:$CI_COMMIT_SHA
+     DOCKER_DRIVER: overlay2
+     ROLLOUT_RESOURCE_TYPE: deployment
+     DOCKER_TLS_CERTDIR: ""  # https://gitlab.com/gitlab-org/gitlab-runner/issues/4501
+     RUNNER_GENERATE_ARTIFACTS_METADATA: "true"
+   
+   stages:
+     - build
+     - test
+    
+   build:
+     stage: build
+     variables:
+       IMAGE: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+     before_script:
+       - docker info
+       - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+     script:
+       - docker build -t $IMAGE .
+     after_script:
+       - docker push $IMAGE
+     artifacts:
+       paths:
+         - Gemfile.lock
+       expire_in: 1 hour
+   
+   test:
+     stage: test
+     image: gliderlabs/herokuish:latest
+     script:
+       - cp -R . /tmp/app
+       - /bin/herokuish buildpack test
+     after_script:
+       - echo "Our race track has been tested!"
+     needs: []
+     rules:
+       - if: $CI_COMMIT_BRANCH == 'main'
+   
+   super_fast_test:
+     stage: test
+     script:
+       - echo "If your not first your last"
+       - return 1
+     needs: []
+     rules:
+       - if: $CI_COMMIT_BRANCH == 'main'
+         allow_failure: true
+   ```
 2. Lets start by adding a new stage for our child pipeline. Edit the stage section to be the following:
 
    ```plaintext
    stages:
-       - build
-       - test
-       - extra-security
+     - build
+     - test
+     - extra-security
    ```
 3. Lets also add a job that calls the child pipeline in the security stage:
 
@@ -104,7 +104,7 @@ super_fast_test:
      stage: extra-security
      trigger:
        include:
-             - local: security-pipeline/security.gitlab-ci.yml
+         - local: security-pipeline/security.gitlab-ci.yml
    ```
 4. Lets go ahead and click **Commit Changes** and use the left hand menu to click through **Build \> Pipelines**, then click the hyperlink from the most recently kicked off pipeline that starts with **<span dir="">_#_</span>**. In the pipeline view as the jobs run click into each of them to see how our added **_child-security-pipeline_** have changed the output.
 
