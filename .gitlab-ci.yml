@@ -21,12 +21,12 @@ stages:
 
 include:
   - template: Jobs/Test.gitlab-ci.yml
-  - template: Jobs/Container-Scanning.gitlab-ci.yml
+  - template: Jobs/Container-Scanning.latest.gitlab-ci.yml
   - template: Code-Quality.gitlab-ci.yml
-  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
-  - template: Jobs/SAST.gitlab-ci.yml
-  - template: Jobs/Secret-Detection.gitlab-ci.yml
-  - template: Jobs/SAST-IaC.gitlab-ci.yml
+  - template: Jobs/Dependency-Scanning.latest.gitlab-ci.yml
+  - template: Jobs/SAST.latest.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.latest.gitlab-ci.yml
+  - template: Jobs/SAST-IaC.latest.gitlab-ci.yml
 
 build:
   stage: build
