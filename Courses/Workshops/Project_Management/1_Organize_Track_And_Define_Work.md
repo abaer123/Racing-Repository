@@ -34,6 +34,7 @@ Organizing and planning work
 
 > [Docs for setting up your org](https://docs.gitlab.com/ee/topics/set_up_organization.html)
 
+> **At this point you should be in your project, not the subgroup**
 
 # Step 3: Planning With GitLab Duo Chat
 
@@ -74,6 +75,8 @@ Organizing and planning work
 4. Leave **Show the Open list** and **Show the Closed list** checkboxes selected
   
 5. Click **Create board**
+
+> You may need to swap to your new board if it dosent change automatically
   
 6. Click **Create list**. Leave the scope of the list set to **Label**. Select **Workflow::Planning**. Click **Add to board**.
   
@@ -102,6 +105,9 @@ Organizing and planning work
     * Click **New issue**
     * Give a title **Update-Pipeline**
     * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown and use this prompt: `Provide a short description around updating our pipeline to use Auto DevOps` then click **Submit**.
+
+> Ensure you are _plain text editing_ to see the icon above
+
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab id
     * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
     * Assign the label **P2**
