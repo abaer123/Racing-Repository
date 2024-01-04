@@ -21,16 +21,18 @@ Git repository and Merge Requests
 # Step 2: Create Merge Request from Issue
 
 1. Click **Create Merge Request**
+
+2. Uncheck _Mark as draft_
   
-2. Note the new branch
+3. Note the new branch
   
-3. Note the the link to the issue
+4. Note the the link to the issue
   
-4. Note automatic Merge Request details, like Assignee & Milestone
+5. Note automatic Merge Request details, like Assignee & Milestone
   
-5. Note history of Merge Request
+6. Note history of Merge Request
   
-6. Scroll down and click **Create merge request**
+7. Scroll down and click **Create merge request**
 
 # Step 3: Modify The Pipeline
 
@@ -45,9 +47,9 @@ Git repository and Merge Requests
 
 3. Click the source control icon on the left hand side navigation menu
   
-4. Add a commit message and then click **Commit & Push**. It will then ask if you want to commit to main and you want to click **No**. 
-  
-5. Once committed a popup will appear for you to click **Go to project**.
+4. Add a commit message and then click **Commit to ...**.
+
+5. Once committed a popup will appear for you to click **Go to MR**.
 
 # Step 4: Prepare for Review
 
@@ -59,11 +61,9 @@ Git repository and Merge Requests
   
 4. click the three dots in the top right, then click **View summary notes**. This new AI feature will then give a quick summary on all of the changes that are involved in this MR.
   
-5. Click **Overview** and click the **Mark as ready** button to signify the change is ready for review
+5. In the **Reviewers** section in the right panel, click **Edit** and assign yourself (click away to save)
   
-6. In the **Reviewers** section in the right panel, click **Edit** and assign yourself (click away to save)
-  
-7. Once the pipeline has ran click into the pipeline and then click on our test job. At the end of this job we should see the text output from out _after_script_ code addition.
+6. Once the pipeline has ran click into the pipeline and then click on our test job. At the end of this job we should see the text output from out _after_script_ code addition.
 
 > [Docs on Merge Requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
 
