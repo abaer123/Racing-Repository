@@ -36,7 +36,7 @@ Your organization now has a few different projects related to improving the app.
   
 6. Repeat for a second sub epic (**Test-CICD-Epic**)
 
-# Step 3: Assign the an issue to one of each Sub-Epic
+# Step 3: Assign the issue to one of each Sub-Epic
 
 1. Click into (**Test-Security-Epic**)
   
