@@ -106,7 +106,7 @@ Organizing and planning work
     * Give a title **Update-Pipeline**
     * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown and use this prompt: `Provide a short description around updating our pipeline to use Auto DevOps` then click **Submit**.
 
-> Ensure you are _plain text editing_ to see the icon above
+      > Ensure you are _plain text editing_ to see the icon above
 
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab id
     * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
@@ -160,7 +160,7 @@ Organizing and planning work
   
 9. Note the issue labels no longer include **Workflow::Review** or **Workflow::Planning** and the issue is now closed
   
-10. Before moving on drag the closed issue back to ***Planning***
+10. Before moving on drag the closed issue back to ***Workflow::Planning***
 
 # Step 9: Review project milestone charts
   

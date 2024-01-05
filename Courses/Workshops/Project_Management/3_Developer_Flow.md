@@ -38,7 +38,7 @@ Git repository and Merge Requests
 
 1. First click **Code**, then click **Open in Web IDE**
   
-2. Click on the _.gitlab-ci.yml_ file and add the code below to the end of the file:
+2. Click on the _.gitlab-ci.yml_ file and add the code below to the end of the `test` job:
 
     ```
     after_script:
@@ -61,7 +61,7 @@ Git repository and Merge Requests
   
 4. click the three dots in the top right, then click **View summary notes**. This new AI feature will then give a quick summary on all of the changes that are involved in this MR.
   
-5. In the **Reviewers** section in the right panel, click **Edit** and assign yourself (click away to save)
+5. In the **Overview** tab, in the **Reviewers** section in the right panel, click **Edit** and assign yourself (click away to save)
   
 6. Once the pipeline has ran click into the pipeline and then click on our test job. At the end of this job we should see the text output from out _after_script_ code addition.
 
@@ -79,4 +79,4 @@ Git repository and Merge Requests
   
 2. Navigate to **Plan**>**Issue boards** to see the issue is now closed
   
-3. Click on the issue to see the Merge Request history captured in the issue
+3. Click on the issue's name to see the Merge Request history captured in the issue
