@@ -2,7 +2,7 @@
 
 Main project for all GitLab hands on events, main project here: https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing/-/edit/main/README.md.
 
-This project consists of 5 workshops that can be run synchronously or self-paced. Additionally, it contains Golden Demos which model the best practices demonstrated via the hands-on workshops. There is also an AI Sandbox subdirectory in /ai-sandbox which contains sample files that you can use to evaluate the output of GitLab Duo Code Suggestions as well.
+This project consists of 5 workshops that can be run synchronously or self-paced, and can be customized on a per-customer basis. Additionally, it contains Golden Demos which model the best practices demonstrated via the hands-on workshops. There is also an AI Sandbox subdirectory in /ai-sandbox which contains sample files that you can use to evaluate the output of GitLab Duo Code Suggestions as well.
 
 **GitLab Fundamentals** - This workshop introduces participants to the basics of working with GitLab. In this lab, participants will learn how to set up a project, work with GitLab project management tools, deploy basic CI/CD pipelines, and learn about security and compliance features offered in our platform.[Deck | Google Slides](https://docs.google.com/presentation/d/1XcKMWpJplJm2SSXbxoqN6RBrOZSVFXyQSmNB5X7aDgI/edit#slide=id.g26189e93f11_0_0)\
 [Lab | GitLab Repo](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing/-/tree/main/Courses/Workshops/Basics?ref_type=heads)
