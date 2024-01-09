@@ -68,7 +68,7 @@ Organizing and planning work
 
 1. Use the left hand navigation menu to click through **Plan -> Issue boards**
   
-2. Click **New board** next to the dropdown that says **Development**.
+2. Click **Create new board** within the dropdown that says **Development**.
 
 3. Enter a title (**Team-Scoped-Board**)
   
@@ -156,11 +156,9 @@ Organizing and planning work
   
 7. Note the issue labels now include **Workflow::Review** and *not* **Workflow::Planning**
   
-8. Click and drag the same issue into Closed
-  
-9. Note the issue labels no longer include **Workflow::Review** or **Workflow::Planning** and the issue is now closed
-  
-10. Before moving on drag the closed issue back to ***Workflow::Planning***
+8. Click and drag the same issue into Closed. This closes the issue.
+    
+9. Before moving on, re-open the issue by dragging the closed issue back to ***Workflow::Planning***
 
 # Step 9: Review project milestone charts
   
