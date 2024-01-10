@@ -25,13 +25,15 @@ This project consists of 5 workshops that can be run synchronously or self-paced
 [Deck | Google Slides](https://docs.google.com/presentation/d/1D9bOq1c8lwCo7CFh-dFa8yUsWuundPQGW_HJVxwNkzE/edit)\
 [Lab | GitLab Repo](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing/-/tree/main/Courses/Workshops/Project_Management?ref_type=heads)
 
-**Security and Compliance** - This workshop focuses on GitLab's Security and Compliance featureset, and discusses how GitLab facilitates shifting Security Left, building Compliance Frameworks within GitLab, managing Scan Execution and Result policies, generating SBOMs within GitLab, and managing Audit Events within GitLab.[Deck | Google Slides](https://docs.google.com/presentation/d/1ZpOj_IVcF-ytVW1EhP6oVY7qIdxW0ezn3E8KjDDevV8/edit#slide=id.g24c46b4dc83_0_1239)\
+**Security and Compliance** - This workshop focuses on GitLab's Security and Compliance featureset, and discusses how GitLab facilitates shifting Security Left, building Compliance Frameworks within GitLab, managing Scan Execution and Result policies, generating SBOMs within GitLab, and managing Audit Events within GitLab.
+
+[Deck | Google Slides](https://docs.google.com/presentation/d/1ZpOj_IVcF-ytVW1EhP6oVY7qIdxW0ezn3E8KjDDevV8/edit#slide=id.g24c46b4dc83_0_1239)\
 [Lab | GitLab Repo](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing/-/tree/main/Courses/Workshops/Security?ref_type=heads)
 
 **GitLab Duo/AI** - This workshop focuses on our Generative AI portfolio of features currently offered on GitLab SaaS. In this workshop, participants will get hands-on with GitLab Duo features such as Suggested Reviewers, Code Suggestions, Duo Chat, and Summarize/Resolve this Vulnerability. This workshop is designed to introduce participants to our approach to Generative AI and improve their understanding of how they can utilize our Duo features in their daily workflows.
 
 [Deck | Google Slides](https://docs.google.com/presentation/d/1Ybg10UkrVT_L74nHT5GpCmkkm8AICAEDEpEwtqbEtVI/edit#slide=id.g24acd83f362_0_580)\
-[Lab | GitLab Repo](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing/-/tree/main/Courses/Workshops/AI?ref_type=heads) (edited)
+[Lab | GitLab Repo](https://gitlab.com/gitlab-learn-labs/sample-projects/tanuki-racing/-/tree/main/Courses/Workshops/AI?ref_type=heads) 
 
 ## Contribution Guidlines
 
