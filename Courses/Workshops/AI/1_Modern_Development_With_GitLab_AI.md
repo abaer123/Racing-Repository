@@ -23,8 +23,11 @@ Throughout this workshop, you will get AI-generated support from GitLab Duo Chat
 
 ### 2\. Enable Code Suggestions
 
-- Code Suggestions has to be enabled for at least one top-level group your account belongs to. If you don’t have a role that lets you view the top-level group’s settings, contact a group owner.
-  - Reference: Enable Code Suggestions for a group: https://docs.gitlab.com/ee/user/group/manage.html#enable-code-suggestions-for-a-group
+ - All of the AI features have already been [enabled at the top group level](https://docs.gitlab.com/ee/user/ai_features.html#enable-aiml-features).
+    - Code Suggestions has to be enabled for at least one top-level group your account belongs to. This has already been taken care of in this environment. If you don’t have a role that lets you view the top-level group’s settings, contact a group owner when implementing this feature in your own context.
+    - References:
+      - [Code Suggestions on GitLab SaaS](https://docs.gitlab.com/ee/user/project/repository/code_suggestions/saas.html)
+      - [Enable Code Suggestions on self-managed GitLab](https://docs.gitlab.com/ee/user/project/repository/code_suggestions/self_managed.html#enable-code-suggestions-on-self-managed-gitlab)
 
  #### Alternative Option
 
