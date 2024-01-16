@@ -1,5 +1,13 @@
 # Tanuki Racing Release Notes
 
+## Version: 1.0.13, Jan 16, 2024
+
+#### Updates:
+- AI workshop now includes x-ray and automatic vulnerability resolution
+
+#### Contributors:
+- Logan Stucker @lfstucker
+
 ## Version: 1.0.12, Dec 14, 2023
 
 #### Updates:
