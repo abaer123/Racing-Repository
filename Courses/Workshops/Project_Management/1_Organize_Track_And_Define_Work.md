@@ -104,9 +104,8 @@ Organizing and planning work
     * Navigate to **Plan>Issues** using the left hand navigation menu
     * Click **New issue**
     * Give a title **Update-Pipeline**
+    * In the **Description** area, ensure you are  _plain text editing_
     * Click the **Tanuki icon** next to preview in the description area. Click **Generate issue description** in the resulting dropdown and use this prompt: `Provide a short description around updating our pipeline to use Auto DevOps` then click **Submit**.
-
-      > Ensure you are _plain text editing_ to see the icon above
 
     * Click **Assign to me** to assign the issue to yourself. Even if your name doesn't appear in the dropdown you can still write in your GitLab id
     * Select the milestone (**Tanuki-Racing-Migration-Milestone**)
