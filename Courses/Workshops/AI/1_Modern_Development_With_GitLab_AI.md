@@ -106,6 +106,20 @@ You need to execute the pipeline of the project to populate your project with us
     sast:
       variables:
           SEARCH_MAX_DEPTH: 12
+
+    xray:
+      stage: build
+      image: registry.gitlab.com/gitlab-org/code-creation/repository-x-ray:latest
+      allow_failure: true
+      rules:
+      - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      variables:
+        OUTPUT_DIR: reports
+      script:
+        - x-ray-scan -p "$CI_PROJECT_DIR" -o "$OUTPUT_DIR"
+      artifacts:
+        reports:
+          repository_xray: "$OUTPUT_DIR/*/*.json"
     ```
 
   > Please note you can also merge the **_ai-main-branch_** branch into main as well.
@@ -154,6 +168,7 @@ You need to execute the pipeline of the project to populate your project with us
   2. First, click into any of the vulnerabilities present. Notice that there are a number of vulnerabilities like token leaks & container issues, all of which GitLab will help you quickly fix through policies and the power of one platform. 
 - [ ] Look for the **Possible SQL Injection** vulnerability  
   1. Filter the report as follows:
+    - `Status=All statuses`
     - `Severity=Low`
     - `Tool=SAST`. 
   2. Select the vulnerability
@@ -176,7 +191,20 @@ You need to execute the pipeline of the project to populate your project with us
 
 ## :art: Implement the fix
 
-### 1\. Resolve SQL Injection
+### 1\. Resolve With AI
+- [ ] Before we jump in and use Code Suggestions to help us fix our security vulnerabilities, we are also going to use the _Resolve with AI_ feature:
+
+1. On the left sidebar, select `Secure > Vulnerability report` to view the full report again
+
+2. Filter the report as follows:
+    - `Status=All statuses`
+    - `Severity=Critical`
+    - `Tool=SAST`. 
+3.. Click into any of the shown vulnerabilities. Once one the vulenerability view go ahead and click **Resolve with AI**.
+4. This will then open up a new Merge Request that fixes our vulnerability. Click the **Changes** tab to view the fix that we are bringing in.
+5. We can check back in on this later to confirm that our vulenerability is fixed, but in the mean time will move on to the next section.
+
+### 2\. Resolve SQL Injection
 - [ ] Now that we have more context around the SQL injection vulnerability lets go try to fix it and do some development with GitLab Code Suggestions:
 
 1. Before we make any code changes we will want to create a merge request to track our work.
@@ -210,7 +238,7 @@ Leaderboard.first.where("player = ?", sanitize_sql(id))
 
 > Please note that Code Suggestions uses your current file as reference for how to write the function, so you may need to do some slight editing for the final result
 
-### 3\. Create A New Class
+### 4\. Create A New Class
 
 - [ ] Your Project Manager has also asked you to write a brand new calculator class that will eventually be used to add up player track times: 
 
