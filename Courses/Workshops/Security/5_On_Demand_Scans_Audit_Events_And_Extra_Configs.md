@@ -50,13 +50,11 @@ In case of security risks events these tools are extremely handy at quickly trou
 
 > [Docs for CodeOwners](https://docs.gitlab.com/ee/user/project/code_owners.html)
 
-# Step 5: Compliance In Action
+# Step 5: License Compliance and Codeowners In Action
 
-1. Now we want to see both of our policies and CODEOWNERS working in action. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
-  
-2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
-  
-3. Next locate the **tanuki-racing.gemspec** file. On line 22 you can see that there are a number of runtime dependencies listed. Your project manager has expressed interest in using a graph database in the future so you decide to add neo-4j to cehck it out:
+1. Now we want to see License Compliance and CODEOWNERS working in action. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+    
+2. Next locate the **tanuki-racing.gemspec** file. On line 22 you can see that there are a number of runtime dependencies listed. Your project manager has expressed interest in using a graph database in the future so you decide to add neo-4j to cehck it out:
 
     ```
     s.add_runtime_dependency 'neo4j-community', '~> 2.2'
@@ -70,6 +68,6 @@ In case of security risks events these tools are extremely handy at quickly trou
   
 6. On the resulting MR notice that our policy requires approval from **_lfstucker_** and is blocked by our two policies before we are able to merge. Wait for the entire pipeline to finish running.
 
-7. Once done running you can see that all of our policies have been enacted restricting us from committing this code. If we wouldnt have used a blocked license or added a token we now would be able to merge our code.
+7. Once done running you can see that our CODEOWNERS protection rule and License Compliance pllicy have been enacted restricting us from committing this code. If we wouldnt have used a blocked license or modified a file protected by CODEOWNERS we now would be able to merge our code.
 
 > [Docs on automatically revoking secrets](https://docs.gitlab.com/ee/user/application_security/secret_detection/#responding-to-a-leaked-secret)
