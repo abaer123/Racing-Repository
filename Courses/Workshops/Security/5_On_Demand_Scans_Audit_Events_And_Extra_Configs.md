@@ -69,5 +69,3 @@ In case of security risks events these tools are extremely handy at quickly trou
 6. On the resulting MR notice that our policy requires approval from **_lfstucker_** and is blocked by our two policies before we are able to merge. Wait for the entire pipeline to finish running.
 
 7. Once done running you can see that our CODEOWNERS protection rule and License Compliance pllicy have been enacted restricting us from committing this code. If we wouldnt have used a blocked license or modified a file protected by CODEOWNERS we now would be able to merge our code.
-
-> [Docs on automatically revoking secrets](https://docs.gitlab.com/ee/user/application_security/secret_detection/#responding-to-a-leaked-secret)
