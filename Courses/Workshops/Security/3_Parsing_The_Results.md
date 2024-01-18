@@ -62,7 +62,7 @@ Following our shift left trend we will see how security results are included thr
 
 # Step 5: Secret Detection In Action
 
-1. Now we want to see our scan results policy working in action for secrets detection. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+1. Now we want to see our scan results policy working in action for secrets detection. From the main page of our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
   
 2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
   

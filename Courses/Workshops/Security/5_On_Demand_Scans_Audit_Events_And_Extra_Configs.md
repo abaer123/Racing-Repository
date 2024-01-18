@@ -52,7 +52,7 @@ In case of security risks events these tools are extremely handy at quickly trou
 
 # Step 5: License Compliance and Codeowners In Action
 
-1. Now we want to see License Compliance and CODEOWNERS working in action. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+1. Now we want to see License Compliance and CODEOWNERS working in action. From the main page of our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
     
 2. Next locate the **tanuki-racing.gemspec** file. On line 22 you can see that there are a number of runtime dependencies listed. Your project manager has expressed interest in using a graph database in the future so you decide to add neo-4j to cehck it out:
 
