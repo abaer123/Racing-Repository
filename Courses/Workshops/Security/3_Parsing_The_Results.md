@@ -59,3 +59,21 @@ Following our shift left trend we will see how security results are included thr
 5. Lastly click **Configure with a merge request**. On the resulting merge request click ***merge*** and you will be brought to your new policy project that is applied to our workshop application. Now this scan will run daily and alert us if a secret was accidentally approved into our default branch.
   
 6. Lastly use the breadcrumbs at the top of the screen to click into your group, then once again click into your project.
+
+# Step 5: Secret Detection In Action
+
+1. Now we want to see our scan results policy working in action for secrets detection. From the main page our project lets go ahead and click **Web IDE** in the **Edit** dropdown list.
+  
+2. Click into the **_cf-sample-scripts/eks.yaml_** file and add a fake AWS token at the end of the line 6. Change the **description** from **_The name of the IAM role for the EKS service to assume._** to **The name of the IAM role for the EKS service to assume, using aws_key_id AKIAIOSF0DNN7EXAMPLE.**.
+  
+3. Once added click the source control button on the left hand side, add a quick commit message, then click the **down arrow**.
+  
+4. On the resulting drop down click **Yes** to open a new branch, then click the **_Enter_** key. A new popup will appear where we want to then click **Create MR**
+
+5. Scroll to the bottom, uncheck **_Delete source branch when merge request is accepted_**, and click **Create merge request**
+  
+6. On the resulting MR notice that our policy requires approval from **_lfstucker_** and is blocked by our two policies before we are able to merge. Wait for the entire pipeline to finish running.
+
+7. When the pipeline is done running you can see that our scan result policy have been enacted restricting us from committing this code. If we did not add a secret token directly to our source code we would be able to merge our code. (you can come back to this merge request to review the blocked merge after the next section)
+
+> [Docs on automatically revoking secrets](https://docs.gitlab.com/ee/user/application_security/secret_detection/#responding-to-a-leaked-secret)
