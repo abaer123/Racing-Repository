@@ -20,16 +20,16 @@ With the uptick of major security breaches hitting headlines many governments ha
 
 1. Using the left hand navigation menu click through the **Secure \> License Compliance** to view all of the licenses detected in your project.
   
-2. Lets say we decided we want to prevent the use of the GPLv3 License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
+2. Lets say we decided we want to prevent the use of the BSD 3-Clause "New" or "Revised" License. Using the left hand navigation menu click through the **Secure \> Policies** then click **New policy**.
   
 3. Click **Select policy** under **Scan result policy**
   
 4. In the **New scan result policy form** that appears, provide the following mandatory information:
-    * Name: Deny GPLv3 License
+    * Name: Deny BSD 3-Clause "New" or "Revised" License
     * Policy status: Enabled
     * Rules: If **Select scan type** == **License Scan**, rest of first section stays as is
     * **Status is** both **Newly Detected** and **Pre-existing**
-    * License is **matching** **_GPLv3_**
+    * License is **matching** **_BSD 3-Clause "New" or "Revised"_**
     * Actions: Require 1 approval from: **Individual users** **lfstucker**
     * Uncheck **Prevent pushing and force pushing**
     * Click **Configure with a merge request**
@@ -38,5 +38,5 @@ With the uptick of major security breaches hitting headlines many governments ha
   
 6. _Remember to go back to your project using the breadcrumb, clicking on your group, then clicking on your project._
   
-7. Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the GPLv3 license from being merged and the security bot will notify you that you have a policy violation.
+7. Now if we were to run a new pipeline for a MR, a new approval rule based on this license compliance policy will be added to prevent any software using the BSD 3-Clause "New" or "Revised" license from being merged and the security bot will notify you that you have a policy violation.
 
