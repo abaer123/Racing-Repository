@@ -1,6 +1,6 @@
 # Transfer workshop project to reference later
 
-## WARNING
+**WARNING**
 
 You will lose some capabilities we went over during the workshop when you transfer the project if you do not have an ultimate or premium license. We do however have a free trial period you can take advantage of as well: https://about.gitlab.com/free-trial/
 
