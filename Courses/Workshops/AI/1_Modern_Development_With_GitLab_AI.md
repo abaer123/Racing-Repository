@@ -200,7 +200,7 @@ You need to execute the pipeline of the project to populate your project with us
     - `Status=All statuses`
     - `Severity=Critical`
     - `Tool=SAST`. 
-3.. Click into any of the shown vulnerabilities. Once one the vulenerability view go ahead and click **Resolve with AI**.
+3. Click into any of the shown vulnerabilities. Once one the vulenerability view go ahead and click **Resolve with AI**.
 4. This will then open up a new Merge Request that fixes our vulnerability. Click the **Changes** tab to view the fix that we are bringing in.
 5. We can check back in on this later to confirm that our vulenerability is fixed, but in the mean time will move on to the next section.
 
